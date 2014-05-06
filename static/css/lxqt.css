@@ -1047,22 +1047,6 @@ div.divider:empty + * {
 	margin-top: 0;
 }
 
-#heading::before {
-	-display: none;
-}
-
-#heading::before {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	padding: 0.375rem;
-	z-index: 100;
-	font-size: 0.75rem;
-	color: #000;
-	background-color: #FFF;
-	opacity: 0.75;
-}
-
 .paged .page[id] {
 	display: none;
 	visibility: hidden;
@@ -1476,51 +1460,11 @@ a[href]:not(:disabled):hover {
     }
 }
 
-@media all and (min-width: 2.675rem) {
-    #heading::before
-    {
-        content: "Columns: 0 (∞)";
-    }
-}
-
-@media all and (min-width: 25.145rem) {
-    body:not([data-columns="0"]) #heading::before
-    {
-        content: "Columns: 0.5 (½)";
-    }
-
-    body:not([data-columns="0"]) :root,
-    body:not([data-columns="0"]) html,
-    body:not([data-columns="0"]) body,
-    body:not([data-columns="0"]) #wrapper,
-    body:not([data-columns="0"]) #content,
-    body:not([data-columns="0"]) #wrapper > div.divider,
-    body:not([data-columns="0"]) #outro,
-    body:not([data-columns="0"]) #content > article,
-    body:not([data-columns="0"]) #content > div.divider,
-    body:not([data-columns="0"]) #content > footer
-    {
-        min-width: 22.5rem;
-    }
-}
-
-@media all and (min-width: 46.545rem) {
-    body:not([data-columns="0"]):not([data-columns="0.5"]) #heading::before
-    {
-        content: "Columns: 1 (1)";
-    }
-}
-
 @media all and (min-width: 70.62rem) {
     body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #wrapper
     {
         width: 65rem;
         max-width: 65rem;
-    }
-
-    body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #heading::before
-    {
-        content: "Columns: 1.5 (1 + ½)";
     }
 
     body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #outro,
@@ -1549,11 +1493,6 @@ a[href]:not(:disabled):hover {
         max-width: 85rem;
     }
 
-    body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]) #heading::before
-    {
-        content: "Columns: 2 (1 + 1)";
-    }
-
     body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]) #outro,
     body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]) #wrapper > div.divider
     {
@@ -1566,11 +1505,6 @@ a[href]:not(:disabled):hover {
     {
         width: 87.5rem;
         max-width: 87.5rem;
-    }
-
-    body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]):not([data-columns="2"]) #heading::before
-    {
-        content: "Columns: 2 +  ((½ + 1) + ½)";
     }
 
     body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]):not([data-columns="2"]) #outro,
@@ -1605,11 +1539,6 @@ a[href]:not(:disabled):hover {
         max-width: 109rem;
     }
 
-    body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]):not([data-columns="2"]) #heading::before
-    {
-        content: "Columns: 2.5 ((½ + 1) + 1)";
-    }
-
     body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]):not([data-columns="2"]) #outro,
     body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]):not([data-columns="2"]) #wrapper > div.divider
     {
@@ -1622,11 +1551,6 @@ a[href]:not(:disabled):hover {
     {
         width: 129rem;
         max-width: 129rem;
-    }
-
-    body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]):not([data-columns="2"]) #heading::before
-    {
-        content: "Columns: 3 ((1 + 1) + 1)";
     }
 
     body:not([data-columns="0"]):not([data-columns="0.5"])[data-columns]:not([data-columns="1"]):not([data-columns="1.5"]):not([data-columns="2"]) #content
