@@ -1284,94 +1284,89 @@ div.wrapper {
 @-webkit-keyframes slideshow {
 	0% {
 		z-index: 3;
-		-webkit-transform: translateX(100%);
+		opacity: 0;
 	}
 	3% { /* 1s */
-		z-index: 4;
-		-webkit-transform: translateX(0);
+		z-index: 3;
+		opacity: 1;
 	}
 	33.33% { /* 10s */
-		z-index: 3;
-		-webkit-transform: translateX(0);
+		z-index: 2;
+		opacity: 1;
 	}
 	36.33% { /* 11s */
-		z-index: -1;
-		-webkit-transform: translateX(-100%);
+		z-index: 2;
+		opacity: 1;
 	}
 	100% {
 		z-index: -1;
-		-webkit-transform: translateX(100%);
+		opacity: 0;
 	}
 }
 @-moz-keyframes slideshow {
 	0% {
 		z-index: 3;
-		transform: translateX(100%);
+		opacity: 0;
 	}
 	3% { /* 1s */
-		z-index: 4;
-		transform: translateX(0);
+		z-index: 3;
+		opacity: 1;
 	}
 	33.33% { /* 10s */
-		z-index: 3;
-		transform: translateX(0);
+		z-index: 2;
+		opacity: 1;
 	}
 	36.33% { /* 11s */
-		z-index: -1;
-		transform: translateX(-100%);
+		z-index: 2;
+		opacity: 1;
 	}
 	100% {
 		z-index: -1;
-		transform: translateX(100%);
+		opacity: 0;
 	}
 }
 @-ms-keyframes slideshow {
 	0% {
 		z-index: 3;
-		transform: translateX(100%);
+		opacity: 0;
 	}
-	3%	/* 1s */
-	{
-		z-index: 4;
-		transform: translateX(0);
-	}
-	33.33%	/* 10s */
-	{
+	3% { /* 1s */
 		z-index: 3;
-		transform: translateX(0);
+		opacity: 1;
 	}
-	36.33%	/* 11s */
-	{
-		z-index: -1;
-		transform: translateX(-100%);
+	33.33% { /* 10s */
+		z-index: 2;
+		opacity: 1;
 	}
-	100%
-	{
+	36.33% { /* 11s */
+		z-index: 2;
+		opacity: 1;
+	}
+	100% {
 		z-index: -1;
-		transform: translateX(100%);
+		opacity: 0;
 	}
 }
 @keyframes slideshow {
 	0% {
 		z-index: 3;
-		transform: translateX(100%);
+		opacity: 0;
 	}
 	3% { /* 1s */
-
-		z-index: 4;
-		transform: translateX(0);
+		z-index: 3;
+		opacity: 1;
 	}
 	33.33% { /* 10s */
-		z-index: 3;
-		transform: translateX(0);
+		z-index: 2;
+		opacity: 1;
 	}
 	36.33% { /* 11s */
-		z-index: -1;
-		transform: translateX(-100%);
+		z-index: 2;
+		opacity: 1;
 	}
 	100% {
 		z-index: -1;
-		transform: translateX(100%);
+		opacity: 0;
 	}
 }
 #figure-screenshots > div.wrapper > main > ol > li {
