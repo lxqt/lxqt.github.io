@@ -1266,7 +1266,6 @@ div.wrapper {
 	position: relative;
 	padding-top: 62.53561253561254%;
 	padding-left: 0;
-	border-radius: 1em;
 	overflow: hidden;
 	background-color: #111;
 }
@@ -1370,12 +1369,18 @@ div.wrapper {
 	}
 }
 #figure-screenshots > div.wrapper > main > ol > li {
+	animation: slideshow 30s linear -10s infinite normal both;
+	-moz-animation: slideshow 30s linear -10s infinite normal both;
 	-webkit-animation: slideshow 30s linear -10s infinite normal both;
 }
 #figure-screenshots > div.wrapper > main > ol > li:first-child {
+	animation-delay: 0s;
+	-moz-animation-delay: 0s;
 	-webkit-animation-delay: 0s;
 }
 #figure-screenshots > div.wrapper > main > ol > li:last-child {
+	animation-delay: -20s;
+	-moz-animation-delay: -20s;
 	-webkit-animation-delay: -20s;
 }
 #figure-screenshots > div.wrapper > main > ol > li > p > a {
