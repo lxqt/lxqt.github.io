@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="js-" lang="en-GB">
+<head>
+	<title>LXQt - The next generation of the Lightweight Desktop Environment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+	<link rel="canonical" href="http://lxqt.org">
+	<link type="text/css" href="/static/css/lxqt.css" rel="stylesheet"/>
+	<link rel="shortcut icon" href="/static/img/favicon.png" type="image/png"/>
+	<script type="text/javascript" src="/static/js/_.js"></script>
+	<script type="text/javascript" src="/static/js/lxqt.js"></script>
+</head>
+<body id="org-lxqt" class="home" data-columns="1.5" itemscope itemtype="http://schema.org/Organization">
+	{% include header.html %}
+	<div id="wrapper" class="wrapper">
+		<div id="unrelimp" class="divider"></div>
+		<main id="content">
+			<div id="relimp" class="divider"></div>
+			<article id="article-comingsoon" class="page">
+				<div class="wrapper">
+					<main>
+						<figure id="figure-screenshots" class="image">
+							<header><hgroup><h1>Screenshots</h1></hgroup></header>
+							<div class="wrapper">
+								{% include screenshots.html %}
+							</div>
+						</figure>
+						<h3>LXQt 0.8.0 is out!</h3>
+						<p>
+							After several months of hard work, the 0.8.0 version of LXQt is out, bringing
+							with it full Qt 5 compatibility, two beautiful new themes and a lot of new features,
+							performance improvements and bugfixes.
+						</p>
+
+						<h3>About LXQt</h3>
+						<p>
+							LXQt is the Qt port and the upcoming version of <a href="http://lxde.org">LXDE</a>,
+							the Lightweight Desktop Environment.
+							It is the product of the merge between the LXDE-Qt and the Razor-qt projects:
+							A lightweight, modular, blazing-fast and user-friendly desktop environment.<br/>
+						</p>
+						<p>
+							<strong>LXQt 0.8.0</strong> is a fast and stable desktop environment already usable
+							on production desktops.<br/>
+							It will not get in your way. It will not hang or slow down your system.
+							It is focused on being a <em>Classic Desktop</em> with a modern Look &amp; Feel.<br/>
+							Already available on most mainstream distributions and with partial FreeBSD support.
+							Try it out at home or in a VM!
+						</p>
+					</main>
+				</div>
+			</article>
+			<div id="relunimp" class="divider"></div>
+		</main>
+		<div id="unrelunimp" class="divider"></div>
+		<footer id="outro">
+			<section id="section-sources">
+				<header>
+					<hgroup><h1>Sources</h1></hgroup>
+				</header>
+				<div class="wrapper">
+					<main>
+						{% include distros.html %}
+					</main>
+				</div>
+			</section>
+			<section id="section-legal">
+				<div class="wrapper">
+					<main>
+						{% include links.html %}
+						<p class="license">
+							LXQt is licensed under <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU GPL 2.0+</a>
+							<br/> and <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">GNU LGPL 2.1+</a>.
+							<br/>LXQt.org is licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY-SA 3.0.</a>
+							<br/><a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="/static/img/cc-by-sa.png" title="Creative Commons Attribution-Share Alike License" alt="CC BY-SA"/></a>
+						</p>
+					</main>
+				</div>
+			</section>
+		</footer>
+	</div>
+</body>
+</html>
