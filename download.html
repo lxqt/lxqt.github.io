@@ -1,0 +1,17 @@
+---
+layout: page
+title: Download
+slug: download
+unrelunimp:
+    - screenshots.html
+---
+							<ul>{% for download in site.downloads %}{% if download.promoted %}
+								<li>
+									<p><a href="{{ download.url }}" title="{{ download.title }}"><img src="{{ download.image.src }}" alt="{{ download.image.alt }}"/> <span class="label">{{ download.label }}</span></a>
+										<br/><span class="description">{{ download.description }}</span></p>
+								</li>{% endif %}{% endfor %}{% for download in site.downloads %}{% if download.promoted == null %}
+								<li>
+									<p><a href="{{ download.url }}" title="{{ download.title }}"><img src="{{ download.image.src }}" alt="{{ download.image.alt }}"/> <span class="label">{{ download.label }}</span></a>
+										<br/><span class="description">{{ download.description }}</span></p>
+								</li>{% endif %}{% endfor %}
+							</ul>

@@ -1,13 +1,31 @@
-<main>
-	<ol>
-		<li>
-			<p><a href="/static/img/screenshots/1.png"><img src="static/img/screenshots/1.jpg"/></a></p>
-		</li>
-		<li>
-			<p><a href="/static/img/screenshots/2.png"><img src="static/img/screenshots/2.jpg"/></a></p>
-		</li>
-		<li>
-			<p style="height: 100%;"><a href="/static/img/screenshots/3.png" style="height: 100%;"><img src="static/img/screenshots/3.jpg" style="height: 100%;"/></a></p>
-		</li>
-	</ol>
-</main>
+					<aside id="aside-screenshots">
+						<header>
+							<hgroup>
+								<h1>Screenshots</h1>
+							</hgroup>
+						</header>
+						<div class="wrapper">
+							<main>
+								<ol>{% for screenshot in site.screenshots %}{% if screenshot.promoted %}
+									<li>
+										<a href="{{ screenshot.url }}" title="{{ screenshot.title }}">
+											<figure>
+												<header>
+													<hgroup>
+														<h1>{{ screenshot.title }}</h1>
+													</hgroup>
+												</header>
+												<div class="wrapper">
+													<main>
+														<img src="{{ screenshot.src }}" alt="{{ screenshot.alt }}"/>
+													</main>
+													<footer>{{ screenshot.caption }}</footer>
+												</div>
+											</figure>
+										</a>
+									</li>{% endif %}{% endfor %}
+								</ol>
+							</main>
+							<footer></footer>
+						</div>
+					</aside>

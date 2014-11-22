@@ -1,0 +1,17 @@
+					<aside id="aside-downloads">
+						<header>
+							<hgroup>
+								<h1>Downloads</h1>
+							</hgroup>
+						</header>
+						<div class="wrapper">
+							<main>
+								<ul>{% for download in site.downloads %}{% if download.promoted %}
+									<li>
+										<p><a href="{{ download.url }}" title="{{ download.title }}"><span class="label">{{ download.label }}</span> <img src="{{ download.icon.src }}" alt="{{ download.icon.alt }}"/></a></p>
+									</li>{% endif %}{% endfor %}
+								</ul>
+							</main>
+							<footer></footer>
+						</div>
+					</aside>

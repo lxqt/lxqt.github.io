@@ -1,0 +1,33 @@
+# Meta
+title: LXQt
+strapline: The next generation of the Lightweight Desktop Environment
+description: The next generation of the Lightweight Desktop Environment
+
+# Settings
+url: 'http://lxqt.org' # the base hostname & protocol for your site
+collections:
+    - downloads
+    - screenshots
+defaults:
+    -
+        scope:
+            path: ''
+        values:
+            unrelimp:
+                - links.html
+            relimp: null
+            relunimp: null
+            unrelunimp:
+                - downloads.html
+    -
+        scope:
+            path: ''
+            type: downloads
+        values:
+            unrelunimp:
+                - screenshots.html
+highlighter: null
+markdown: kramdown
+sass:
+    sass_dir: _sass
+permalink: pretty

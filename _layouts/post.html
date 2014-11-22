@@ -1,0 +1,20 @@
+---
+layout: default
+unrelimp: { links.html }
+unrelunimp: { downloads.html }
+---
+				<article id="article-post-{{ page.slug }}" class="page post">
+					<header>
+						<hgroup>
+							<h1>{{ page.title }}</h1>
+						</hgroup>
+						<p class="date"><time datetime="{{ post.date | date: '%F %R' }}">{{ post.date | date: '%R %A, %-d %B, %Y' }}</time></p>
+						{% if post.author %}<p class="author">{{ post.author }}</p>{% endif %}
+					</header>
+					<div class="wrapper">
+						<main>
+{{ content }}
+						</main>
+						<footer>{% if post.meta %}<p>{{ post.meta }}</p>{% endif %}</footer>
+					</div>
+				</article>

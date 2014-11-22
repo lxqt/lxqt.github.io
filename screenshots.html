@@ -1,0 +1,41 @@
+---
+layout: page
+title: Screenshots
+slug: screenshots
+---
+							<ul>{% for screenshot in site.screenshots %}{% if screenshot.promoted %}
+									<li>
+										<a href="{{ screenshot.url }}" title="{{ screenshot.title }}">
+											<figure>
+												<header>
+													<hgroup>
+														<h1>{{ screenshot.title }}</h1>
+													</hgroup>
+												</header>
+												<div class="wrapper">
+													<main>
+														<img src="{{ screenshot.src }}" alt="{{ screenshot.alt }}"/>
+													</main>
+													<footer>{{ screenshot.caption }}</footer>
+												</div>
+											</figure>
+										</a>
+									</li>{% endif %}{% endfor %}{% for screenshot in site.screenshots %}{% if screenshot.promoted == null %}
+									<li>
+										<a href="{{ screenshot.url }}" title="{{ screenshot.title }}">
+											<figure>
+												<header>
+													<hgroup>
+														<h1>{{ screenshot.title }}</h1>
+													</hgroup>
+												</header>
+												<div class="wrapper">
+													<main>
+														<img src="{{ screenshot.src }}" alt="{{ screenshot.alt }}"/>
+													</main>
+													<footer>{{ screenshot.caption }}</footer>
+												</div>
+											</figure>
+										</a>
+									</li>{% endif %}{% endfor %}
+							</ul>
