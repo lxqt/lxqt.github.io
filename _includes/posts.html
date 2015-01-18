@@ -1,0 +1,18 @@
+					<aside id="aside-downloads">
+						<header>
+							<hgroup>
+								<h1>Downloads</h1>
+							</hgroup>
+						</header>
+						<div class="wrapper">
+							<main>
+								<ul>{% for post in site.posts limit:5 %}
+									<li>
+										<p><strong class="title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></strong><br/>
+											<time datetime="{{ post.date | date: '%F %R' }}">{{ post.date | date: '%R %A, %-d %B, %Y' }}</time></p>
+									</li>{% endif %}{% endfor %}
+								</ul>
+							</main>
+							<footer></footer>
+						</div>
+					</aside>

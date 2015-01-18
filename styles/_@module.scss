@@ -1,0 +1,402 @@
+@charset "UTF-8";
+// Module handler
+$modules: () !default !global;
+@function module($name,$version,$media,$description,$dependencies)
+{
+	@if (index($modules,$name))
+	{
+		@return false;
+	}
+	$modules: append($modules,$name) !global;
+	@return true;
+}
+
+// Get unitless integer value only
+@function int($int)
+{
+	@if unitless($int)
+	{
+		@return $int;
+	}
+	@else
+	{
+		@return ($int / ($int * 0 + 1));
+	}
+}
+
+// Convert CSS unit values where possible and provide literal unit conversion where not possible.
+@function convert($measurement, $unit)
+{
+	@if unitless($unit) == false
+	{
+		@if unitless($measurement)
+		{
+			@return ($measurement * $unit);
+		}
+		@else if unit($unit) == unit($measurement)
+		{
+			@return $measurement;
+		}
+		@else if unit($unit) == 'px'
+		{
+			@if unit($measurement) == 'in'
+			{
+				// (1/96)in per px
+				$measurement: (int($measurement) * (1 / 96));
+			}
+			@else if unit($measurement) == 'mm'
+			{
+				// 	(25.4/96)mm per px
+				$measurement: (int($measurement) * (25.4 / 96));
+			}
+			@else if unit($measurement) == 'cm'
+			{
+				// (2.54/96)cm per px
+				$measurement: (int($measurement) * (2.54 / 96));
+			}
+			@else if unit($measurement) == 'pt'
+			{
+				// (72/96)pt per px
+				$measurement: (int($measurement) * (72 / 96));
+			}
+			@if unit($measurement) == 'pc'
+			{
+				// (864/96)pc per px
+				$measurement: (int($measurement) * (864 / 96));
+			}
+			@else
+			{
+				$measurement: int($measurement);
+			}
+		}
+		@else if unit($unit) == 'in'
+		{
+			@if unit($measurement) == 'px'
+			{
+				// 96px per in
+				$measurement: (int($measurement) * 96);
+			}
+			@else if unit($measurement) == 'mm'
+			{
+				// 25.4mm per in
+				$measurement: (int($measurement) * 25.4);
+			}
+			@else if unit($measurement) == 'cm'
+			{
+				// 2.54cm per in
+				$measurement: (int($measurement)  * 2.54);
+			}
+			@else if unit($measurement) == 'pt'
+			{
+				// 72pt per in
+				$measurement: (int($measurement) * 72);
+			}
+			@if unit($measurement) == 'pc'
+			{
+				// 864pc per in
+				$measurement: (int($measurement) * 864);
+			}
+			@else
+			{
+				$measurement: int($measurement);
+			}
+		}
+		@else if unit($unit) == 'mm'
+		{
+			@if unit($measurement) == 'px'
+			{
+				// (96/25.4)px per mm
+				$measurement: (int($measurement) * (96 / 25.4));
+			}
+			@else if unit($measurement) == 'in'
+			{
+				// (1/25.4)in per mm
+				$measurement: (int($measurement) * (1 / 25.4));
+			}
+			@else if unit($measurement) == 'cm'
+			{
+				// (2.54/25.4)cm per mm
+				$measurement: (int($measurement) * (2.54 / 25.4));
+			}
+			@else if unit($measurement) == 'pt'
+			{
+				// (72/25.4)pt per mm
+				$measurement: (int($measurement) * (72 / 25.4));
+			}
+			@else if unit($measurement) == 'pc'
+			{
+				// (864/25.4)pc per mm
+				$measurement: (int($measurement) * (864 / 25.4));
+			}
+			@else
+			{
+				$measurement: int($measurement);
+			}
+		}
+		@else if unit($unit) == 'cm'
+		{
+			@if unit($measurement) == 'px'
+			{
+				// (96/2.54)px per cm
+				$measurement: (int($measurement) * (96 / 2.54));
+			}
+			@else if unit($measurement) == 'in'
+			{
+				// (1/2.54)in per cm
+				$measurement: (int($measurement) * (1 / 2.54));
+			}
+			@else if unit($measurement) == 'mm'
+			{
+				// (25.4/2.54)mm per cm
+				$measurement: (int($measurement) * (25.4 / 2.54));
+			}
+			@else if unit($measurement) == 'pt'
+			{
+				// (72/2.54)pt per cm
+				$measurement: (int($measurement) * (72 / 2.54));
+			}
+			@else if unit($measurement) == 'pc'
+			{
+				// (864/2.54)pc per cm
+				$measurement: (int($measurement) * (864 / 2.54));
+			}
+			@else
+			{
+				$measurement: int($measurement);
+			}
+		}
+		@else if unit($unit) == 'pt'
+		{
+			@if unit($measurement) == 'px'
+			{
+				// (96/72)px per pt
+				$measurement: (int($measurement) * (96 / 72));
+			}
+			@else if unit($measurement) == 'in'
+			{
+				// (1/72)in per pt
+				$measurement: (int($measurement) * (1 / 72));
+			}
+			@else if unit($measurement) == 'mm'
+			{
+				// (25.4/72)mm per pt
+				$measurement: (int($measurement) * (25.4 / 72));
+			}
+			@else if unit($measurement) == 'cm'
+			{
+				// (2.54/72)cm per pt
+				$measurement: (int($measurement) * (2.54 / 72));
+			}
+			@if unit($measurement) == 'pc'
+			{
+				// (864/72)pc per pt
+				$measurement: (int($measurement) * (864 / 72));
+			}
+			@else
+			{
+				$measurement: int($measurement);
+			}
+		}
+		@else if unit($unit) == 'pc'
+		{
+			@if unit($measurement) == 'px'
+			{
+				// (96/864)px per pc
+				$measurement: (int($measurement) * (96 / 864));
+			}
+			@else if unit($measurement) == 'in'
+			{
+				// (1/864)in per pc
+				$measurement: (int($measurement) * (1 / 864));
+			}
+			@else if unit($measurement) == 'mm'
+			{
+				// (25.4/864)mm per pc
+				$measurement: (int($measurement) * (25.4 / 72));
+			}
+			@else if unit($measurement) == 'cm'
+			{
+				// (2.54/864)cm per pc
+				$measurement: (int($measurement) * (2.54 / 72));
+			}
+			@else if unit($measurement) == 'pt'
+			{
+				// (72/864)pt per pc
+				$measurement: (int($measurement) * (2.54 / 72));
+			}
+			@else if unit($measurement) == 'rem'
+			{
+				// get font-size
+				// 
+				$measurement: int(int($measurement) * $font-size);
+			}
+			@else
+			{
+				$measurement: int($measurement);
+			}
+		}
+		@else if unit($unit) == 'rem'
+		{
+			@if comparable($measurement,$font-size)
+			{
+				$measurement: (int($measurement) / convert($font-size, unit($measurement)));
+			}
+			@else
+			{
+				$measurement: int($measurement);
+			}
+		}
+		@return (int($measurement) * $unit);
+	}
+	@return $measurement;
+}
+
+// Convert transparent to white
+@function transparent($color)
+{
+	@if ($color == 'transparent' or $color == rgba(0,0,0,0))
+	{
+		@return rgba(255,255,255,0);
+	}
+	@return $color;
+}
+
+// Snap to line-height grid
+@function snaptogrid($value,$grid)
+{
+	$value: (ceil($value) - $value);
+	@if ($value < 1)
+	{
+		// Add one line and round off to nearest sub-line.
+		$value: ($value + 1) - (floor(($value * $grid) / ($grid / 2)) / 2);
+	}
+	@return (($value * $grid) * 1rem);
+}
+
+// Flip between fixed and responsive
+@function fixed-width($sum,$value)
+{
+	@if ($fixed-width)
+	{
+		@if ($value)
+		{
+			@return $value;
+		}
+		@else
+		{
+			@return $fixed-width;
+		}
+	}
+	@else
+	{
+		@return $sum;
+	}
+}
+@function fixed-height($sum,$value)
+{
+	@if ($fixed-height)
+	{
+		@if ($value)
+		{
+			@return $value;
+		}
+		@else
+		{
+			@return $fixed-height;
+		}
+	}
+	@else
+	{
+		@return $sum;
+	}
+}
+
+// Scale relative font-sizes for media queries
+@function relative-query($value)
+{
+	@return ($value * ($font-size / ($font-size * 0 + 1)));
+}
+
+// Remove values from list
+@function list-detach($list, $value)
+{
+	@if length($list) >= 1 and length($value) >= 1
+	{
+		//@debug 'List: #{$list} - Values: #{$value}';
+	}
+	@else
+	{
+		@if $list
+		{
+			//@debug 'List: #{$list} - Values: null';
+			@return $list;
+		}
+		@if $value
+		{
+			//@debug 'List: null - Values: #{$value}';
+			@return 'wtf';
+		}
+		@if not $value and not $list
+		{
+			//@debug 'List: null - Values: null';
+			@return 'wtf2';
+		}
+	}
+	@if type-of($value) == list
+	{
+		$return: ();
+		//@debug 'Begin removal of "#{nth($value, 1)}" from list (#{$list})';
+		$relist: list-detach($list, nth($value, 1));
+		@if length($relist) >= 1
+		{
+			//@debug 'End removal of "#{nth($value, 1)}" from list (#{$relist})';
+		}
+		@else
+		{
+			//@debug 'End removal of "#{nth($value, 1)}" from list null';
+		}
+		//@debug 'Begin removal of "#{nth($value, 1)}" from values (#{$value})';
+		$reval: list-detach($value, nth($value, 1));
+		@if length($reval) >= 1
+		{
+			//@debug 'End removal of "#{nth($value, 1)}" from values (#{$reval})';
+		}
+		@else
+		{
+			//@debug 'End removal of "#{nth($value, 1)}" from values null';
+		}
+		@if length($reval) >= 1 and length($relist) >= 1
+		{
+			//@debug 'Begin recursion of (#{$relist} - #{$reval})';
+			$return: list-detach($relist, $reval);
+			//@debug 'End recursion of (#{$relist} - #{$reval})';
+		}
+		@else
+		{
+			$return: $relist;
+			//@debug 'Finished #{$return}';
+		}
+		@return $return;
+	}
+	@else
+	{
+		//@debug 'Removing "#{$value}" from list (#{$list})';
+		$return: ();
+		@each $item in $list
+		{
+			@if $item != $value
+			{
+				$return: append($return, $item);
+			}
+		}
+		@if length($return) >= 1
+		{
+			//@debug 'Removed "#{$value}" from list (#{$return})';
+		}
+		@else
+		{
+			//@debug 'Removed "#{$value}" from list null';
+		}
+		@return $return;
+	}
+}

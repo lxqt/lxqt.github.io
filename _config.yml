@@ -29,5 +29,6 @@ defaults:
 highlighter: null
 markdown: kramdown
 sass:
-    sass_dir: _sass
+    sass_dir: styles
+    style: :compressed
 permalink: pretty

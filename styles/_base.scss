@@ -1,0 +1,1510 @@
+@charset "UTF-8";
+@import '@module';
+@if module(
+	$name: 'Base',
+	$version: 1.0,
+	$media: all,
+	$description: 'Styling and functions common to everything.',
+	$dependencies: ()
+)
+{
+	// Do stuff once
+	
+}
+
+// Global variables (with defaults)
+$debug: false !global;
+$vendors: webkit moz ms spec !global;	// #Note: Opera dropped due to move to Blink.
+$viewport-width: device-width !global;	// #Note: Always use real device width.
+$viewport-height: device-height !global;	// #Note: Always use real device height.
+$zoom: zoom !global;	// #Note: Always allow users to zoom.
+$zoom-factor: 1.0 !global;	// #Note: Always start with no zooming.
+$zoom-factor-min: $zoom-factor !global;	// #Note: Never allow zooming out, there's simply no reason.
+$zoom-factor-max: auto !global;	// #Note: Never limit zooming in, let user/UA control.
+$line-width: 100% !global;	// #Note: Line width should always try to be as long as possible.
+$line-width-min: 21rem !global;	// #Note: Line width should never be shorter than this.
+$line-width-max: 41rem !global;	// #Note: Line width should never be longer than this.
+$line-height: 1.5 !global;	// #Note: 1.5 provides a good readable line-height (leading would be 0.5).
+$fixed-width: false !global;
+$fixed-height: false !global;
+$width: $line-width !global;	// #Note: Use line-width for column widths.
+$width-min: $line-width-min !global;	// #Note: Use line-width-min for column min-widths.
+$width-max: $line-width-max !global;	// #Note: Use line-length-max for column max-widths.
+$line-space: convert($line-height, 1rem) !global;	// #Note: Line is line-height in rem.
+$border: ($line-space - 1rem) !global;	// #Note: Border is line-height minus font-size in rem.
+$block-space: 1rem !global;	// #Note: Block space is line-height in rem.
+$margin-thick: $block-space !global;	// #Note: Margin-thick is block-space.
+$margin: ($block-space / 2) !global;	// #Note: Margin is block-space / 2.
+$margin-thin: ($block-space / 4) !global;	// #Note: Margin-thin is block-space / 4.
+$padding-ratio: (1/1.3);
+$padding-thick: ($block-space * $padding-ratio) $block-space !global;	// #Note Padding-thick is margin for horizontal and (1/1.3) * margin for vertical.
+$padding: (($block-space * 0.5) * $padding-ratio) ($block-space * 0.5) !global;	// #Note Padding is (margin/2 for) horizontal and (1/1.3) * (margin/2) for vertical.
+$padding-thin: (($block-space * 0.25) * $padding-ratio) ($block-space * 0.25) !global;	// #Note Padding-thin is (margin/4 for) horizontal and (1/1.3) * (margin/4) for vertical.
+$font-style: normal !global;
+$font-variant: normal !global;
+$font-weight: normal !global;
+$font-size: 0.95em !global;	// #Note: (~15px)
+$font-family: Roboto, OpenSans, Arial, 'Helvetica Neue', Helvetica, Segoe, 'Segoe UI', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Tahoma, Sans-Serif !global;
+$font-family-monospace: Consolas, Inconsolate, 'DeJa Vu Sans Mono', Monospace !global;
+$font-family-serif: 'Times New Roman', Serif !global;
+$letter-spacing: normal !global;
+
+$col-white: #FFF !global;
+$col-white-dark: #EEE !global;
+$col-grey-white: #CCC !global;
+$col-grey-light: #999 !global;
+$col-grey-dark: #666 !global;
+$col-grey-black: #333 !global;
+$col-black-light: #111 !global;
+$col-black: #000 !global;
+
+$color: #222 !global;	// #Note: Don't use pure black, it's too harsh.
+$background-color: transparent !global;	// #Note: Use rgba values as transparent is not handled by SASS correctly
+$line-space-grid: '../images/baseline-grid-#{($line-height * $font-size)}.png' !global;
+$link-color: #33C !global;	// #Note: Default blue for links
+$link-unvisited-color: $link-color !global;	// #Note: Don't recolour unvisited links
+$link-visited-color: darken($link-color,20%) !global;	// #Note: Slightly darken visited links
+$link-focus-color: lighten(saturate($link-color,20%),20%) !global;	// #Note: Slightly lighten and saturate focused and hovered links
+$link-active-color: lighten(saturate($link-color,40%),40%) !global; // #Note: Lighten and saturate active links
+$focus-outline: #CC0 dotted 1px !global;	// #Note: Default orange for focus outline
+$target-outline: #C00 dotted 1px !global;	// #Note: Default red for target outline
+$selected-color: invert($color) !global;	// #Note: Default inverted for selected colour
+$selected-background-color: #39F !global;	// #Note: Default light blue for selected background-colour
+$highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight colour
+
+// Mixins
+@mixin Base()
+{
+	// Device viewport
+	@include viewport()
+	{
+		width: $viewport-width;
+		height: $viewport-height;
+		user-zoom: $zoom;
+		zoom: $zoom-factor;
+		min-zoom: $zoom-factor-min;
+		max-zoom: $zoom-factor-max;
+	}
+	
+	// HTML viewport
+	:root,
+	html
+	{
+		display: block;
+		width: auto;
+		min-width: 0;
+		min-height: 100%;
+		margin: 0;
+		padding: 0; 
+		border: none;
+		
+		font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
+		direction: ltr;
+		letter-spacing: $letter-spacing;
+		text-align: left;
+		text-decoration: none;
+		text-indent: 0;
+		text-transform: none;
+		vertical-align: baseline;
+		white-space: normal;
+		word-spacing: normal;
+		-webkit-text-size-adjust: none;	// #Note: Don't allow changing text-size independently of layout, as it will break layouts and is never required.
+		-webkit-font-smoothing: subpixel-antialiased;
+		
+		color: $color;
+		background-color: $background-color;
+		
+		-ms-overflow-style: scrollbar;	// #Note: Disable overlayed scrollbars in Trident/6+
+		-ms-scroll-chaining: none;	// #Note: Disable overflow scroll
+		@if ($zoom != zoom)
+		{
+			-ms-content-zooming: none;	// #Note: Disables propriety zooming
+			-ms-touch-action: none;	// #Note: Disables special touch behaviours (IE10)
+			touch-action: none;	// #Note: Disables special touch behaviours
+		}
+		
+		// - Debug
+		@if ($debug)
+		{
+			background-image: url($line-space-grid);
+		}
+	}
+	
+	// Sectioning flow
+	body,
+	article,
+	section,
+	aside,
+	nav,
+	figure
+	{
+		display: block;
+		//position: relative;	// #Note: Provide a positional context, as you're more than likely going to need it.
+		margin: $margin 0;
+		padding: 0;
+		//	#Bug:[UNRESOLVED:WORKAROUND]
+			//	[Blink/*] Overflowing triggers from minor sub-pixel rounding errors.
+			// #Workaround: Change 'auto' to 'hidden'.
+		//overflow: auto;
+		overflow: hidden;
+		
+		//	#Bug:[UNRESOLVED:WORKAROUND]
+			//	[Blink/*] [Webkit/*] Hardware transforms disable subpixel-antiliasing during animation, causing visual changes and rounding issues in unrelated areas of a composite layer.
+			// #Workaround: Preemptively force separate composite layers for each context. Causes contents to be anti-aliased instead.
+		-webkit-backface-visibility: hidden;
+	}
+	body
+	{
+		width: $width;
+		margin: 0 auto;
+		padding: 0;
+		overflow-y: auto;
+	}
+	#content article,
+	#content section,
+	#content aside
+	{
+		counter-increment: section;	// #Note: Track the number of sections in the content
+	}
+	#content figure
+	{
+		counter-increment: figure;	// #Note: Track the number of figures in the content
+	}
+	
+	// Dividing and Grouping flow
+	div, // .wrapper, .divider, .group, .p
+	dl,
+	ol,
+	ul,
+	menu,
+	dt,
+	dd,
+	li,
+	menuitem,
+	header,
+	main,
+	footer,
+	hgroup,
+	figcaption,
+	a,
+	blockquote,
+	pre,
+	address
+	{
+		display: block;
+		margin: 0;
+		padding: 0;
+		
+		font-size: inherit;
+		font-style: inherit;
+	}
+	#intro,
+	#wrapper
+	{
+		overflow-y: auto;
+	}
+	div.wrapper
+	{
+		margin-left: $margin;	// #Note: Indent from header.
+	}
+	#content div.wrapper
+	{
+		counter-reset: section figure;	// #Note: Create new section and figure counter contexts.
+	}
+	dl,
+	ol,
+	ul
+	{
+		padding-left: $margin;
+	}
+	dl
+	{
+		margin-bottom: $line-space;
+		
+		list-style-type: none;
+	}
+	div.p > dl,
+	div.p > ol,
+	div.p > ul
+	{
+		margin-left: $margin;	// #Note: Part of paragraph so add extra additional indent.
+	}
+	ul,
+	ol,
+	menu
+	{
+		list-style-type: none;
+	}
+	ol
+	{
+		
+		counter-reset: ol;
+	}
+	div.group
+	{
+		overflow: hidden;
+		
+		list-style-type: none;
+	}
+	dt,
+	dd,
+	li,
+	menuitem
+	{
+		display: list-item;
+		
+		text-indent: 0;
+	}
+	menuitem
+	{
+		cursor: pointer;
+		
+		&[icon]::before
+		{
+			content: url(attr(icon));
+			display: inline-block;
+		}
+		&[label]::after
+		{
+			content: attr(label);
+			display: inline-block;
+		}
+	}
+	dl.compact > dt,
+	dl.compact > dd
+	{
+		display: inline;
+	}
+	dl.compact > dt > *,
+	dl.compact > dd > *
+	{
+		display: inline-block;
+		
+		vertical-align: top;
+	}
+	dl.compact > dd + dt::before
+	{
+		content: '\A';
+		display: inline;
+		white-space: pre;
+	}
+	dl.compact > dd p
+	{
+		margin-top: $line-space;
+	}
+	dl.compact > dt:first-child + dd p
+	{
+		margin-top: 0;
+	}
+	dd
+	{
+		margin-left: $block-space;	// #Note: Indent description from term.
+	}
+	ol > li
+	{
+		counter-increment: ol;
+	}
+	// #Note: Due to increasing lengths nested counters, each depth of indentation needs to be increased too.
+	$indent: $margin * 0.93;
+	ol > li > p:first-child,
+	ol > li > :first-child > p:first-child,
+	ol > li > :first-child > :first-child > p:first-child
+	{
+		padding-left: $indent * 1;
+		
+		text-indent: $indent * -1;
+	}
+	ol > li li > p:first-child,
+	ol > li li > :first-child > p:first-child,
+	ol > li li > :first-child > :first-child > p:first-child
+	{
+		padding-left: $indent * 2.15;
+		
+		text-indent: $indent * -2.15;
+	}
+	ol > li li li > p:first-child,
+	ol > li li li > :first-child > p:first-child,
+	ol > li li li > :first-child > :first-child > p:first-child
+	{
+		padding-left: $indent * 3.3;
+		
+		text-indent: $indent * -3.3;
+	}
+	ol > li > p:first-child::before,
+	ol > li > :first-child > p:first-child::before,
+	ol > li > :first-child > :first-child > p:first-child::before
+	{
+		content: counters(ol, '.') '.';
+		margin-left: convert($margin,-1em);
+		margin-right: convert(($margin * 0.8),1em);
+	}
+	/* Shouldn't need these, but they're good examples is needed, so perhaps turn into mixins
+	ol.alpha > li > p:first-child::before,
+	ol.alpha > li > :first-child > p:first-child::before,
+	ol.alpha > li > :first-child > :first-child > p:first-child::before
+	{
+		content: counter(ol, upper-alpha) '.';
+	}
+	ol.alpha.lower > li > p:first-child::before,
+	ol.alpha.lower > li > :first-child > p:first-child::before,
+	ol.alpha.lower > li > :first-child > :first-child > p:first-child::before
+	{
+		content: counter(ol, lower-alpha) '.';
+	}
+	ol.roman > li > p::before
+	{
+		content: counter(ol, upper-alpha) '.';
+	}
+	ol.roman.lower > li > p::before
+	{
+		content: counter(ol, lower-alpha) '.';
+	}*/
+	ul > li > p
+	{
+		padding-left: $indent;
+		
+		text-indent: $indent * -1;
+	}
+	ul > li > p:before
+	{
+		content: '●';
+		margin-left: convert($margin,-1em);
+		margin-right: convert(($margin * 1.07),1em);
+	}
+	a[href],
+	button
+	{
+		border-color: transparent;
+		line-height: inherit;
+		vertical-align: inherit;
+		
+		text-decoration: none;
+		
+		color: $link-color;
+		background-color: transparent;
+		outline-width: 0;
+		
+		cursor: pointer;
+		
+		&:not(:disabled):link
+		{
+			color: $link-unvisited-color;
+		}
+		&:not(:disabled):visited
+		{
+			color: $link-visited-color;
+		}
+		//	#Bug:[UNRESOLVED]
+			//	Bubbling of :focus is optional, but preferred not.
+			//	[Trident/5] :focus bubbles.
+			//	[Blink/*] :focus doesn't bubble.
+			//	[WebKit/*] :focus doesn't bubble.
+			//	[Gecko/*] :focus doesn't bubble.
+		// #Bug:[UNRESOLVED]
+			//	Should be :focus on mouse down or tab to, :focus on mouse up, and :not(:focus) on tab away.
+			//	[WebKit/534] [Blink/*] :focus is removed on unload and not restored on restoring the state (i.e. Back).
+		&:not(:disabled):focus,
+		&:not(:disabled):hover,
+		&:not(:disabled):active,
+		&:not(:disabled):focus:hover
+		{
+			color: $link-focus-color;
+			background-color: $background-color;
+			background-color: rgba(transparent($background-color),0.8);
+			outline: 1px solid darken(transparent($background-color),10%);
+			outline: 1px solid rgba(0,0,0,0.1);
+		}
+		//	#Bug:[UNRESOLVED]
+			//	Bubbling of :active is optional.
+			//	[Trident/5] :active doesn't bubble.
+			//	[WebKit Gecko] :active bubbles.
+		// #Bug:[UNRESOLVED:WORKAROUND]
+			//	Should be :focus:active on mouse down, and :focus on mouse up.
+			//	[WebKit/534] :focus on mouse down and mouse up, and :active on trigger.
+			//	[Gecko/20100101] :focus on mouse down, and :focus:active on mouse up. Should be :focus:active on mouse down, and :focus on mouse up.
+				//	#Workaround: Use :focus:hover as a fallback.
+		&:not(:disabled):active,
+		&:not(:disabled):focus:hover
+		{
+			color: $link-active-color;
+		}
+	}
+	blockquote
+	{
+	}
+	// #Note: Add stylish quote marks to blockquotes
+	blockquote::before,
+	blockquote::after
+	{
+		position: absolute;
+		top: -0.25em;
+		left: -0.25em;
+		width: auto;
+		margin: 0;
+		padding: 0;
+		z-index: 1;
+		
+		text-align: center;
+		font-size: 3em;	// #Note: 33pt (~44px)
+		font-family: 'Times New Roman', Serif;
+		font-weight: bold;
+	}
+	blockquote::after
+	{
+		top: auto;
+		left: auto;
+		bottom: -0.07em;
+		right: -0.25em;
+	}
+	pre
+	{
+		font-family: $font-family-monospace;
+		white-space: nowrap;
+	}
+	table
+	{
+		display: block;
+		margin: $margin;
+		padding: 0;
+	}
+	table
+	{
+		display: table;
+		margin: auto;
+		table-layout: fixed;	// #Note: Allows more predictable control of the table size
+		caption-side: bottom;
+		border: 1px solid lighten($color,20%);
+		border: 1px solid rgba($color,0.20);
+		border-collapse: separate;	// #Note: Allows greater flexibility for border effects
+		border-spacing: 0;
+		empty-cells: hide;	// #Note: Typically desirable
+	}
+	colgroup
+	{
+		display: table-column-group;
+	}
+	col
+	{
+		display: table-column;
+	}
+	thead
+	{
+		display: table-header-group;
+	}
+	tbody
+	{
+		display: table-row-group;
+	}
+	tfoot
+	{
+		display: table-footer-group;
+	}
+	tr
+	{
+		display: table-row;
+	}
+	th,
+	td
+	{
+		display: table-cell;
+		padding: 0.25em;
+		border: 1px solid lighten($color,20%);
+		border: 1px solid rgba($color,0.2);
+		
+		text-align: left;
+		vertical-align: text-top;
+	}
+	th
+	{
+		font-style: inherit;
+		font-weight: bold;
+		white-space: nowrap;
+	}
+	td.number
+	{
+		text-align: right;
+	}
+	caption
+	{
+		display: table-caption;
+		padding: $padding;
+		border: 1px solid $color;
+		vertical-align: text-top;
+		
+		text-align: left;
+		
+		&:empty
+		{
+			display: none;
+		}
+	}
+	
+	// Embedded flow
+	img
+	{
+		display: block;
+		width: auto;
+		max-width: 100%;
+		// min-width: 21rem;
+		height: auto;
+		max-height: 100%;
+		margin: auto;
+	}
+	
+	// Phrasing flow
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	div.p,
+	p
+	{
+		display: block;
+		margin: 0 0 $line-space 0;
+		padding: 0;
+		
+		font-size: inherit;
+		font-style: inherit;
+		font-weight: inherit;
+	}
+	th > p:last-child,
+	td > p:last-child,
+	div.p > p,
+	div.p > ul > li > p,
+	div.p > ol > li > p,
+	dt > p,
+	dd > p,
+	dd > address > p
+	{
+		margin-bottom: 0;
+	}
+	dt > p
+	{
+		margin-top: $line-space;
+	}
+	dl:first-child > dt:first-child > p
+	{
+		margin-top: 0;
+	}
+	dt + dd > dl > dt:first-child > p,
+	dt + dd > ol > li:first-child > p,
+	dt + dd > ul > li:first-child > p,
+	dt + dd > dl:first-child > dt:first-child > p,
+	div.p dt:first-child > p
+	div.p > ol > li:first-child > p,
+	div.p > dl> dt:first-child  > p,
+	div.p > ul > li:first-child > p,
+	div.p > address > p:first-child
+	{
+		margin-top: ($line-space / 2);
+	}
+	div.p > :first-child,
+	div.p > ol:first-child > li > p,
+	div.p > dl:first-child > dt > p,
+	div.p > ul:first-child > li > p,
+	div.p > address:first-child > p:first-child
+	{
+		margin-top: 0;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+	{
+		margin: 0;
+		
+		&:last-child:not(:empty)
+		{
+			margin-bottom: $margin;
+		}
+	}
+	
+	$heading-ratio: 1.6180339887498948482045868343656;
+	h1
+	{
+		font-size: convert(1 + ($heading-ratio * 1), 1em);	// #Note: 33.8pt (~px)
+	}
+	header header h1,
+	div.wrapper h1,
+	h2
+	{
+		font-size: convert(1 + ($heading-ratio * 0.8), 1em);	// #Note: 22pt (~29px)
+	}
+	header header header h1,
+	div.wrapper header header h1,
+	div.wrapper div.wrapper h1,
+	header header h2,
+	div.wrapper h2,
+	h3
+	{
+		font-size: convert(1 + ($heading-ratio * 0.6), 1em);	// #Note: ~19.25pt (~25px)
+	}
+	header header header header h1,
+	div.wrapper header header header h1,
+	div.wrapper div.wrapper header header h1,
+	div.wrapper div.wrapper div.wrapper h1,
+	header header header h2,
+	div.wrapper header header h2,
+	div.wrapper div.wrapper h2,
+	header header h3,
+	div.wrapper h3,
+	h4
+	{
+		font-size: convert(1 + ($heading-ratio * 0.4), 1em);	// #Note: ~16.5pt (~23px)
+	}
+	header header header header header h1,
+	div.wrapper header header header header h1,
+	div.wrapper div.wrapper header header header h1,
+	div.wrapper div.wrapper div.wrapper header header h1,
+	div.wrapper div.wrapper div.wrapper div.wrapper h1,
+	header header header header h2,
+	div.wrapper header header header h2,
+	div.wrapper div.wrapper header header h2,
+	div.wrapper div.wrapper div.wrapper h2,
+	header header header h3,
+	div.wrapper header header h3,
+	div.wrapper div.wrapper h3,
+	header header h4,
+	div.wrapper h4,
+	h5
+	{
+		font-size: convert(1 + ($heading-ratio * 0.2), 1em);	// #Note: ~14pt (~19px)
+	}
+	header header header header header header h1,
+	div.wrapper header header header header header h1,
+	div.wrapper div.wrapper header header header header h1,
+	div.wrapper div.wrapper div.wrapper header header header h1,
+	div.wrapper div.wrapper div.wrapper div.wrapper header header h1,
+	div.wrapper div.wrapper div.wrapper div.wrapper div.wrapper h1,
+	header header header header header h2,
+	div.wrapper header header header header h2,
+	div.wrapper div.wrapper header header header h2,
+	div.wrapper div.wrapper div.wrapper header header h2,
+	div.wrapper div.wrapper div.wrapper div.wrapper h2,
+	header header header header h3,
+	div.wrapper header header header h3,
+	div.wrapper div.wrapper header header h3,
+	div.wrapper div.wrapper div.wrapper h3,
+	header header header h4,
+	div.wrapper header header h4,
+	div.wrapper div.wrapper h4,
+	header header h5,
+	div.wrapper h5,
+	h6
+	{
+		font-size: convert(1 + ($heading-ratio * 0), 1em);	// #Note: 13pt (~18px)
+		font-weight: bold;
+	}
+	article.quote > div.wrapper > footer > p.cite::before,
+	figure.quote > div.wrapper > footer > p.cite::before
+	{
+		content: '— ';
+	}
+	article.code pre > p > code,
+	figure.code pre > p > code
+	{
+		overflow: auto;
+	}
+	
+	// Phrased flow
+	p img,
+	li img,
+	dt img,
+	dd img,
+	br,
+	wbr,
+	input,
+	button,
+	select,
+	textarea,
+	div.p > table
+	{
+		display: inline-block;
+	}
+	br
+	{
+		//	#Bug:[UNRESOLVED:WORKAROUND]
+			//	[*/*] Defaults for br elements suggested by the W3C in CSS2.1 do not work when applied in any browser.
+				// #Workaround: Don't use defaults until fixed.
+		// #Bug:[UNRESOLVED:WORKAROUND]
+			//	[Presto/*] display: inline-block removes line-breaks as they are implemented with display: block only.
+				// #Workaround: Ignore Presto/* as it's no longer in use.
+		//	#Bug:[UNRESOLVED:WORKAROUND]
+			//	[Blink/*] When content is set to anything but content: none, line breaks are removed.
+				// #Workaround: Disable setting content to "\A" as it's supposed to be.
+		//content: "\A";
+		white-space: pre-line;
+		
+		&::before,
+		&::after
+		{
+			content: "";
+			content: none;
+			display: none;
+		}
+	}
+	wbr
+	{
+		padding-left: ($block-space / 2);
+	}
+	div.p > table
+	{
+		display: inline-table;
+		vertical-align: text-top;
+	}
+	input,
+	button,
+	select,
+	textarea
+	{
+		width: auto;
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+		@include box-sizing();
+		
+		font: inherit;
+		letter-spacing: inherit;
+		text-transform: inherit;
+		word-spacing: inherit;
+		
+		color: inherit;
+		background-color: transparent;
+	}
+	button
+	{
+		margin: 0;
+		padding: $padding;
+		border-width: 0;
+	}
+	textarea
+	{
+		vertical-align: top;
+	}
+	form :not(a):focus
+	{
+		outline: $focus-outline;
+	}
+	form :not(a):active,
+	form :not(a):focus:hover
+	{
+		outline-width: 0;
+	}
+	
+	// Phrasing
+	span,
+	i,
+	dfn,
+	var,
+	b,
+	em,
+	strong,
+	abbr,
+	acronym,
+	code,
+	kbd,
+	samp,
+	q,
+	sup,
+	sub,
+	cite,
+	u,
+	s,
+	small,
+	mark,
+	time,
+	ins,
+	del,
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a,
+	h6 a,
+	p a,
+	li a,
+	dt a,
+	dd a,
+	address a
+	{
+		display: inline;
+		margin: 0;
+		padding: 0;
+		border: none;
+		outline: none;
+		
+		color: inherit;
+		background: none;
+		
+		font-family: inherit;
+		font-size: inherit;
+		font-style: inherit;
+		font-variant: inherit;
+		font-weight: inherit;
+		direction: inherit;
+		letter-spacing: inherit;
+		line-height: inherit;
+		text-align: inherit;
+		text-decoration: inherit;
+		text-indent: 0;
+		text-transform: inherit;
+		vertical-align: inherit;
+		white-space: inherit;
+		word-spacing: inherit;
+	}
+	h1:lang(en-US),
+	h2:lang(en-US),
+	h3:lang(en-US),
+	h4:lang(en-US),
+	h5:lang(en-US),
+	h6:lang(en-US)
+	{
+		text-transform: capitalize;
+	}
+	article article h1 > span::before,
+	article section h1 > span::before,
+	article aside h1 > span::before
+	{
+		content: counters(section, '.') '. ';
+	}
+	article figure h1 > span::before
+	{
+		content: counters(figure, '.') '.';
+	}
+	.small > small,
+	.extra-small > small
+	{
+		font-size: inherit;
+	}
+	.small,
+	small
+	{
+		// font-size: 0.727em;	// #Note: ~8pt (~11px)
+		font-size: 0.818em;	// #Note: ~9pt (~12px)
+	}
+	.extra-small
+	{
+		font-size: 0.759em;
+	}
+	footer > div.p,
+	footer > p,
+	figcaption > div.p,
+	figcaption > p
+	{
+		font-size: 0.818em;	// #Note: ~9pt (~12px)
+	}
+	footer > div.p small,
+	footer > p small,
+	figcaption > div.p small,
+	figcaption > p small
+	{
+		font-size: inherit;
+	}
+	
+	em,	// #Note: Spoken emphasis
+	em.alt,	// #Note: Alternative meaning
+	i.proper-noun.title,	// #Note: Works or position title
+	i.foreign,	// #Note: Foreign words
+	i.thought,	// #Note: Third-person thought
+	dt,	// #Note: Defined term
+	dfn,	// #Note: Defined term
+	var,	// #Note: Variable
+	var.constant,	// #Note: Constant
+	ins,	// #Note: Inserted text
+	del	// #Note: Deleted text
+	{
+		font-style: italic;
+	}
+	
+	b,	// #Note: ???
+	strong,	// #Note: Local importance
+	dt,	// #Note: Defined term
+	.cite.publication .volume	// #Note: Publication volume
+	var.global,	// #Note: Global variable
+	var.constant	// #Note: Constant
+	{
+		font-weight: bold;
+	}
+	dd > dl > dt
+	{
+		font-weight: inherit;
+	}
+	strong strong,	// #Note: Increased importance
+	strong.global,	// #Note: Global importance
+	strong.promote	// #Note: Promoted importance
+	{
+		font-weight: bolder;
+	}
+	strong.promote
+	{
+		font-size: 1.273em;	// #Note: ~14pt (~19px)
+	}
+	// #Note: Line-height must be set to 0 to avoid super and sub script from affecting parent line-height.
+	sup,
+	sub
+	{
+		font-size: 0.636em;	// #Note: ~7pt (~9px)
+		line-height: 0;
+	}
+	sup.symbol.trademark:not(.registered)	// #Note: Trademark symbol is already superscripted in fonts, so reset to normal
+	{
+		font-size: inherit;
+		vertical-align: inherit;
+		line-height: inherit;
+	}
+	sup.symbol.trademark.registered	// #Note: Registered trademark symbol requires some alignment adjustment
+	{
+		padding: 0 0.1em;
+	}
+	sup.symbol.medical.monitored	// #Note: Black triangle symbol
+	{
+		color: #000;
+	}
+	sup,
+	sup.ref,	// #Note: Reference
+	sup.nb,	// #Note: Note marker
+	sup.power,	// #Note: Power
+	sup.charge,	// #Note: Charge
+	sup.isotope,	// #Note: Isotope
+	sup.nuclide	// #Note: Nuclide nucleon
+	{
+		vertical-align: super;
+	}
+	sup.ordinal,	// #Note: Ordinal
+	sup.fraction,	// #Note: Fraction
+	sup.symbol	// #Note: Symbol
+	{
+		vertical-align: text-top;
+		line-height: inherit;
+	}
+	sub,
+	sub.atom,	// #Note: Atom
+	sub.set,	// #Note: Sequence set
+	sub.radix,	// #Note: Radix base or type
+	sub.nuclide	// #Note: Nuclide proton or neutron
+	{
+		vertical-align: sub;
+	}
+	sub.fraction	// #Note: Fraction
+	{
+		vertical-align: text-bottom;
+	}
+	span.splitscript	// #Note: Combos of above in same horizontal space
+	{
+		display: inline-block;
+		vertical-align: inherit;
+	}
+	sup.reveal,
+	sub.reveal
+	{
+		cursor: help;
+	}
+	code,	// #Note: Code
+	samp,	// #Note: Sample code output
+	kbd,	// #Note: Sample keyboard input
+	var,	// #Note: Variable
+	var.constant	// #Note: Constant
+	{
+		font-family: monospace;
+		white-space: pre-wrap;
+	}
+	var.constant	// #Note: Variable (local only)
+	{
+		text-transform: lowercase;
+	}
+	h1:lang(en-US),	// #Note: Headings
+	h2:lang(en-US), 
+	h3:lang(en-US), 
+	h4:lang(en-US),
+	h5:lang(en-US), 
+	h6:lang(en-US),
+	i.proper-noun:lang(en-US),	// #Note: Proper noun
+	i.proper-noun.title,	// #Note: Works or position title
+	var.global,	// #Note: Global variable
+	{
+		text-transform: capitalize;
+	}
+	var.constant,	// #Note: Constant
+	abbr.initial,	// #Note: Initialism
+	abbr.acronym,	// #Note: Acronym
+	abbr.initial.acronym,	// #Note: Initial Acronym
+	{
+		text-transform: uppercase;
+	}
+	u
+	{
+		text-decoration: underline;
+		
+		&.overline
+		{
+			text-decoration: overline;
+		}
+	}
+	s
+	{
+		text-decoration: line-through;
+	}
+	mark
+	{
+		text-decoration: blink;
+		background-color: $highlight-color;
+	}
+	abbr[title]
+	{
+		// #Bug:[UNRESOLVED]
+			//	[Trident/5] Title attribute does not display with a tooltip.
+		cursor: help;
+		border-bottom: 1px dotted red;	// #Note: Can't use global keywords for individual properties in shorthand properties, so use a temp value.
+		border-bottom-color: inherit;
+	}
+	q
+	{
+		font: inherit;
+	}
+	q:lang(en-GB),	// #Note: English quotes
+	blockquote:lang(en-GB),	// #Note: English block quotes
+	i.proper-noun.name.alias:lang(en-GB),	// #Note: English alias
+	//em.alt:lang(en-GB),	// #Note: English alternative meaning
+	q.mention:lang(en-GB),	// #Note: English word mentions
+	q.direct:lang(en-GB),	// #Note: English direct quotes
+	q i.proper-noun.name.alias:lang(en-US),	// #Note: American secondary alias
+	q em.alt:lang(en-US),	// #Note: American secondary alternative meaning
+	q q.mention:lang(en-US),	// #Note: American secondary word mentions
+	q q.direct:lang(en-US),	// #Note: American secondary direct quotes
+	blockquote q:lang(en-US),	// #Note: American secondary quotes
+	blockquote i.proper-noun.name.alias:lang(en-US),	// #Note: American secondary alias
+	blockquote em.alt:lang(en-US),	// #Note: American secondary alternative meaning
+	blockquote q.mention:lang(en-US),	// #Note: American secondary word mentions
+	blockquote q.direct:lang(en-US)	// #Note: American secondary direct quotes
+	{
+		quotes: '‘' '’' '“' '”';
+	}
+	q:lang(en-US),	// #Note: American quotes
+	blockquote:lang(en-US),	// #Note: American block quotes
+	i.proper-noun.name.alias:lang(en-US),	// #Note: American alias
+	//em.alt:lang(en-US),	// #Note: American alternative meaning
+	q.mention:lang(en-US),	// #Note: American word mentions
+	q.direct:lang(en-US),	// #Note: American direct quotes
+	q i.proper-noun.name.alias:lang(en-GB),	// #Note: English secondary quotes
+	q em.alt:lang(en-GB),	// #Note: English secondary alternative meaning
+	q q.mention:lang(en-GB),	// #Note: English secondary word mentions
+	q q.direct:lang(en-GB),	// #Note: English secondary direct quotes
+	blockquote q:lang(en-GB),	// #Note: English secondary quotes
+	blockquote i.proper-noun.name.alias:lang(en-GB),	// #Note: English secondary alias
+	blockquote em.alt:lang(en-GB),	// #Note: English secondary alternative meaning
+	blockquote q.mention:lang(en-GB),	// #Note: English secondary word mentions
+	blockquote q.direct:lang(en-GB)	// #Note: English secondary direct quotes
+	{
+		quotes: '“' '”' '‘' '’';
+	}
+	
+	blockquote::before,
+	q::before,
+	i.proper-noun.name.alias::before//,
+	//em.alt::before
+	{
+		content: open-quote;
+	}
+	blockquote::after,
+	q::after,
+	i.proper-noun.name.alias::after//,
+	//em.alt::after
+	{
+		content: close-quote;
+	}
+	q ins::before,	// #Note: Quote insertions
+	blockquote ins::before	// #Note: Block quote insertions
+	{
+		content: '[';
+	}
+	q ins::after,	// #Note: Quote insertions
+	blockquote ins::after	// #Note: Block quote insertions
+	{
+		content: ']';
+	}
+	
+	// Miscellaneous
+	[id]:target
+	{
+		outline: $target-outline;
+	}
+	@include selection()
+	{
+		color: $selected-color;
+		background-color: $selected-background-color;
+	}
+	:disabled
+	{
+		opacity: 0.3;
+	}
+	.-img > *	// Image replaces content
+	{
+		display: none;
+	}
+	[data-state="inert"],
+	dt[data-state="inert"] + dd
+	{
+		display: none;
+	}
+	[data-fallback~="nocss"],
+	[data-fallback~="noimg"],
+	[data-fallback~="nojs"],
+	[data-fallback~="ie"],
+	[data-fallback~="ie7"],
+	[data-fallback~="ie8"],
+	[data-fallback~="ie9"],
+	[data-empty]
+	{
+		display: none;
+	}
+	[data-uc]
+	{
+		text-decoration: line-through;
+	}
+}
+@mixin Base_key-icon($type,$key-color)
+{
+	$key-color: $color !default;
+	
+	display: inline-block;
+	
+	line-height: 1;
+	text-align: center;
+	
+	@if $type == square
+	{
+		width: 1.2em;
+		height: 1.2em;
+		
+		background-color: $key-color;
+	}
+	@else if $type == disc
+	{
+		width: 0.767em;
+		height: 0.767em;
+		border-radius: 50%;
+		
+		background-color: $key-color;
+	}
+	@else if $type == triangle
+	{
+		width: 0;
+		height: 0;
+		border-width: 0.767em 0.3835em;
+		border-style: solid;
+		border-color: transparent;
+		border-bottom-color: $key-color;
+	}
+}
+@mixin prefix($property, $value, $prefixes: $vendors)
+{
+	$spec: false;
+	@each $prefix in $prefixes
+	{
+		@if $prefix == spec
+		{
+			$spec: true;
+		}
+		@else
+		{
+			-#{$prefix}-#{$property}: $value;
+		}
+	}
+	@if $spec
+	{
+		#{$property}: $value;
+	}
+}
+@mixin selector-prefix($pre, $selector, $prefixes: $vendors)
+{
+	// #Bug:[UNRESOLEVED:WORKAROUND] Sass/3.3.3
+		// Interpolation of selectors and directives beginning with variables doesn't work.
+			// #Workaround: Use manual selectors and directives for now.
+	$spec: false;
+	@each $prefix in $prefixes
+	{
+		@if $prefix == spec
+		{
+			$spec: true;
+		}
+		@else
+		{
+			#{$pre}-#{$prefix}-#{$selector}
+			{
+				@content;
+			}
+		}
+	}
+	@if $spec
+	{
+		#{$pre}#{$selector}
+		{
+			@content;
+		}
+	}
+}
+@mixin box-sizing($type: border-box)
+{
+	@include prefix(box-sizing, $type);
+}
+@mixin box-shadow($args...)
+{
+	@include prefix(box-shadow, $args);
+}
+@mixin text-shadow($args...)
+{
+	@include prefix(text-shadow, $args);
+}
+@mixin selection($parent-ref: false)
+{
+	$pre: '::';
+	@if $parent-ref
+	{
+		$pre: '&::';
+	}
+	/*@include selector-prefix($pre, selection)
+	{
+		@content;
+	}*/
+	$spec: false;
+	@each $vendor in $vendors
+	{
+		@if $vendor == spec
+		{
+			$spec: true;
+		}
+		@if $vendor == webkit
+		{
+			@if $parent-ref
+			{
+				&::-webkit-selection
+				{
+					@content;
+				}
+			}
+			@else
+			{
+				::-webkit-selection
+				{
+					@content;
+				}
+			}
+		}
+		@if $vendor == moz
+		{
+			@if $parent-ref
+			{
+				&::-moz-selection
+				{
+					@content;
+				}
+			}
+			@else
+			{
+				::-moz-selection
+				{
+					@content;
+				}
+			}
+		}
+		@if $vendor == ms
+		{
+			@if $parent-ref
+			{
+				&::-ms-selection
+				{
+					@content;
+				}
+			}
+			@else
+			{
+				::-ms-selection
+				{
+					@content;
+				}
+			}
+		}
+	}
+	@if $spec
+	{
+		@if $parent-ref
+		{
+			&::selection
+			{
+				@content;
+			}
+		}
+		@else
+		{
+			::selection
+			{
+				@content;
+			}
+		}
+	}
+}
+@mixin transform($args...)
+{
+	@include prefix(transform, $args);
+}
+@mixin transition($args...)
+{
+	// Fix for vendor-prefix transform property
+	$needs-prefixes: false;
+	$webkit: ();
+	$moz: ();
+	$ms: ();
+	$spec: ();
+	
+	@each $list in $args
+	{
+		// Multiple transitions
+		@if nth($list, 1) == transform
+		{
+			// Create lists for vendor-prefixed transform
+			$needs-prefixes: true;
+			$list-webkit: -webkit-transform;
+			$list-moz: -moz-transform;
+			$list-ms: -ms-transform;
+			$list-spec: ();
+			
+			@each $var in $list
+			{
+				$list-spec: join($list-spec, $var);
+			
+				@if $var != transform
+				{
+					$list-webkit: join($list-webkit, $var);
+					$list-moz: join($list-moz, $var);
+					$list-ms: join($list-ms, $var);
+				}
+			}
+			
+			$webkit: append($webkit, $list-webkit);
+			$moz: append($moz, $list-moz);
+			$ms: append($ms, $list-ms);
+			$spec: append($spec, $list-spec);
+		}
+		@else
+		{
+			// Create lists for non-prefixed transition properties
+			$webkit: append($webkit, $list, comma);
+			$moz: append($moz, $list, comma);
+			$ms: append($moz, $list, comma);
+			$spec: append($spec, $list, comma);
+		}
+	}
+	@if $needs-prefixes
+	{
+		-webkit-transition: $webkit;
+		-moz-transition: $moz;
+		-ms-transition: $ms;
+		transition: $spec;
+	}
+	@else
+	{
+		@if length($args) <= 0
+		{
+			$args: all 0.25s ease 0s;
+		}
+		@include prefix(transition, $args);
+	}
+}
+@mixin animation($args...)
+{
+	-webkit-animation: $args;
+	-moz-animation: $args;
+	-ms-animation: $args;
+	animation: $args;
+}
+@mixin keyframes($animation: none)
+{
+	/*@include selector-prefix('@', keyframes $animation)
+	{
+		@content;
+	}*/
+	$animation-vendors: list-detach($vendors, moz ms);
+	$spec: false;
+	@each $vendor in $animation-vendors
+	{
+		@if $vendor == spec
+		{
+			$spec: true;
+		}
+		@if $vendor == webkit
+		{
+			@-webkit-keyframes #{$animation}
+			{
+				@content;
+			}
+		}
+		@if $vendor == moz
+		{
+			@-moz-keyframes #{$animation}
+			{
+				@content;
+			}
+		}
+		@if $vendor == ms
+		{
+			@-ms-keyframes #{$animation}
+			{
+				@content;
+			}
+		}
+	}
+	@if $spec
+	{
+		@keyframes #{$animation}
+		{
+			@content;
+		}
+	}
+}
+@mixin viewport()
+{
+	/*@include selector-prefix('@', viewport)
+	{
+		@content;
+	}*/
+	$spec: false;
+	@each $vendor in $vendors
+	{
+		@if $vendor == spec
+		{
+			$spec: true;
+		}
+		@if $vendor == webkit
+		{
+			@-webkit-viewport
+			{
+				@content;
+			}
+		}
+		@if $vendor == moz
+		{
+			@-moz-viewport
+			{
+				@content;
+			}
+		}
+		@if $vendor == ms
+		{
+			@-ms-viewport
+			{
+				@content;
+			}
+		}
+	}
+	@if $spec
+	{
+		@viewport
+		{
+			@content;
+		}
+	}
+}

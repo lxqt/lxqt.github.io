@@ -1,0 +1,385 @@
+@charset "UTF-8";
+@import '@module', 'base';
+@if module(
+	$name: 'Web',
+	$version: 1.0,
+	$media: all,
+	$description: 'Styling common to the web.',
+	$dependencies: ('base')
+)
+{
+	// Do stuff once
+	
+}
+
+// Global variables
+$width: 100% !global;
+$width-min-min: 0 !global;
+$scrollbar-padding: 1rem !global;	// #Note: Because the W3C are morons, add an arbitrary padding to handle unknown and irrelevant scrollbar dimensions.
+
+// Mixins
+@mixin Web()
+{
+	// Includes
+	@include Base();
+	
+	:root,
+	html,
+	body
+	{
+		min-width: fixed-width($width-min-min + ($margin * 2), 0);
+	}
+	
+	// Responsive columns.
+	#wrapper,	// Apply wrapper widths and margins to accommodate columns.
+	#content	// Apply wrapper widths and margins to accommodate columns.
+	{
+		width: 100%;
+		min-width: fixed-width($width-min-min + ($margin * 2), 0);
+		max-width: fixed-width($width-max + ($margin * 2), auto);
+		margin: auto;
+		overflow: hidden;
+	}
+	#wrapper > div.divider,	// Apply widths and padding to and change box-sizing.
+	#outro,	// Apply widths and padding to and change box-sizing.
+	#content > article,	// Apply widths and padding to and change box-sizing.
+	#content > div.divider,	// Apply widths and padding to and change box-sizing.
+	#content > footer	// Apply widths and padding to and change box-sizing.
+	{
+		width: fixed-width($width, auto);
+		min-width: fixed-width($width-min-min + ($margin * 2), 0);
+		max-width: fixed-width($width-max + ($margin * 2), auto);
+		margin: auto;
+		padding: 0 $margin;
+		@include box-sizing();
+		overflow: hidden;
+	}
+	header:empty,	// Hide empty headers.
+	footer:empty,	// Hide empty footers.
+	main:empty,	// Hide empty mains.
+	#wrapper div.divider:empty	// Hide empty dividers.
+	{
+		display: none;
+	}
+	div.divider:empty + *
+	{
+		margin-top: 0;
+	}
+	@if (not $debug)
+	{
+		#heading::before
+		{
+			display: none;
+		}
+	}
+	#heading::before
+	{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		padding: ($margin / 2);
+		z-index: 100;
+		
+		font-size: 0.75rem;
+		
+		color: #000;
+		background-color: #FFF;
+		opacity: 0.75;
+	}
+	@if ($fixed-width)
+	{
+		
+	}
+	@else
+	{
+		// 0.25
+		@media all and (min-width: relative-query($width-min-min + ($margin * 2) + $scrollbar-padding))	// #Note: 0 (∞) columns (∞).
+		{
+			#heading::before	// Debug column width.
+			{
+				content: "Columns: 0 (∞)";
+			}
+		}
+		
+		body:not([data-columns="0"])
+		{
+			// 0.5
+			@media all and (min-width: relative-query($width-min + ($margin * 2) + $scrollbar-padding))	// #Note: 0.5 (½) columns (margin + half + margin).
+			{
+				#heading::before	// Debug column width.
+				{
+					content: "Columns: 0.5 (½)";
+				}
+				:root,
+				html,
+				body,
+				#wrapper,
+				#content,
+				#wrapper > div.divider,
+				#outro,
+				#content > article,
+				#content > div.divider,
+				#content > footer	// Increase min-widths
+				{
+					min-width: fixed-width($width-min + ($margin * 2), 0);
+				}
+			}
+			
+			&:not([data-columns="0.5"])
+			{
+				// 1
+				@media all and (min-width: relative-query($width-max + ($margin * 2) + $scrollbar-padding))	// #Note: 1 (1) columns (margin + full + margin).
+				{
+					#heading::before	// Debug column width.
+					{
+						content: "Columns: 1 (1)";
+					}
+				}
+				
+				&[data-columns]:not([data-columns="1"])	// #Note: More than 1 column allowed.
+				{
+					// 1.5
+					@media all and (min-width: relative-query($width-max + $width-min + ($margin * 4) + $scrollbar-padding))	// #Note: 1.5 (1+½) columns ((margin + full + margin) (margin + half + margin)).
+					{
+						#wrapper	// Apply 1.5 column width.
+						{
+							width: ($width-max + $width-min + ($margin * 4));
+							max-width: ($width-max + $width-min + ($margin * 4));
+						}
+						#heading::before	// Debug column width.
+						{
+							content: "Columns: 1.5 (1+½)";
+						}
+						#outro,
+						#wrapper > div.divider	// Move all top level dividers and #outro to a column on the right with a 0.5 column width.
+						{
+							float: right;
+							width: ($width-min + ($margin * 2));
+						}
+						#content	// Move content to a column on the left with a 1 column width.
+						{
+							float: left;
+							max-width: fixed-width($width-max + ($margin * 2), auto);
+							
+							> article	// Remove top and bottom margins.
+							{
+								margin: 0;
+							}
+						}
+					}
+					
+					&:not([data-columns="1.5"])
+					{
+						// 2
+						@media all and (min-width: relative-query(($width-max * 2) + ($margin * 4) + $scrollbar-padding))	// #Note: 2 (1+1) columns ((margin + full + margin) (margin + full + margin)).
+						{
+							#wrapper	// Apply 2 column width.
+							{
+								width: (($width-max * 2) + ($margin * 4));
+								max-width: (($width-max * 2) + ($margin * 4));
+							}
+							#heading::before	// Debug column width.
+							{
+								content: "Columns: 2 (1+1)";
+							}
+							#outro,
+							#wrapper > div.divider	// Increase the right column to 1 column width.
+							{
+								width: ($width-max + ($margin * 2));
+							}
+						}
+						
+						&:not([data-columns="2"])
+						{
+							// > 2
+							@media all and (min-width: relative-query($width-max + ($width-min * 2) + ($margin * 6) + $scrollbar-padding))	// #Note: 2+ ((½+1)+½) columns (((margin + full + margin) (margin + half + margin)) (margin + half + margin))
+							{
+								#wrapper	// Apply 2+ column width.
+								{
+									width: ($width-max + ($width-min * 2) + ($margin * 6));
+									max-width: ($width-max + ($width-min * 2) + ($margin * 6));
+								}
+								#heading::before	// Debug column width.
+								{
+									content: "Columns: 2+ ((½+1)+½)";
+								}
+								#outro,
+								#wrapper > div.divider	// Decrease the right column to 0.5 column width.
+								{
+									width: ($width-min + ($margin * 2));
+								}
+								#content	// Increase the left column to 1.5 column  width.
+								{
+									width: fixed-width($width-max + $width-min  + ($margin * 4), auto);
+									max-width: fixed-width($width-max + $width-min + ($margin * 4), auto);
+								}
+								#content > footer,
+								#content > div.divider	// Move all content dividers and footer to a column on the left with a 0.5 column width.
+								{
+									float: left;
+									width: ($width-min + ($margin * 2));
+								}
+								#content > article	// Move content's article to a column in the centre with 1 column width.
+								{
+									float: right;
+									width: ($width-max + ($margin * 2));
+								}
+							}
+							// 2.5
+							@media all and (min-width:  relative-query(($width-max * 2) + ($width-min) + ($margin * 8) + $scrollbar-padding))	// #Note: 2.5 ((½+1)+1) columns (((margin + full + margin) + margin + (margin + half + margin)) + margin + (margin + full + margin).
+							{
+								#wrapper	// Apply 2.5 column width.
+								{
+									width: (($width-max * 2) + $width-min + ($margin * 8));
+									max-width: (($width-max * 2) + $width-min + ($margin * 8));
+								}
+								#heading::before	// Debug column width.
+								{
+									content: "Columns: 2.5 ((½+1)+1)";
+								}
+								#outro,
+								#wrapper > div.divider	// Increase the right column to 1 column width.
+								{
+									width: ($width-max + ($margin * 2));
+								}
+							}
+							
+							// 3
+							@media all and (min-width:  relative-query(($width-max * 3) + ($margin * 8) + $scrollbar-padding))	// #Note: 3 ((1+1)+1) columns (((margin + full + margin) + margin + (margin + full + margin)) + margin + (+margin + full + margin))
+							{
+								#wrapper	// Apply 3 column width.
+								{
+									width: (($width-max * 3) + ($margin * 8));
+									max-width: (($width-max * 3) + ($margin * 8));
+								}
+								#heading::before	// Debug column width.
+								{
+									content: "Columns: 3 ((1+1)+1)";
+								}
+								 #content	// Increase the left column to 2 column width.
+								{
+									width: (($width-max * 2) + ($margin * 5));
+								}
+								#content > footer,
+								#content > div.divider	// Increase the left-left column to 1 column width.
+								{
+									width: ($width-max + ($margin * 2));
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	// Contextual page flow.
+	.paged .page[id]	// Hide all pages
+	{
+		display: none;
+		visibility: hidden;
+	}
+	.paged .page[id][data-context="0"],	// Show ancestor pages of current context
+	.paged .page[id][data-context="1"],	// Show page with current context
+	.paged .page[id][data-context="1"] .page[id]:first-child	// Show first page of page with current context
+	{
+		display: block;
+		visibility: visible;
+	}
+	
+	// Undisplay superfluous headers.
+	/*nav > header,	// Undisplay nav headers.
+	#content > header > hgroup > h1,	// Undisplay header text.
+	#relimp > aside > header > hgroup > h1,	// Undisplay header text.
+	#relunimp > aside > hgroup > h1	// Undisplay header text.
+	{
+		display: none;
+	}*/
+	nav > div.wrapper	// Remove wrapper indenting as header removal makes it redundant.
+	{
+		margin-left: 0;
+	}
+
+	// Undisplay counters.
+	h1 > span::before,	// Remove numbered headers.
+	ol.toc li::before,	// Remove numbered ToC items.
+	ul.menu li::before	// Remove numbered menu items.
+	{
+		content: normal;
+		display: none;
+	}
+	
+	// Site notifications
+	div.group.notification
+	{
+		display: none;
+		/*position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		*/
+		position: relative;
+		
+		background-color: transparent;
+		
+		&[data-state="active"]
+		{
+			display: block;
+		}
+		> p
+		{
+			margin-bottom: ($line-space / 2);
+			
+			> strong
+			{
+				font-size: 1.1em;
+			}
+				> button.dismiss
+			{
+				position: absolute;
+				top: 0;
+				right: 0;
+				margin: 0;
+				padding: $margin;
+				border-width: 0;
+				
+				color: inherit;
+				background-color: transparent;
+				
+				&::before
+				{
+					content: '×';
+					display: block;
+					font-size: 2em;
+				}
+				> span
+				{
+					display: none;
+				}
+			}
+		}
+	}
+	
+	// States
+	menu[type="popup"]
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
+		
+		visibility: hidden;
+		opacity: 0;
+	}
+	menu[type="popup"][data-state="active"]
+	{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	// Misc.
+	.debug
+	{
+		display: none !important;
+	}
+}
