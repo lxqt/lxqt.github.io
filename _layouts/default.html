@@ -13,7 +13,7 @@
 		<link type="text/css" href="/styles/lxqt.css" rel="stylesheet"/>
 		<link rel="shortcut icon" href="/images/favicon.png" type="image/png"/>
 		
-		<script type="text/javascript" src="/scripts/_.js"></script>
+		<script type="text/javascript" src="/scripts/@module.js"></script>
 		<script type="text/javascript" src="/scripts/lxqt.js"></script>
 	</head>
 	<body id="org-lxqt" data-columns="1.5" itemscope itemtype="http://schema.org/Organization">
@@ -26,8 +26,9 @@
 					</a>
 				</h1>
 			</hgroup>
+			<p class="button action"><button data-action="state.toggle" data-target="#nav"><img src="images/webapp-icon-action-menu.svg"/></button></p>
 			<p class="strapline"><strong><span>{{ site.strapline }}</span></strong></p>
-			<nav id="nav">
+			<nav id="nav" data-state="inert">
 				<header>
 					<hgroup>
 						<h1>Menu</h1>

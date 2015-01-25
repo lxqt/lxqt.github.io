@@ -13,8 +13,8 @@
 	// Do stuff once
 	
 	$col-lxqt-blue-white: #13F !global;
-	$col-lxqt-blue-light: #0280B9 !global;
-	$col-lxqt-blue: #0192D3 !global;
+	$col-lxqt-blue-light: #0192D3 !global;
+	$col-lxqt-blue: #0280B9 !global;
 	$col-lxqt-blue-grey: #1D2F37 !global;
 	$col-lxqt-blue-grey-dark: #0E2028 !global;
 	$col-lxqt-grey: #222 !global;
@@ -152,22 +152,61 @@
 				}
 			}
 		}
-		> #nav
+		> p.button.action
 		{
-			float: left;
+			display: block;
+			float: right;
 			height: 3em;
 			margin: 0;
 			padding: 0.5em;
 			
+			> button
+			{
+				width: 3em;
+				height: 3em;
+				margin: 0;
+				padding: 0;
+				border-width: 0;
+				
+				background-color: transparent;
+				outline-width: 0;
+				
+				&:active
+				{
+					background-color: rgba(0, 0, 0, 0.2);
+				}
+			}
+			@media all and (min-width: 960px)
+			{
+				display: none;
+			}
+		}
+		> #nav
+		{
+			display: none;
+			clear: right;
+			height: 3em;
+			margin: 0;
+			padding: 0.5em;
+			
+			background-color: $col-lxqt-blue-grey;
+			
+			&[data-state="active"]
+			{
+				display: block;
+			}
+			> header
+			{
+				> hgroup
+				{
+					display: none;
+				}
+			}
 			> div.wrapper
 			{
 				display: table;
 				height: 3em;
 				
-				> header > hgroup
-				{
-					display: none;
-				}
 				> main
 				{
 					display: table-cell;
@@ -176,6 +215,7 @@
 					
 					ul
 					{
+						display: block;
 						margin: 0;
 						padding: 0 0.5em;
 						
@@ -206,6 +246,18 @@
 							}
 						}
 					}
+				}
+			}
+			@media all and (min-width: 960px)
+			{
+				display: block;
+				clear: none;
+				
+				background-color: $col-lxqt-blue;
+				
+				&[data-state="inert"]
+				{
+					display: block;
 				}
 			}
 		}
@@ -530,11 +582,6 @@
 		body:not([data-columns="0.5"]) #nav
 		{
 			background-color: transparent;
-		}
-		
-		body:not([data-columns="0.5"]) #nav > header
-		{
-			display: none;
 		}
 		
 		body:not([data-columns="0.5"]) #nav > div.wrapper
