@@ -153,6 +153,7 @@ $scrollbar-padding: 1rem !global;	// #Note: Because the W3C are morons, add an a
 						#outro,
 						#wrapper > div.divider	// Move all top level dividers and #outro to a column on the right with a 0.5 column width.
 						{
+							clear: right;
 							float: right;
 							width: ($width-min + ($margin * 2));
 						}

@@ -6,18 +6,22 @@ description: The next generation of the Lightweight Desktop Environment
 # Settings
 url: 'http://lxqt.org' # the base hostname & protocol for your site
 collections:
-    - downloads
-    - screenshots
+    downloads:
+        output: true
+        permalink: /downloads/:path/
+    screenshots:
+        output: true
+        permalink: /screenshots/:path/
 defaults:
     -
         scope:
             path: ''
         values:
-            unrelimp:
-                - links.html
+            unrelimp: null
             relimp: null
             relunimp: null
             unrelunimp:
+                - links.html
                 - downloads.html
     -
         scope:

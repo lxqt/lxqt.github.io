@@ -772,15 +772,18 @@
 						{
 							var shift = '';
 							var s = ($(this).attr('data-state')) ? $(this).attr('data-state') : 'none';
+							var actions = $(this).attr('data-state', shift).attr('data-action');
 							if (dir == 'down')
 							{
 								shift = states[s].shiftDown;
+								actions = actions.replace('shift.down', 'shift.up');
 							}
 							else
 							{
 								shift = states[s].shiftUp;
+								actions = actions.replace('shift.up', 'shift.down');
 							}
-							$(this).attr('data-state', shift);
+							$(this).attr('data-state', shift).attr('data-action', actions);
 							$Console.debug(this).log(prefix+'State shifted to '+shift+'.');
 							return this;
 						});

@@ -3,7 +3,7 @@ layout: page
 title: Screenshots
 slug: screenshots
 ---
-							<ul>{% for screenshot in site.screenshots %}{% if screenshot.promoted %}
+							<ol>{% for screenshot in site.screenshots %}{% if screenshot.promoted %}
 									<li>
 										<a href="{{ screenshot.url }}" title="{{ screenshot.title }}">
 											<figure>
@@ -38,4 +38,4 @@ slug: screenshots
 											</figure>
 										</a>
 									</li>{% endif %}{% endfor %}
-							</ul>
+							</ol>

@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="/scripts/@module.js"></script>
 		<script type="text/javascript" src="/scripts/lxqt.js"></script>
 	</head>
-	<body id="org-lxqt" data-columns="1.5" itemscope itemtype="http://schema.org/Organization">
+	<body id="org-lxqt" data-columns="2" itemscope itemtype="http://schema.org/Organization">
 		<header id="intro">
 			<hgroup id="heading">
 				<h1 itemprop="brand" itemscope itemtype="http://schema.org/Brand">
@@ -26,7 +26,7 @@
 					</a>
 				</h1>
 			</hgroup>
-			<p class="button action"><button data-action="state.toggle" data-target="#nav"><img src="images/webapp-icon-action-menu.svg"/></button></p>
+			<p class="button action"><button data-action="state.toggle" data-target="#nav"><img src="/images/webapp-icon-action-menu.svg"/></button></p>
 			<p class="strapline"><strong><span>{{ site.strapline }}</span></strong></p>
 			<nav id="nav" data-state="inert">
 				<header>
@@ -38,7 +38,7 @@
 					<main>
 						<ul>{% for page in site.pages %}{% if page.title %}
 							<li>
-								<p><a href="{{ page.url | replace:'index.html','' | prepend: site.url }}">{{ page.title }}</a></p>
+								<p><a href="{{ page.url | replace:'index.html','' | replace:'/downloads/', '/downloads/lxqt/0.8.0/' }}">{{ page.title }}</a></p>
 							</li>{% endif %}{% endfor %}
 						</ul>
 					</main>
@@ -71,11 +71,8 @@
 					</header>
 					<div class="wrapper">
 						<main>
-							<p class="license">
-								LXQt is licensed under <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU GPL 2.0+</a>
-								<br/> and <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">GNU LGPL 2.1+</a>.
-								<br/>LXQt.org is licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY-SA 3.0.</a>
-								<br/><a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="/static/img/cc-by-sa.png" title="Creative Commons Attribution-Share Alike License" alt="CC BY-SA"/></a>
+							<p class="license">LXQt is licensed under <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU GPL 2.0+</a> and <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">GNU LGPL 2.1+</a>.<br/>
+								LXQt.org is licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY-SA 3.0</a>. <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="/images/cc-by-sa.png" title="Creative Commons Attribution-Share Alike License" alt="CC BY-SA"/></a>
 							</p>
 						</main>
 						<footer></footer>

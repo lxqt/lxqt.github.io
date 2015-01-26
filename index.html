@@ -1,8 +1,25 @@
 ---
 layout: page
 slug: home
-relimp: { screenshots.html }
 ---
+<ol id="article-{{ page.slug }}_preview">{% for screenshot in site.screenshots limit:5 %}{% if screenshot.promoted %}
+	<li data-state="inert">
+		<a href="{{ screenshot.url }}" title="{{ screenshot.title }}">
+			<figure id="article-{{ page.slug }}_preview_{{ screenshot.slug }}" data-action="state.shift.up" data-state="none">
+				<header>
+					<hgroup>
+						<h1>{{ screenshot.title }}</h1>
+					</hgroup>
+				</header>
+				<div class="wrapper">
+					<main>
+						<img src="{{ screenshot.src }}" alt="{{ screenshot.alt }}"/>
+					</main>
+				</div>
+			</figure>
+		</a>
+	</li>{% endif %}{% endfor %}
+</ol>
 {% for post in site.posts limit:3 %}{% if post.promoted %}							<article id="article-{{ post.slug }}" class="post">
 								<header>
 									<hgroup>
@@ -15,6 +32,6 @@ relimp: { screenshots.html }
 									<main>
 										{{ post.excerpt }}
 									</main>
-									<footer>{% if post.meta %}<p>{{ post.meta }}</p>{% endif %}</footer>
+									<footer>{% if post.meta %}<p class="meta">{{ post.meta }}</p>{% endif %}</footer>
 								</div>
 							</article>{% endif %}{% endfor %}

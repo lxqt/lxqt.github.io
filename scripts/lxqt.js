@@ -63,6 +63,41 @@
 						icon:			'/images/lxqt-icon-32.png'
 					});
 					
+					// Preview slideshow
+					var slideshowTimer = function ($next, $screen)
+					{
+						setTimeout(function ()
+						{
+							if ($screen.find('figure').state() == 'active')
+							{
+								slideshowTimer($next, $screen);
+								return;
+							}
+							showScreenshot($next);
+							$screen.state('inert');
+						}, 8000);
+					}
+					var showScreenshot = function ($screen)
+					{
+						if ($screen.state() == 'active')
+						{
+							return;
+						}
+						var $n = $screen.next();
+						if ($n.length <= 0)
+						{
+							$n = $screen.siblings().first();
+						}
+						$screen.on('transitionEnd webkitTransitionEnd', function (e)
+						{
+							var $t = $(this);
+							$t.off('transitionEnd webkitTransitionEnd');
+							slideshowTimer($n, $t);
+						});
+						$screen.state('active');
+					};
+					showScreenshot($('#article-home_preview > li:first-child'));
+					
 					m.done();
 					$Console.group(m.name, 'info', 'color: #393;').info('Version '+m.version+'.').info(m.description).log('Readied in '+$Console.time(m.name)+'.').debug(m).send();
 				}
