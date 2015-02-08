@@ -179,7 +179,7 @@
 					background-color: rgba(#000, 0.2);
 				}
 			}
-			@media all and (min-width: 960px)
+			@media all and (min-width: 1070px)
 			{
 				display: none;
 			}
@@ -209,6 +209,7 @@
 			{
 				display: table;
 				height: 3em;
+				margin: auto;
 				
 				> main
 				{
@@ -251,7 +252,7 @@
 					}
 				}
 			}
-			@media all and (min-width: 960px)
+			@media all and (min-width: 1070px)
 			{
 				display: block;
 				clear: none;
@@ -786,10 +787,6 @@
 	}
 	@media all and (min-width: 65rem)
 	{
-		body:not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #intro > #nav
-		{
-			float: right;
-		}
 		body:not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #wrapper::after
 		{
 			content: "";
