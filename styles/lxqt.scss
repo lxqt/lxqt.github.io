@@ -37,11 +37,11 @@
 	$letter-spacing: 0 !global;
 	$color: $col-white !global;
 	$background-color: $col-lxqt-blue-black !global;
-	$link-color: $col-lxqt-blue !global;
-	$link-unvisited-color: $col-lxqt-blue !global;
-	$link-visited-color: $col-lxqt-blue !global;
-	$link-focus-color: $col-lxqt-blue !global;
-	$link-active-color: $col-lxqt-blue !global;
+	$link-color: $col-lxqt-blue-light !global;
+	$link-unvisited-color: $link-color !global;
+	$link-visited-color: $link-color !global;
+	$link-focus-color: $link-color !global;
+	$link-active-color: $link-color !global;
 	$focus-outline: transparent dotted 0 !global;
 	$target-outline: transparent dotted 0 !global;
 	$selected-color: lighten(invert($background-color), 10%) !global;
@@ -63,6 +63,8 @@
 	// Wrappers
 	html
 	{
+		overflow: auto;
+		
 		background-image: radial-gradient(50% 50% at 50% 50%, $col-lxqt-blue-black 0, $col-lxqt-blue-black-dark 100%);
 		background-size: 100% 100%;
 		background-position: top left;
@@ -282,6 +284,12 @@
 				}
 			}
 		}
+		a[href]
+		{
+			font-weight: 400;
+			
+			color: $col-lxqt-blue;
+		}
 	}
 	
 	// Content
@@ -330,28 +338,31 @@
 						> a
 						{
 							display: block;
+							width: ((($line-width-min - ($margin * 2)) / 1.5) - 0.5rem);
+							margin-right: 0.5rem;
 							
 							> figure
 							{
 								position: relative;
-								width: (($line-width-min - ($margin * 2)) / 1.5);
+								width: 100%;
 								height: ((($line-width-min - ($margin * 2)) / 1.5) * 0.625);
-								margin: 0;
-								overflow: hidden;
+								margin: 0 0 2.575rem 0;
+								overflow: visible;
 								
 								background-color: $col-lxqt-grey;
 								
 								> header
 								{
 									position: absolute;
-									bottom: 0;
+									bottom: -2.075rem;
 									left: 0;
 									right: 0;
+									height: 2.075rem;
 									padding: $padding;
+									border-radius: 0 0 0.5rem 0.5rem;
+									@include box-sizing(border-box);
 									
-									background-image: -webkit-linear-gradient(bottom, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
-									background-image: -moz-linear-gradient(bottom, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
-									background-image: linear-gradient(to top, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
+									background-color: $col-lxqt-blue-black-light;
 									text-shadow: rgba(#000, 0.75) 1px 1px 5px;
 									
 									> hgroup > h1
@@ -367,6 +378,11 @@
 								div.wrapper > main > img
 								{
 									display: block;
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									bottom: 0;
 								}
 							}
 						}
@@ -471,28 +487,32 @@
 						> a
 						{
 							display: block;
+							width: (($line-width-min - 3rem) / 1);
+							margin: 0 auto;
 							
 							> figure
 							{
 								position: relative;
-								width: (($line-width-min - 3rem) / 1);
+								width: 100%;
 								height: ((($line-width-min - 3rem) / 1) * 0.625);
 								margin: 0 auto;
-								overflow: hidden;
+								margin-bottom: 2.575rem;
+								overflow: visible;
 								
-								background-color: $col-lxqt-grey;
+								background-color: $col-lxqt-blue-black-dark;
 								
 								> header
 								{
 									position: absolute;
-									bottom: 0;
+									bottom: -2.075rem;
 									left: 0;
 									right: 0;
+									height: 2.075rem;
 									padding: $padding;
+									border-radius: 0 0 0.5rem 0.5rem;
+									@include box-sizing(border-box);
 									
-									background-image: -webkit-linear-gradient(bottom, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
-									background-image: -moz-linear-gradient(bottom, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
-									background-image: linear-gradient(to top, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
+									background-color: $col-lxqt-blue-black-light;
 									text-shadow: rgba(#000, 0.75) 1px 1px 5px;
 									
 									> hgroup > h1
@@ -508,6 +528,11 @@
 								div.wrapper > main > img
 								{
 									display: block;
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									bottom: 0;
 								}
 							}
 						}
@@ -534,6 +559,12 @@
 					margin-bottom: 0;
 				}
 			}
+		}
+		a[href]
+		{
+			font-weight: 400;
+			
+			color: $col-lxqt-blue;
 		}
 	}
 	
@@ -589,6 +620,12 @@
 				}
 			}
 		}
+		a[href]
+		{
+			font-weight: 400;
+			
+			color: $col-lxqt-blue;
+		}
 	}
 	
 	// Preview
@@ -597,6 +634,7 @@
 		position: relative;
 		padding-top: 62.5%;
 		padding-left: 0;
+		margin-bottom: 2.25rem;
 		background-color: #111;
 		
 		> li
@@ -640,6 +678,7 @@
 				bottom: 0;
 				right: 0;
 				margin: auto;
+				overflow: visible;
 				
 				background-color: $col-lxqt-grey;
 				
@@ -689,15 +728,15 @@
 				> header
 				{
 					position: absolute;
-					bottom: 0;
+					bottom: -2.25rem;
 					left: 0;
 					right: 0;
-					z-index: 1;
+					height: 2.25rem;
 					padding: $padding;
+					@include box-sizing(border-box);
+					z-index: 1;
 					
-					background-image: -webkit-linear-gradient(bottom, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
-					background-image: -moz-linear-gradient(bottom, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
-					background-image: linear-gradient(to top, rgba(#000, 0.85) 0%, rgba(#000, 0) 100%);
+					background-color: $col-lxqt-blue-black-light;
 					text-shadow: rgba(#000, 0.75) 1px 1px 5px;
 					
 					> hgroup > h1
@@ -732,7 +771,9 @@
 	a[href]:not(:disabled):focus:hover,
 	a[href]:not(:disabled):active
 	{
+		font-weight: 400;
 		text-decoration: none;
+		
 		background-color: transparent;
 		outline-width: 0;
 	}
