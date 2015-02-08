@@ -18,20 +18,23 @@ slug: home
 				</div>
 			</figure>
 		</a>
-	</li>{% endif %}{% endfor %}
+	</li>{% endif %}
+{% endfor %}
 </ol>
-{% for post in site.posts limit:3 %}{% if post.promoted %}							<article id="article-{{ post.slug }}" class="post">
-								<header>
-									<hgroup>
-										<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-									</hgroup>
-									<p class="date"><time datetime="{{ post.date | date: '%F %R' }}">{{ post.date | date: '%R %A, %-d %B, %Y' }}</time></p>
-									{% if post.author %}<p class="author">{{ post.author }}</p>{% endif %}
-								</header>
-								<div class="wrapper">
-									<main>
-										{{ post.excerpt }}
-									</main>
-									<footer>{% if post.meta %}<p class="meta">{{ post.meta }}</p>{% endif %}</footer>
-								</div>
-							</article>{% endif %}{% endfor %}
+{% for post in site.posts limit:3 %}
+	{% if post.promoted %}
+		<article id="article-{{ post.slug }}" class="post">
+			<header>
+				<hgroup>
+					<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+				</hgroup>
+			</header>
+			<div class="wrapper">
+				<main>
+					{{ post.content }}
+				</main>
+				<footer>{% if post.meta %}<p class="meta">{{ post.meta }}</p>{% endif %}</footer>
+			</div>
+		</article>
+	{% endif %}
+{% endfor %}
