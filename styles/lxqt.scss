@@ -301,7 +301,8 @@
 			margin: 0;
 			padding: 1rem;
 			
-			&.post
+			&.post,
+			article.post
 			{
 				> header,
 				> footer
