@@ -4,15 +4,15 @@
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
-		
+
 		<title>{% if page.title %}{{ page.title}} | {{ site.title }}{% else %}{{ site.title }} - {{ site.strapline }}{% endif %}</title>
 		<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
 		<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}"/>
 		<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml"/>
-		
+
 		<link type="text/css" href="/styles/lxqt.css" rel="stylesheet"/>
 		<link rel="shortcut icon" href="/images/favicon.png" type="image/png"/>
-		
+
 		<script type="text/javascript" src="/scripts/@module.js"></script>
 		<script type="text/javascript" src="/scripts/lxqt.js"></script>
 	</head>
@@ -36,13 +36,14 @@
 				</header>
 				<div class="wrapper">
 					<main>
-						<ul>{% for page in site.pages %}{% if page.title %}
-							<li>
-								<p><a href="{{ page.url | replace:'index.html','' | replace:'/downloads/', '/downloads/lxqt/0.8.0/' }}">{{ page.title }}</a></p>
-							</li>{% endif %}{% endfor %}
+						<ul>
+							<li><p><a href="/about/">About</a></p></li>
+							<li><p><a href="/releases/">Releases</a></p></li>
+							<li><p><a href="/screenshots/">Screenshots</a></p></li>
+							<li><p><a href="http://downloads.lxqt.org/lxqt/0.9.0/">Downloads</a></p></li>
+							<li><p><a href="http://blog.lxde.org">LXDE Blog</a></p></li>
 						</ul>
 					</main>
-					<footer></footer>
 				</div>
 			</nav>
 		</header>
