@@ -1,0 +1,235 @@
+[18:02:45] <jleclanche> Thank you all for coming, if this is successful we'll do roughly one every 4-6 weeks I'm hoping
+[18:03:36] <jleclanche> What I want to talk about is what everyone wants to work on, what to focus on for 0.11, the ML migration and if our new devs are around I'd love to have them speak up
+[18:03:56] <jleclanche> if anyone here in the channel has been looking to contribute I'll want to hear from you as well
+[18:04:16] <jleclanche> intialonso, since you're here, I'd like to start with graphics work
+[18:04:26] <intialonso> Great
+[18:04:43] <jleclanche> intialonso: you're our only available artist, can you talk a bit about what you're planning to work on and what your free lxqt time looks like?
+[18:05:33] <intialonso> Firt, I want to retake the maintainance and polish of the themes
+[18:05:56] <intialonso> also I have seen some interesting discussions going on about theme engines
+[18:06:10] <intialonso> and a possible new "system" theme
+[18:06:13] <luis-pereira> hi
+[18:07:01] <intialonso> That "system" or "no-theme" idea seems really nice, as It can give os a simplified way to theme lxt and preserve a unique style around all the desktop
+[18:07:14] <agaida> maybe we could convince Rafael Laguna to work with us too - but this would be a task for gilir and philw (would make sense imho)
+[18:07:22] <jleclanche> agaida: who's that?
+[18:07:43] <intialonso> One more thing that we need to advance i to finally detach the wallpapers from thye themes
+[18:07:46] <phillw> jleclanche: he is the art guy for lubuntu
+[18:07:53] <agaida> the special weapon of lubuntu (graphics wise)
+[18:08:09] <intialonso> That will be great
+[18:08:16] <gilir> agaida, he already works on the lubuntu theme :-) But he is new to Qt theming
+[18:08:35] <jleclanche> gilir, can you put intialonso in touch with him?
+[18:08:38] <jleclanche> cc me
+[18:09:18] <gilir> jleclanche, sure, you want him to take a look to the current themes ? Or to create a new one ?
+[18:09:52] <jleclanche> gilir: I'm open to anything but mostly I'd like us to polish the themes we have, and work on qt theming and icon theme
+[18:09:59] <intialonso> First, I think that we need to reestructure the theming protocol
+[18:10:05] <agaida> gilir: or just talk about some things we could do better - so both upstream and lubuntu win
+[18:10:12] <intialonso> Please detach thye wallpapers from the themes
+[18:10:33] <jleclanche> intialonso: I agree with that, the open wallpaper bug needs to be taken care of. Any takers here to work on it?
+[18:10:45] <intialonso> We need to make it more simple, at this moment I dont think that we need new themes
+[18:10:49] <paulolieuthier> yeah, detaching the wallpaper is a thing for 0.11 imo
+[18:11:26] <gilir> jleclanche, ok, I'll contact him
+[18:11:29] <jleclanche> thanks
+[18:11:32] <intialonso> We need more quality in our themes, little polishes here and there
+[18:12:08] <intialonso> FOr the wallpaper we can make a couple LXQT branded ones, but they will need to be installed in /usr/share/backgrounds
+[18:12:32] <jleclanche> gilir, you've been pretty quiet the past few weeks - what's your schedule like around lxqt?
+[18:13:06] <gilir> Is there a wiki page or documentation about the theming ? (what part are needed, etc ...)
+[18:13:08] <paulolieuthier> the thing is wallpaper is not a standard thing
+[18:13:22] <intialonso> Ok
+[18:13:26] <paulolieuthier> i mean for implementations
+[18:13:38] <intialonso> There is a little theming page in the Manjaro wiki
+[18:13:47] <intialonso> But we hyave no official one
+[18:13:53] <jleclanche> https://github.com/lxde/lxqt/wiki/Themes there's this
+[18:14:18] <gilir> jleclanche, I think my contribution to lxqt will be very limited for the next 6 months, I preparing a long term release for lubuntu with lxde on it
+[18:14:38] <intialonso> That need more details, mainly some explain about the custom widgets from the environment
+[18:15:31] <paulolieuthier> our themes are mainly for the panel and runner, right?
+[18:15:35] <jleclanche> gilir: are you planning to come back to coding? :)
+[18:15:52] <intialonso> Panel, Runner and Notifications
+[18:16:30] <paulolieuthier> right
+[18:16:41] <agaida> gilir: maybe we could activate joern a little bit more - btw, for all: https://qa.debian.org/developer.php?login=pkg-lxqt-devel@lists.alioth.debian.org
+[18:16:49] <phillw> jleclanche: the lubuntu test team are keen to assist where they can.
+[18:16:57] <jleclanche> phillw: Excellent
+[18:16:58] <agaida> all packages are in sid, will be enter testing in 3 days
+[18:17:15] <jleclanche> phillw: can you poke me after this meetup is over btw ill get you on the github release-maintainers team
+[18:17:15] <paulolieuthier> one thing i've thought is that we can use kde's palettes
+[18:17:22] <gilir> jleclanche, maybe :-) If I want to ship lxqt in Lubuntu, I probably have to do some coding :-)
+[18:17:23] <agaida> and if one can see - the packages are in Xenial too
+[18:17:44] <intialonso> What do you think of the no-theme idea?
+[18:17:45] <gilir> agaida, 0.10 is in Xenial since a couple of days
+[18:18:09] <agaida> gilir: i know - and i know the packagers :P
+[18:18:12] <jleclanche> agaida, palinek, pmattern, paulolieuthier: is there anything you guys are keen on working on for the next release? is there anything you can't work on but would like to see done?
+[18:18:13] <phillw> gilir: it's quite close, just that lxpanel dependency, which I want to discuss afterwards.
+[18:18:20] <paulolieuthier> inti: i'm not up to date, can you explain?
+[18:19:22] <agaida> jleclanche: i would like to spend a bit of time on qps, qterminal/qtermwidget and some packaging/compatibility things
+[18:19:23] <paulolieuthier> completion of plugin infrastructure
+[18:19:37] <intialonso> Paulo, this: https://github.com/lxde/lxqt/issues/892#issuecomment-156488051
+[18:19:44] <jleclanche> agaida: I'm +1 on that, and wanted to talk about our 3rd party apps actually here.
+[18:20:46] <gilir> any release date for 0.11 ?
+[18:20:58] <jleclanche> I'm not sure, probably Q1 2016
+[18:21:02] <jleclanche> but that's the ideal case
+[18:21:25] <jleclanche> in a "we have everything we want" scenario we can do fast-release every 3-4 months
+[18:21:38] <jleclanche> but we're limited on manpower so we make the best out of what we can :)
+[18:21:39] <intialonso> The no-theme is really a theme that makes LXQt uses the system theme (gtk or qt)
+[18:21:55] <jleclanche> I'd like to see us give some love to qterminal and qtermwidget. especially right now, I'd like to do a new qterminal release soon
+[18:22:03] <jleclanche> but there's a lot of bugs to fix, code to clean up
+[18:22:08] <jleclanche> luis-pereira: anything in qtdesktop is FFA, you can PR even large changes, btw.
+[18:22:10] <paeschli> btw, will the 15.10 PPA also be updated to 0.10?
+[18:22:48] <gilir> jleclanche, I'm asking because ubuntu freeze on mid-February
+[18:23:17] <jleclanche> gilir: we can try to release 0.11.1 for then, but not sure 0.12 could even make the cut... remind me of it in december
+[18:23:27] <gilir> paeschli, I should be updated already
+[18:23:29] <jleclanche> we have christmas, we'll see less activity around it
+[18:24:05] <gilir> jleclanche, you probably want to check with other distro also
+[18:24:56] <gilir> jleclanche, if 0.11.1 is a bug fix only, we can push it later than mid-February
+[18:25:01] <paulolieuthier> inti: let's discuss it later
+[18:25:05] <luis-pereira> jleclanche: I'm aware of that. PR's are also a way to possibly get another pair of eyeballs into it.
+[18:25:11] <jleclanche> gilir: debian's long release cycle isn't a problem. arch is rolling release and the others ont don't matter as much
+[18:25:17] <luis-pereira> agaida: I'm resumimg my work on qps
+[18:25:25] <jleclanche> gilir: mostly to do with usage
+[18:25:32] <agaida> luis-pereira: cool
+[18:26:03] <jleclanche> I'd like us to focus on qps at some point (agaida) but I don't think we can for this particular release to be honest, not unless someone steps up big time
+[18:26:50] <luis-pereira> jleclanche: for what I've seen qps needs a substancial amount of work
+[18:26:54] <jleclanche> yep
+[18:27:06] <pmattern> gilir: There seem to be two LXQt repos in the *buntu ecosystem. One maintained by an "LXQt team" and one by "Lubuntu Developers Team". Cold you enlighten me what's the purpose of maintaining these in parallel?
+[18:27:18] <jleclanche> luis-pereira: i consider qps a "starting point"
+[18:27:35] <agaida> it is working, it is in the debian repo again, thats a good start - i think, we should do a general cleanup first
+[18:28:12] <gilir> pmattern, the one by lubuntu dev is the PPA with upstream git builds, the one by lxqt team is for stable release
+[18:28:59] <gilir> pmattern, I maintain the first one, but not the second one
+[18:30:33] <intialonso_> Im having some connection issues
+[18:31:08] <jleclanche> Followup item, new dev experience
+[18:31:20] <luis-pereira> jleclanche: agaida is right. an "initial" clean up is the best way to go
+[18:31:23] <jleclanche> I've been meaning to focus on this a lot the past release and this one
+[18:31:33] <pmattern> gilir: Err, but it's the second one where your name is stated?! And how about https://bugs.launchpad.net/lubuntu-next? You told me it was the place to report some time ago. But tbh. it looks rather like a graveyard. E. g. https://bugs.launchpad.net/lubuntu-next/+bug/1507697.
+[18:32:05] <jleclanche> our best bet is to make it as easy as possible to have new devs joining us. does anyone have any particular pain points to contributions they'd like to see fixed? (this is an open question to the entire channel)
+[18:32:16] <joern_s> hi everyone!
+[18:32:26] <jleclanche> hey joern_s
+[18:32:28] <agaida> hi joern_s
+[18:32:53] <phillw> o/ jo
+[18:33:01] <phillw> o/ joern_s
+[18:33:17] <gilir> pmattern, not the lxqt team one, I didn't push anything on it
+[18:33:25] <jleclanche> Alternatively, if anyone has suggestions or wants to step up to improve documentation and code quality, I'm all ears
+[18:33:42] <paulolieuthier> jleclanche: i don't follow
+[18:33:59] <gilir> pmattern, and yes sorry I know about lubuntu-next bug tracker, I didn't have time to triage it recently
+[18:34:20] <pmattern> jleclanche: To add to your question what should get addressed next I think the way milestone tags are handled on the tracker is very reasonable so they provide a good landmark. Something that badly should get addressed is https://github.com/lxde/lxqt/issues/65.
+[18:34:24] <jleclanche> paulolieuthier: I think one of the barriers for newcomers is documentation and code quality, the better they are the easier it is for someone to just dive in.
+[18:34:31] <agaida> hmm - a pain point was and will be abi-changes - so please: If one work in that field, please consider not to break our abi in an incompatible way - it's a real pita for downstream :)
+[18:34:41] <gilir> pmattern, with 0.10 in official repo, I hope people will start to use the official ubuntu bug tracker
+[18:34:49] <jleclanche> pmattern: please be very generous with milestones - if you want to see something fixed for the next release don't hesitate to flag it as such
+[18:35:04] <paulolieuthier> i mean the sentence before that. pain points?
+[18:35:15] <jleclanche> paulolieuthier: barriers, issues
+[18:35:42] <paulolieuthier> k
+[18:36:16] <phillw> jleclanche: we have a very fledging wiki presence under the lubuntu wiki area, we are looking to expand this as our knowledge of the system expands. So far, we just have 'how to install it' ; which has a couple of bugs that need to be worked on :)
+[18:36:39] <jleclanche> phillw: if you have people willing to work on docs, send them my way please. jerome at leclan dot ch
+[18:36:59] <jleclanche> phillw: I'll guide them about - I'd like the docs to be consolidated if possible, even if it means setting up mirrors and such
+[18:37:47] <phillw> jleclanche: I'll inform our TL of wiki/docs on lubuntu
+[18:38:51] <jleclanche> on code quality specifically, I've been toying about with clang-format. it's an autoformatter for clang-supported languages
+[18:39:04] <jleclanche> I'd like us to try it out. we're trying it out on sddm with plfiorini too
+[18:39:09] <jleclanche> any objections?
+[18:40:33] <agaida> no
+[18:40:55] <jleclanche> :)
+[18:41:21] <jleclanche> it should take care of normalizing our code style so we don't have to worry about it anymore
+[18:42:09] <jleclanche> I have two more items on my list, and I'd like anyone who wants to talk about something specific to step up at any time.
+[18:42:58] <jleclanche> first item is IRC, this is part of being friendlier to new contributors. most of the time, the irc channel doesn't get much love at all; if more people were online and were to keep an eye on it, it'd help greatly, and this is a fairly easy thing to do
+[18:43:10] <luis-pereira> jleclanche: no problem about that. But let's keep in mind that's a bike shed isseu
+[18:43:54] <jleclanche> luis-pereira: precisely why i want it to happen automatically :)
+[18:44:42] <phillw> jleclanche: I now auto join and will say hello to people, as my and others from lubuntu gain further experience, we will be on here and will learn to help others.
+[18:44:53] <luis-pereira> jleclanche: I understood. The bike shed there are the settings to do that.
+[18:44:57] <jleclanche> phillw: that's great news
+[18:45:01] <jleclanche> irc: I personally recommend quassel, a great qt irc client which can be used as a bouncer as well
+[18:45:38] -*- phillw still uses pidgin from back in ubuntu 9.04 days... happy with it :)
+[18:46:00] <jleclanche> so in general if you guys can use irc a little more it'd really be great, even if you're not always around it speeds up comms - i don't really want us to move to something closed source like gitter or some such
+[18:46:20] <agaida> phillw: i think that jleclanche means esp. quassel-core
+[18:47:44] <phillw> agaida: as I said, it will take some time for us to get used to the qt options, I installed qupzilla for the 1st time yesterday.
+[18:47:44] <pmattern> Regarding IRC I really think people should set themselves "away" more generously if they cannot respond in a reasonable time. It's okay to know someone won't be able to respond. But it's pretty annoying to post stuff and not getting an answer at all.
+[18:47:45] <palinek> ad IRC how about changing the name of the channel?
+[18:48:06] <jleclanche> palinek: right now #lxqt forwards here
+[18:48:13] <palinek> the LXDE is realy confusing
+[18:48:31] <jleclanche> lxqt is a part of the lxde project/organization :)
+[18:49:16] <paulolieuthier> it is confusing
+[18:49:44] <jleclanche> I'll consider it
+[18:49:52] <pmattern> jleclanche: The channel isn't about the organization as a whole only. Frequently people come up with specific questions concering one of the DEs. And wonder why they get send to OFTC.
+[18:49:59] <agaida> and maybe it would be a good idea if freenode #lxde would be forward to freenode #lxqt
+[18:50:22] <jleclanche> I'll be doing a round-up of pootle/ML/irc soon-ish (december)
+[18:50:42] <agaida> and to change our topic that way - the main LXDE development is happen in oftc #lxde
+[18:50:57] <jleclanche> but right now I don't really want to split the communities further when we still lack manpower :/
+[18:51:09] <jleclanche> will see what I can do.
+[18:51:11] <joern_s> sounds reasonable
+[18:51:53] <phillw> jleclanche: o/
+[18:52:11] <jleclanche> agaida paulolieuthier palinek pmattern luis-pereira gilir phillw, last item on my side, I'd like you all to pick a bug, if possible in the 0.11 milestone, and announce it in the channel ;) if you want to work on something not currently on the tracker, feel free to file one
+[18:52:29] <jleclanche> doesn't have to be a hard one, just any :)
+[18:52:59] <palinek> i'm taking/closing the issues...as they are ariving...
+[18:53:00] <jleclanche> I'll be taking https://github.com/lxde/lxqt/issues/488 from pcman, since he isnt available this month
+[18:53:20] <palinek> don't have any special favourite
+[18:53:34] <phillw> jleclanche: your mention of pootle reminded me. Are .po files to be dropped, as I think this would be a nightmare for translators (I saw it mentioned on the ML)
+[18:53:54] <jleclanche> phillw: we don't use po anywhere in lxqt i believe
+[18:53:59] <jleclanche> it's ts everywhere
+[18:54:09] <agaida> jleclanche: my prio no. 1 was to get LXQt into debian in a good shape and a timely manner - thats done, open for new adventures
+[18:54:16] <jleclanche> agaida: good enough :)
+[18:54:36] <joern_s> phillw: both our update manager and software center use .ts files for translations, too
+[18:55:00] <palinek> agaida: yep, get into debian was a realy good job!
+[18:55:07] <joern_s> yeah, thumbs up for your work agaida
+[18:55:34] -*- agaida think - it wasn't only me - it was team work of a new created team
+[18:55:53] <jleclanche> agaida: get them to come in this channel if possible, the more the merrier
+[18:56:21] <agaida> they are  right now - more or less
+[18:57:23] <phillw> jleclanche:  joern_s that's good :) I read it as there was nothing instead of .po and was concerned :)
+[18:58:15] <jleclanche> phillw: anything to do with translations you can ping or email me directly, FYI. or luis-pereira. I haven't been taking care of pootle lately, my work has been 99% of my life the past 2 months :/
+[18:58:49] <jleclanche> the plan on pootle is to update it some point soon (next release maybe), and set up a new lxqt-translations repo in the lxde organization
+[18:58:52] <phillw> jleclanche: it will be Rafael who will be in touch. Shame he could not attend
+[18:59:07] <jleclanche> in that repository, will go *all* translations
+[18:59:20] <jleclanche> and it'll be 100% bot-committed
+[18:59:25] <israel> Has anyone looked at dunst the notification daemon?  It is DE independant and uses no toolkits.  It might be something to check out to replace the xfce notifications.  You do have to enable icons and put in good icon paths, but it is really nice.  and small :)
+[19:00:13] <jleclanche> speaking of notifications
+[19:00:23] <jleclanche> this is something that will require some collaboration between intialonso and a dev
+[19:00:44] <jleclanche> I'd like to see us use a better internal-notification system for volume changes
+[19:00:47] <intialonso> Yes
+[19:00:59] <jleclanche> something closer to a slider popup
+[19:01:52] <luis-pereira> I will be taking them as they came. I will work on finishing pending cmake stuff, qtxdg and https://github.com/lxde/lxqt/issues/893
+[19:02:05] <jleclanche> luis-pereira: awesome!
+[19:02:52] <pmattern> israel: LXQt isn't relying on Xfce stuff but is featuring its own daemon already. No need to replace it ,IMO. Maybe not as lean as Dunst but playing much more nicely with all the rest of LXQt.
+[19:03:20] <israel> pmattern oh, ok :)
+[19:03:24] <israel> thanks
+[19:04:40] <jleclanche> Anything else from anyone?
+[19:05:04] <intialonso> Nothing here
+[19:05:15] <palinek> jleclanche: sound notification.... just the very same window as currently is shown upon click?
+[19:05:30] <phillw> jleclanche: just a quick one... would you like a meeting bot on here that will take minutes and post them up for the group?
+[19:05:37] <jleclanche> palinek: would be the easiest yeah
+[19:05:43] <jleclanche> phillw: "minutes"?
+[19:05:51] <phillw> logs of the meeting
+[19:05:53] <gilir> jleclanche, what the status of obconf-qt, lximage-qt ... ?
+[19:06:04] <jleclanche> phillw: I can make logs available myself, the meetings won't be that regular
+[19:06:12] <agaida> gilir: good point
+[19:06:54] <agaida> imho we should release all not yet released programs/apps asap
+[19:07:04] <jleclanche> gilir: right. they haven't received much love at all this release so there isn't really any need to make a new release. they're not on the same schedule. but essentially, if someone wants to make a new release, hit up the mailing list with a request and I'll get on it
+[19:07:09] <gilir> jleclanche, also, if we can have a release for qterminal and qtermwidget, to have good looking version number in Debian / Ubuntu :-)
+[19:07:15] <palinek> just show the popup window upon volume change... shouldn't be a big deal
+[19:07:35] <jleclanche> gilir: yes, qterminal+qtermwidget release will happen, but I'd have liked to get some of the more critical stuff fixed
+[19:07:42] <agaida> gilir: and more important - less discussions about the state of some packages
+[19:08:27] <gilir> well, having some packages without 0.10 release make the impression that there are out of lxqt
+[19:08:40] <jleclanche> they are, technically
+[19:08:51] <jleclanche> we pull them in but they're not part of the lxqt- suite
+[19:08:54] <wallbroken> hi
+[19:09:04] <jleclanche> wallbroken: hey there
+[19:09:08] <wallbroken> which difference there is between lxde and lxde-core ?
+[19:09:17] <agaida> and 0.9.0+2015$foo don't  look that nice from a users point of view
+[19:10:05] <gilir> jleclanche, so there is nothing to read images files in lxqt ? Because lximage-qt is the only one I think (or I miss one)
+[19:10:38] <jleclanche> gilir: lximage-qt hasn't seen any commits almost since its first release
+[19:10:48] <agaida> gilir: i would suggest nomacs as third party, cool, fast, capable and full Qt 5
+[19:10:49] <jleclanche> gilir: if we do a release now, it'll just be the same product
+[19:10:55] <jleclanche> I use feh personally...
+[19:11:07] <pmattern> gilir: Phototonic is quite a good alternative as well, IMO.
+[19:11:22] <gilir> jleclanche, yes good point, I need to do a translation update to it ;-)
+[19:11:42] <intialonso> +1 for Phototonic
+[19:12:05] <agaida> and we should have a wiki page about some prefered third party apps - like in razorqt
+[19:12:21] <joern_s> PhotoQt is pretty good
+[19:12:27] <jleclanche> agaida gilir: there's two bugs I'd like to see fixed in qterminal. the cjk font support which is horribly broken, and the multipage selection which is broken when scrolling up. I wanted to wait on those before releasing the next qterminal version to be honest
+[19:12:29] <joern_s> +1 agaida
+[19:12:33] <jleclanche> any taker for either of these bugs?
+[19:13:17] <jleclanche> https://github.com/lxde/qterminal/issues/150 this is the cjk issue, the character width calculation is horribly broken
+[19:13:57] <agaida> jleclanche: there is another bug we should work on urgently - https://github.com/lxde/qtermwidget/issues/50
+[19:14:10] <jleclanche> agaida: noted
+[19:14:36] <agaida> if we could cut out the old part and use upstream for that - i think it would help a lot
+[19:14:50] <jleclanche> agaida: post your thoughts in the bug
+[19:14:50] <intialonso> I must leave now, I have an appointment, Where can I read the meeting logs?
+[19:14:58] <jleclanche> intialonso: I'm going to close the meeting now
+[19:15:29] <jleclanche> alright guys,  stick around for more if you can, stay in the chan if at all possible, but officially we're ending now, we went 15 mins over ;) Logs will be available later on lxqt.org (Ill post them on the mailing list later tonight).
+[19:15:44] <intialonso> Great
+[19:15:52] <intialonso> Have a nice day/night everybody
+[19:15:59] <jleclanche> I'll try to schedule another meeting like this ~6 weeks from now
+[19:16:11] <jleclanche> thanks!
