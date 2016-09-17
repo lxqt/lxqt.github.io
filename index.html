@@ -31,7 +31,8 @@ slug: home
 			</header>
 			<div class="wrapper">
 				<main>
-					{{ post.content }}
+					{{ post.excerpt }}
+                                        <a href="{{ post.url }}">Read more...</a>
 				</main>
 				<footer>{% if post.meta %}<p class="meta">{{ post.meta }}</p>{% endif %}</footer>
 			</div>
