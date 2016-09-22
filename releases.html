@@ -9,7 +9,7 @@ slug: releases
 		<hgroup>
 			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
 		</hgroup>
-		<p class="date"><time datetime="{{ post.date | date: '%F %R' }}">{{ post.date | date: '%R %A, %-d %B, %Y' }}</time></p>
+		<p class="date"><time datetime="{{ post.date | date: '%F %R' }}">{{ post.date | date: '%A, %-d %B, %Y' }}</time></p>
 		{% if post.author %}<p class="author">{{ post.author }}</p>{% endif %}
 	</header>
 	<div class="wrapper">
