@@ -30,7 +30,7 @@ defaults:
         values:
             unrelunimp:
                 - screenshots.html
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 sass:
     sass_dir: styles
