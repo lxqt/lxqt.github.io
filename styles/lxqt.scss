@@ -23,10 +23,9 @@
 	
 	$easing: cubic-bezier(.4,0,.2,1);
 	
-	$zoom: fixed !global;
+	$zoom: zoom !global;
 	$zoom-factor: 1.0 !global;
 	$zoom-factor-min: $zoom-factor !global;
-	$zoom-factor-max: $zoom-factor !global;
 	$zoom-factor-max: auto !global;
 	$fixed-width: false !global;
 	$fixed-height: false !global;
