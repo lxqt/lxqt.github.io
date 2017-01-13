@@ -13,7 +13,7 @@ Further more 0.11.2 lxqt-common and 0.11.3 pcmanfm-qt will be released today.
 Both contain only small but important fixes that justify a point release.
 
 In lxqt-common the dbus handling of startlxqt was fixed, in pcmanfm-qt the painting of
-backgrounds (https://bugreports.qt.io/browse/QTBUG-54384) on hi-res screens.
+backgrounds ([QTBUG-54384](https://bugreports.qt.io/browse/QTBUG-54384)) on hi-res screens.
 
 With these releases we close the 0.11 release cycle and open the one for 0.12. In other
 words: Let's break some things, happy hacking. Planned release goals are listed in 
