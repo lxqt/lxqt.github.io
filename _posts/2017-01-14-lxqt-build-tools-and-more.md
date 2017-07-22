@@ -8,7 +8,7 @@ categories: release
 ---
 
 I would like to announce the 0.3.2 release of lxqt-build-tools. There are no changes 
-in functionality but the package is now arch indipendent and meets the FHS standards.
+in functionality but the package is now arch independent and meets the FHS standards.
 Further more 0.11.2 lxqt-common and 0.11.3 pcmanfm-qt will be released today.
 Both contain only small but important fixes that justify a point release.
 
