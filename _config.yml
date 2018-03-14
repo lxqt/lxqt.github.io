@@ -4,7 +4,7 @@ strapline: The Lightweight Qt Desktop Environment
 description: The Lightweight Qt Desktop Environment
 
 # Settings
-url: 'http://lxqt.org'
+url: 'https://lxqt.org'
 collections:
     downloads:
         output: true
