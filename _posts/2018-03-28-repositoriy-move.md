@@ -20,7 +20,9 @@ $EDITOR .git/config
 url = git@github.com:lxde/$foo
 --> url = git@github.com:lxqt/$foo
 ```
-or use
+
+or use  
+
 ```
 git remote set-url origin git@github.com:lxqt/$foo
 ```
