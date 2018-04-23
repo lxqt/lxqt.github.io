@@ -13,9 +13,9 @@ All components have several improvements and bug fixes beside the new dependency
 Please read the changelogs.
 
 Todays batch contains:
-* [libfm-qt](https://github.com/lxde/libfm-qt/releases)
-* [lximage-qt](https://github.com/lxde/lximage-qt/releases)
-* [pcmanfm-qt](https://github.com/lxde/pcmanfm-qt/releases)
-* [qtermwidget](https://github.com/lxde/qtremwidget/releases)
-* [qterminal](https://github.com/lxde/qterminal/releases)
+* [libfm-qt](https://github.com/lxqt/libfm-qt/releases)
+* [lximage-qt](https://github.com/lxqt/lximage-qt/releases)
+* [pcmanfm-qt](https://github.com/lxqt/pcmanfm-qt/releases)
+* [qtermwidget](https://github.com/lxqt/qtremwidget/releases)
+* [qterminal](https://github.com/lxqt/qterminal/releases)
 

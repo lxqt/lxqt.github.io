@@ -37,7 +37,7 @@
 [18:13:26] <paulolieuthier> i mean for implementations
 [18:13:38] <intialonso> There is a little theming page in the Manjaro wiki
 [18:13:47] <intialonso> But we hyave no official one
-[18:13:53] <jleclanche> https://github.com/lxde/lxqt/wiki/Themes there's this
+[18:13:53] <jleclanche> https://github.com/lxqt/lxqt/wiki/Themes there's this
 [18:14:18] <gilir> jleclanche, I think my contribution to lxqt will be very limited for the next 6 months, I preparing a long term release for lubuntu with lxde on it
 [18:14:38] <intialonso> That need more details, mainly some explain about the custom widgets from the environment
 [18:15:31] <paulolieuthier> our themes are mainly for the panel and runner, right?
@@ -60,7 +60,7 @@
 [18:18:20] <paulolieuthier> inti: i'm not up to date, can you explain?
 [18:19:22] <agaida> jleclanche: i would like to spend a bit of time on qps, qterminal/qtermwidget and some packaging/compatibility things
 [18:19:23] <paulolieuthier> completion of plugin infrastructure
-[18:19:37] <intialonso> Paulo, this: https://github.com/lxde/lxqt/issues/892#issuecomment-156488051
+[18:19:37] <intialonso> Paulo, this: https://github.com/lxqt/lxqt/issues/892#issuecomment-156488051
 [18:19:44] <jleclanche> agaida: I'm +1 on that, and wanted to talk about our 3rd party apps actually here.
 [18:20:46] <gilir> any release date for 0.11 ?
 [18:20:58] <jleclanche> I'm not sure, probably Q1 2016
@@ -107,7 +107,7 @@
 [18:33:25] <jleclanche> Alternatively, if anyone has suggestions or wants to step up to improve documentation and code quality, I'm all ears
 [18:33:42] <paulolieuthier> jleclanche: i don't follow
 [18:33:59] <gilir> pmattern, and yes sorry I know about lubuntu-next bug tracker, I didn't have time to triage it recently
-[18:34:20] <pmattern> jleclanche: To add to your question what should get addressed next I think the way milestone tags are handled on the tracker is very reasonable so they provide a good landmark. Something that badly should get addressed is https://github.com/lxde/lxqt/issues/65.
+[18:34:20] <pmattern> jleclanche: To add to your question what should get addressed next I think the way milestone tags are handled on the tracker is very reasonable so they provide a good landmark. Something that badly should get addressed is https://github.com/lxqt/lxqt/issues/65.
 [18:34:24] <jleclanche> paulolieuthier: I think one of the barriers for newcomers is documentation and code quality, the better they are the easier it is for someone to just dive in.
 [18:34:31] <agaida> hmm - a pain point was and will be abi-changes - so please: If one work in that field, please consider not to break our abi in an incompatible way - it's a real pita for downstream :)
 [18:34:41] <gilir> pmattern, with 0.10 in official repo, I hope people will start to use the official ubuntu bug tracker
@@ -155,7 +155,7 @@
 [18:52:11] <jleclanche> agaida paulolieuthier palinek pmattern luis-pereira gilir phillw, last item on my side, I'd like you all to pick a bug, if possible in the 0.11 milestone, and announce it in the channel ;) if you want to work on something not currently on the tracker, feel free to file one
 [18:52:29] <jleclanche> doesn't have to be a hard one, just any :)
 [18:52:59] <palinek> i'm taking/closing the issues...as they are ariving...
-[18:53:00] <jleclanche> I'll be taking https://github.com/lxde/lxqt/issues/488 from pcman, since he isnt available this month
+[18:53:00] <jleclanche> I'll be taking https://github.com/lxqt/lxqt/issues/488 from pcman, since he isnt available this month
 [18:53:20] <palinek> don't have any special favourite
 [18:53:34] <phillw> jleclanche: your mention of pootle reminded me. Are .po files to be dropped, as I think this would be a nightmare for translators (I saw it mentioned on the ML)
 [18:53:54] <jleclanche> phillw: we don't use po anywhere in lxqt i believe
@@ -180,7 +180,7 @@
 [19:00:44] <jleclanche> I'd like to see us use a better internal-notification system for volume changes
 [19:00:47] <intialonso> Yes
 [19:00:59] <jleclanche> something closer to a slider popup
-[19:01:52] <luis-pereira> I will be taking them as they came. I will work on finishing pending cmake stuff, qtxdg and https://github.com/lxde/lxqt/issues/893
+[19:01:52] <luis-pereira> I will be taking them as they came. I will work on finishing pending cmake stuff, qtxdg and https://github.com/lxqt/lxqt/issues/893
 [19:02:05] <jleclanche> luis-pereira: awesome!
 [19:02:52] <pmattern> israel: LXQt isn't relying on Xfce stuff but is featuring its own daemon already. No need to replace it ,IMO. Maybe not as lean as Dunst but playing much more nicely with all the rest of LXQt.
 [19:03:20] <israel> pmattern oh, ok :)
@@ -221,8 +221,8 @@
 [19:12:27] <jleclanche> agaida gilir: there's two bugs I'd like to see fixed in qterminal. the cjk font support which is horribly broken, and the multipage selection which is broken when scrolling up. I wanted to wait on those before releasing the next qterminal version to be honest
 [19:12:29] <joern_s> +1 agaida
 [19:12:33] <jleclanche> any taker for either of these bugs?
-[19:13:17] <jleclanche> https://github.com/lxde/qterminal/issues/150 this is the cjk issue, the character width calculation is horribly broken
-[19:13:57] <agaida> jleclanche: there is another bug we should work on urgently - https://github.com/lxde/qtermwidget/issues/50
+[19:13:17] <jleclanche> https://github.com/lxqt/qterminal/issues/150 this is the cjk issue, the character width calculation is horribly broken
+[19:13:57] <agaida> jleclanche: there is another bug we should work on urgently - https://github.com/lxqt/qtermwidget/issues/50
 [19:14:10] <jleclanche> agaida: noted
 [19:14:36] <agaida> if we could cut out the old part and use upstream for that - i think it would help a lot
 [19:14:50] <jleclanche> agaida: post your thoughts in the bug
