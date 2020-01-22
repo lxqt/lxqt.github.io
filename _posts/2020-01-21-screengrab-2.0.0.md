@@ -13,6 +13,6 @@ This release opens the 2.0 release cycle. Most of the changes in this release ar
 
 The release can be downloaded from [downloads.lxqt.org](https://downloads.lxqt.org/current.html) or [Github](https://github.com/lxqt/screengrab/releases)
 
-----
+---
 
 [Read the full release notes here](https://forum.lxqt.org/t/release-screengrab-2-0-0/1081)
