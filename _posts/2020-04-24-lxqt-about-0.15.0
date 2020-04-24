@@ -1,0 +1,18 @@
+---
+layout: post
+title: Release lxqt-about 0.15.0
+slug: lxqt-about-0-15-0
+date: 2020-04-24
+promoted: true
+categories: release
+---
+The LXQt team is proud to announce the release of lxqt-about 0.15.0
+The release can be downloaded from [Github](https://github.com/lxqt/lxqt-about/releases)
+
+Main changes:
+
+ * Bumped the version
+ * Added translations
+ * Code cleanups.
+
+A full list of changes is in the CHANGELOG file.
