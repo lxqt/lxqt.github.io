@@ -1,0 +1,25 @@
+---
+layout: post
+title: Release lximage-qt 0.15.0
+slug: lximage-qt-0-15-0
+date: 2020-04-23
+promoted: true
+categories: release
+---
+The LXQt team is proud to announce the release of lximage-qt 0.15.0
+The release can be downloaded from [Github](https://github.com/lxqt/lximage-qt/releases)
+
+Main changes:
+
+ * Added "Open With..." to File menu.
+ * Added shortcut editor to Preferences.
+ * Optionally show image outline.
+ * Made maximum number of recent files configurable.
+ * Keep zooming state on switching image.
+ * Support uploading of unsaved images.
+ * Jump forward when the image is deleted/renamed.
+ * No auto-selection in thumbnail view.
+ * Added command-line option to take a screenshot and save it to the directory  without showing the GUI.
+ * Several fixes.
+
+A full list of changes is in the CHANGELOG file.
