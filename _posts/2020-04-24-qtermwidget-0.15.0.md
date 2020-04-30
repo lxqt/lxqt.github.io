@@ -6,8 +6,8 @@ date: 2020-04-24
 promoted: true
 categories: release
 ---
-The LXQt team is proud to announce the release of qtermwidget 0.15.0
-The release can be downloaded from [Github](https://github.com/lxqt/qtermwidget/releases)
+The LXQt team is proud to announce the release of qtermwidget 0.15.0.
+The release can be downloaded from [Github](https://github.com/lxqt/qtermwidget/releases).
 
 Main changes:
 
@@ -26,5 +26,6 @@ Main changes:
  * Fixed build with LLVM/clang.
  * Several fixes.
  * Bumped the version.
+
 
 A full list of changes is in the CHANGELOG file.
