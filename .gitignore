@@ -24,3 +24,6 @@ _site
 
 # Sass cache
 .sass-cache
+
+# Installed gems snapshot
+Gemfile.lock
