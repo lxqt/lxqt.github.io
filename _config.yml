@@ -4,7 +4,7 @@ strapline: The Lightweight Qt Desktop Environment
 description: The Lightweight Qt Desktop Environment
 
 # Settings
-url: 'https://lxqt.org'
+url: 'https://lxqt.github.io'
 collections:
     downloads:
         output: true
@@ -30,9 +30,17 @@ defaults:
         values:
             unrelunimp:
                 - screenshots.html
-highlighter: rouge
-markdown: kramdown
+theme: null
+encoding: 'utf-8'
+kramdown:
+    input: GFM
+    hard_wrap: false
 sass:
     sass_dir: styles
-    style: :compressed
+    style: compressed
 permalink: pretty
+exclude:
+  - LICENSE
+  - README.md
+  - Gemfile
+  - Gemfile.lock
