@@ -6,24 +6,24 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
          <title>{% if page.title %}{{ page.title}} | {{ site.title }}{% else %}{{ site.title }} - {{ site.strapline }}{% endif %}</title>
          <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
-         <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}"/>
-         <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml"/>
-         <link type="text/css" href="/styles/lxqt.css" rel="stylesheet"/>
-         <link rel="shortcut icon" href="/images/favicon.png" type="image/png"/>
-         <script type="text/javascript" src="/scripts/@module.js"></script>
-         <script type="text/javascript" src="/scripts/lxqt.js"></script>
+         <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}"/>
+         <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}"/>
+         <link type="text/css" href="{{ '/styles/lxqt.css' | relative_url }}" rel="stylesheet"/>
+         <link rel="shortcut icon" href="{{ '/images/favicon.png' | relative_url }}" type="image/png"/>
+         <script type="text/javascript" src="{{ '/scripts/@module.js' | relative_url }}"></script>
+         <script type="text/javascript" src="{{ '/scripts/lxqt.js' | relative_url }}"></script>
     </head>
     <body id="org-lxqt" data-columns="2" itemscope itemtype="http://schema.org/Organization">
         <header id="intro">
             <hgroup id="heading">
                 <h1 itemprop="brand" itemscope itemtype="http://schema.org/Brand">
-                    <a href="{{ site.url }}" itemprop="url">
+                    <a href="{{ '/' | absolute_url }}" itemprop="url">
                         <img src="/images/lxqt-white.png" title="{{ site.title }}" alt="{{ site.title }}" itemprop="logo"/>
                         <span itemprop="name">{{ site.title }}</span>
 		    </a>
                 </h1>
             </hgroup>
-            <p class="button action"><button data-action="state.toggle" data-target="#nav"><img src="/images/webapp-icon-action-menu.svg"/></button></p>
+            <p class="button action"><button data-action="state.toggle" data-target="#nav"><img src="{{ '/images/webapp-icon-action-menu.svg' | relative_url }}"/></button></p>
             <p class="strapline"><strong><span>{{ site.strapline }}</span></strong></p>
             <nav id="nav" data-state="inert">
                 <header>
@@ -34,13 +34,13 @@
                 <div class="wrapper">
                     <main>
                         <ul>
-                            <li><p><a href="/about/">About</a></p></li>
-                            <!--<li><p><a href="https://blog.lxqt.org">Blog</a></p></li>-->
-                            <!--<li><p><a href="https://forum.lxqt.org">Forum</a></p></li>-->
-                            <li><p><a href="/releases/">Releases</a></p></li>
-                            <li><p><a href="/downloads/">Downloads</a></p></li>
-                            <li><p><a href="/screenshots/">Screenshots</a></p></li>
-                            <li><p><a href="https://translate.lxqt-project.org">Translations</a></p></li>
+                            <li><p><a href="{{ '/about/' | relative_url }}">About</a></p></li>
+                            <!--<li><p><a href="{{ site.url | replace_first: 'https://','https://blog.' | replace_first: 'http://','http://blog.' }}">Blog</a></p></li>-->
+                            <!--<li><p><a href="{{ site.url | replace_first: 'https://','https://forum.' | replace_first: 'http://','http://forum.' }}">Forum</a></p></li>-->
+                            <li><p><a href="{{ '/releases/' | relative_url }}">Releases</a></p></li>
+                            <li><p><a href="{{ '/downloads/' | relative_url }}">Downloads</a></p></li>
+                            <li><p><a href="{{ '/screenshots/' | relative_url }}">Screenshots</a></p></li>
+                            <li><p><a href="{{ site.url | replace_first: 'https://','https://translate.' | replace_first: 'http://','http://translate.' }}">Translations</a></p></li>
                             <li><p><a href="https://github.com/lxqt/lxqt/blob/master/CONTRIBUTING.md">Contribute</a></p></li>
                         </ul>
                     </main>

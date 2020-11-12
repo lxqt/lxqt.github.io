@@ -9,7 +9,7 @@ layout: default
 	</header>
 	<div class="wrapper">
 		<main>
-			<a href="{{page.src}}"><img src="{{ page.src }}" alt="{{ page.alt }}"/></a>
+			<a href="{{ page.src | relative_url }}"><img src="{{ page.src | relative_url }}" alt="{{ page.alt }}"/></a>
 		</main>
 		<footer>{{ post.caption }}</footer>
 	</div>

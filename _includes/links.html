@@ -56,7 +56,7 @@
                     <p>Feed RSS</p>
                 </dt>
                 <dd>
-                    <p><a href="https://lxqt.github.io/feed">https://lxqt.github.io/feed</a></p>
+                    <p><a href="{{ '/feed.xml' | absolute_url }}">{{ '/feed.xml' | absolute_url | replace_first: 'https://','' | replace_first: 'http://','' }}</a></p>
                 </dd>
             </dl>
         </main>
