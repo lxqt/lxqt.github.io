@@ -6,38 +6,38 @@ description: The Lightweight Qt Desktop Environment
 # Settings
 url: 'https://lxqt-project.org/'
 collections:
-    downloads:
-        output: true
-        permalink: /downloads/:path/
-    screenshots:
-        output: true
-        permalink: /screenshots/:path/
+  downloads:
+    output: true
+    permalink: /downloads/:path/
+  screenshots:
+    output: true
+    permalink: /screenshots/:path/
 defaults:
-    -
-        scope:
-            path: ''
-        values:
-            unrelimp: null
-            relimp: null
-            relunimp: null
-            unrelunimp:
-                - links.html
-                - downloads.html
-    -
-        scope:
-            path: ''
-            type: downloads
-        values:
-            unrelunimp:
-                - screenshots.html
+  -
+    scope:
+      path: ''
+    values:
+      unrelimp: null
+      relimp: null
+      relunimp: null
+      unrelunimp:
+        - links.html
+        - downloads.html
+  -
+    scope:
+      path: ''
+      type: downloads
+    values:
+      unrelunimp:
+        - screenshots.html
 theme: null
 encoding: 'utf-8'
 kramdown:
-    input: GFM
-    hard_wrap: false
+  input: GFM
+  hard_wrap: false
 sass:
-    sass_dir: styles
-    style: compressed
+  sass_dir: styles
+  style: compressed
 permalink: pretty
 exclude:
   - CNAME
