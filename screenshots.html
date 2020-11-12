@@ -6,7 +6,7 @@ slug: screenshots
 <ol>
 {% for screenshot in site.screenshots %}{% if screenshot.promoted %}
 	<li>
-		<a href="{{ screenshot.url }}" title="{{ screenshot.title }}">
+		<a href="{{ screenshot.url | relative_url }}" title="{{ screenshot.title }}">
 			<figure>
 				<header>
 					<hgroup>
@@ -15,7 +15,7 @@ slug: screenshots
 				</header>
 				<div class="wrapper">
 					<main>
-						<img src="{{ screenshot.src }}" alt="{{ screenshot.alt }}"/>
+						<img src="{{ screenshot.src | relative_url }}" alt="{{ screenshot.alt }}"/>
 					</main>
 					<footer>{{ screenshot.caption }}</footer>
 				</div>

@@ -4,7 +4,7 @@ slug: home
 ---
 <ol id="article-{{ page.slug }}_preview">{% for screenshot in site.screenshots limit:5 %}{% if screenshot.promoted %}
 	<li data-state="inert">
-		<a href="{{ screenshot.url }}" title="{{ screenshot.title }}">
+		<a href="{{ screenshot.url | relative_url }}" title="{{ screenshot.title }}">
 			<figure id="article-{{ page.slug }}_preview_{{ screenshot.slug }}" data-action="state.shift.up" data-state="none">
 				<header>
 					<hgroup>
@@ -13,7 +13,7 @@ slug: home
 				</header>
 				<div class="wrapper">
 					<main>
-						<img src="{{ screenshot.src }}" alt="{{ screenshot.alt }}"/>
+						<img src="{{ screenshot.src | relative_url }}" alt="{{ screenshot.alt }}"/>
 					</main>
 				</div>
 			</figure>
@@ -26,13 +26,13 @@ slug: home
 		<article id="article-{{ post.slug }}" class="post">
 			<header>
 				<hgroup>
-					<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+					<h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
 				</hgroup>
 			</header>
 			<div class="wrapper">
 				<main>
 					{{ post.excerpt }}
-                                        <a href="{{ post.url }}">Read more...</a>
+                                        <a href="{{ post.url | relative_url }}">Read more...</a>
 				</main>
 				<footer>{% if post.meta %}<p class="meta">{{ post.meta }}</p>{% endif %}</footer>
 			</div>
