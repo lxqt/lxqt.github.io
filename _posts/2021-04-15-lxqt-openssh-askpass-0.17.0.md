@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-openssh-askpass 0.17.0
 slug: lxqt-openssh-askpass-0-17-0
-date: Apr 17, 2021, 11:49:07
+date: Apr 15, 2021, 11:49:07
 promoted: true
 categories: release
 ---
