@@ -12,14 +12,14 @@
 {
 	// Do stuff once
 	
-	$col-lxqt-blue-light: #41A0CB !global;
-	$col-lxqt-blue: #0280B9 !global;
-	$col-lxqt-blue-dark: #02608B !global;
-	$col-lxqt-blue-black-light: #01405D !global;
-	$col-lxqt-blue-black: #013046 !global;
-	$col-lxqt-blue-black-dark: #01202F !global;
-	$col-lxqt-grey-light: #888 !global;
-	$col-lxqt-grey: #222 !global;
+	$col-lxqt-blue-light: #639fff !global;
+	$col-lxqt-blue: #2790db !global;
+	$col-lxqt-blue-dark: #18378c !global;
+	$col-lxqt-blue-black-light: #3150a3 !global;
+	$col-lxqt-blue-black: #294389 !global;
+	$col-lxqt-blue-black-dark: #294389 !global;
+	$col-lxqt-grey-light: #3150a3 !global;
+	$col-lxqt-grey: #132b6e !global;
 	
 	$easing: cubic-bezier(.4,0,.2,1);
 	
@@ -34,8 +34,8 @@
 	$font-weight: 300 !global;
 	$font-size: 1em !global;
 	$letter-spacing: 0 !global;
-	$color: $col-white !global;
-	$background-color: $col-lxqt-blue-black !global;
+	$color: #FFF !global;
+	$background-color: #FFF !global;
 	$link-color: $col-lxqt-blue-light !global;
 	$link-unvisited-color: $link-color !global;
 	$link-visited-color: $link-color !global;
@@ -91,9 +91,9 @@
 	h5,
 	h6
 	{
-		font-weight: 200;
+		font-weight: 250;
 		text-transform: capitalize;
-		color: #0192D3;
+		color: #12c0ff;
 	}
 	
 	// Intro
@@ -102,7 +102,7 @@
 		position: static;
 		
 		color: #FFF;
-		background-color: #0280B9;
+		background-color: #2790db;
 		box-shadow: 0 0 1em 0 rgba(#000,0.5);
 		
 		> #heading
@@ -113,11 +113,11 @@
 			border-right: 0.25em solid #FFF;
 			
 			background-color: $col-lxqt-grey;
-			opacity: 1;
+			opacity: 10;
 			
 			> h1
 			{
-				margin: 0;
+				margin: 1;
 				
 				> a,
 				> a > img
@@ -152,7 +152,7 @@
 				{
 					display: table-cell;
 					vertical-align: middle;
-					text-shadow: rgba(#000, 0.75) 1px 1px 5px;
+					text-shadow: rgba(#FFF, 0.75) 1px 1px 5px;
 				}
 			}
 		}
@@ -286,7 +286,7 @@
 		{
 			font-weight: 400;
 			
-			color: $col-lxqt-blue;
+			color: #26a7fc;
 		}
 	}
 	
@@ -317,7 +317,7 @@
 							
 							font-size: 0.875em;
 							
-							color: $col-lxqt-grey-light;
+							color: #26a7fc;
 						}
 					}
 				}
@@ -368,7 +368,7 @@
 									{
 										margin: 0;
 										
-										font-size: 0.875em;
+										font-size: 0.9em;
 										font-weight: 400;
 										
 										color: $col-white;
@@ -428,7 +428,7 @@
 		padding: 0 1rem;
 		border-top: 1px solid lighten($col-lxqt-grey, 4);
 		
-		font-size: 0.875em;
+		font-size: 0.9em;
 		
 		background-color: $col-lxqt-grey;
 		
@@ -518,7 +518,7 @@
 									{
 										margin: 0;
 										
-										font-size: 0.875em;
+										font-size: 0.9em;
 										font-weight: 400;
 										
 										color: $col-white;
@@ -563,7 +563,7 @@
 		{
 			font-weight: 400;
 			
-			color: $col-lxqt-blue;
+			color: #26a7fc;
 		}
 	}
 	
