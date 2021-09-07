@@ -44,7 +44,7 @@
 	$focus-outline: transparent dotted 0 !global;
 	$target-outline: transparent dotted 0 !global;
 	$selected-color: lighten(invert($background-color), 10%) !global;
-	$selected-background-color: $color !global;
+	$selected-background-color: $link-color !global;
 	$use-rem: true;
 	
 	@include Web();
