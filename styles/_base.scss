@@ -235,6 +235,12 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	{
 		list-style-type: none;
 	}
+	#content ul {
+   		list-style: disc;
+	}
+	#content li {
+    		margin-top: 3px;
+	}
 	ol
 	{
 		
