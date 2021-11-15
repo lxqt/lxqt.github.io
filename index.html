@@ -2,7 +2,7 @@
 layout: page
 slug: home
 ---
-<ol id="article-{{ page.slug }}_preview">{% for screenshot in site.screenshots limit:5 %}{% if screenshot.promoted %}
+<ol id="article-{{ page.slug }}_preview">{% for screenshot in site.screenshots limit:9 %}{% if screenshot.promoted %}
 	<li data-state="inert">
 		<a href="{{ screenshot.url | relative_url }}" title="{{ screenshot.title }}">
 			<figure id="article-{{ page.slug }}_preview_{{ screenshot.slug }}" data-action="state.shift.up" data-state="none">
