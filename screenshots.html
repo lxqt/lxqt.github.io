@@ -31,4 +31,54 @@ slug: screenshots
 		</a>
 	</li>{% endif %}
 {% endfor %}
+</ol><hr>
+<div><h2>Application Screenshots</h2>
+<center><p> Filemanager PcManFM-Qt </p></center>
+</div>
+<ol>
+{% for screenshot in site.screenshots %}{% if screenshot.pcmanfm-qt %}
+	<li>
+		<a href="{{ screenshot.url | relative_url }}" title="{{ screenshot.title }}">
+			<figure>
+				<header>
+					<hgroup>
+						<h1>{{ screenshot.title }}</h1>
+					</hgroup>
+				</header>
+				<div class="wrapper">
+					<main>
+						<img src="{{ screenshot.src | relative_url }}" alt="{{ screenshot.alt }}"/>
+					</main>
+					<footer>{{ screenshot.caption }}</footer>
+				</div>
+			</figure>
+		</a>
+	</li>{% endif %}
+{% endfor %}
 </ol>
+<div>
+<br/>
+<center><p>Other Applications</p></center>
+</div>
+<ol>
+{% for screenshot in site.screenshots %}{% if screenshot.other %}
+	<li>
+		<a href="{{ screenshot.url | relative_url }}" title="{{ screenshot.title }}">
+			<figure>
+				<header>
+					<hgroup>
+						<h1>{{ screenshot.title }}</h1>
+					</hgroup>
+				</header>
+				<div class="wrapper">
+					<main>
+						<img src="{{ screenshot.src | relative_url }}" alt="{{ screenshot.alt }}"/>
+					</main>
+					<footer>{{ screenshot.caption }}</footer>
+				</div>
+			</figure>
+		</a>
+	</li>{% endif %}
+{% endfor %}
+</ol>
+
