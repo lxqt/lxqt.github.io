@@ -21,7 +21,7 @@ slug: home
 	</li>{% endif %}
 {% endfor %}
 </ol>
-{% for post in site.posts limit:3 %}
+{% for post in site.posts limit:5 %}
 	{% if post.promoted %}
 		<article id="article-{{ post.slug }}" class="post">
 			<header>
