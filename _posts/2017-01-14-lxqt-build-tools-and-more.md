@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 0.3.2 release of lxqt-build-tools and more
+title: Release of lxqt-build-tools 0.3.2 and more
 slug: 0.3.2-release-lxqt-build-tools-and-more
 date: 2017-01-14
 promoted: true

@@ -4,7 +4,7 @@ title: Repository move finished
 slug: repository-move-finished
 date: 2018-03-28
 promoted: true
-categories: release
+categories: archived
 ---
 
 After a short discussion we decided to move our repositories from gh/lxde to

@@ -4,7 +4,7 @@ title: We're moving IRC channels!
 slug: moving-to-oftc
 date: 2018-07-26
 promoted: true
-categories: release
+categories: archived
 ---
 
 The LXQt team is moving our IRC presence!

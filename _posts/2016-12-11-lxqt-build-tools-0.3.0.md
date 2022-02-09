@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing lxqt-build-tools, corresponding point releases
+title: Release lxqt-build-tools 0.3.0, corresponding point releases
 slug: introducing-lxqt-build-tools
 date: 2016-12-10
 promoted: true
