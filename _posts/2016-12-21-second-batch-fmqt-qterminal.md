@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Second batch of point releases, introducing lxqt-build-tools
+title: Second batch of point releases
 slug: second-batch-introducing-lxqt-build-tools
 date: 2016-12-21
 promoted: true
