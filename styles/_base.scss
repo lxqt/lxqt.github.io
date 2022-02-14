@@ -239,7 +239,8 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
    		list-style: disc;
 	}
 	#content li {
-    		margin-top: 3px;
+		margin-top: 3px;
+		margin-bottom: 3px;
 	}
 	ol
 	{
@@ -556,6 +557,14 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		max-height: 100%;
 		margin: auto;
 	}
+	#content img //blog posts
+	{
+		 margin: 20px 0;
+	}
+	#article-screenshots img //do not apply above in screenshots
+	{
+	margin: 0;
+	}
 
 	// Phrasing flow
 	h1,
@@ -574,6 +583,11 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		font-size: inherit;
 		font-style: inherit;
 		font-weight: inherit;
+	}
+	#content h3
+	{
+		text-indent: 20px;
+		margin-top: 20px;
 	}
 	th > p:last-child,
 	td > p:last-child,
