@@ -9,7 +9,7 @@
 )
 {
 	// Do stuff once
-	
+
 }
 
 // Global variables (with defaults)
@@ -85,7 +85,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		min-zoom: $zoom-factor-min;
 		max-zoom: $zoom-factor-max;
 	}
-	
+
 	// HTML viewport
 	:root,
 	html
@@ -95,9 +95,9 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		min-width: 0;
 		min-height: 100%;
 		margin: 0;
-		padding: 0; 
+		padding: 0;
 		border: none;
-		
+
 		font: $font-style $font-variant $font-weight #{$font-size}/#{$line-height} $font-family;
 		direction: ltr;
 		letter-spacing: $letter-spacing;
@@ -110,10 +110,10 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		word-spacing: normal;
 		-webkit-text-size-adjust: none;	// #Note: Don't allow changing text-size independently of layout, as it will break layouts and is never required.
 		-webkit-font-smoothing: subpixel-antialiased;
-		
+
 		color: $color;
 		background-color: $background-color;
-		
+
 		-ms-overflow-style: scrollbar;	// #Note: Disable overlayed scrollbars in Trident/6+
 		-ms-scroll-chaining: none;	// #Note: Disable overflow scroll
 		@if ($zoom != zoom)
@@ -122,14 +122,14 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 			-ms-touch-action: none;	// #Note: Disables special touch behaviours (IE10)
 			touch-action: none;	// #Note: Disables special touch behaviours
 		}
-		
+
 		// - Debug
 		@if ($debug)
 		{
 			background-image: url($line-space-grid);
 		}
 	}
-	
+
 	// Sectioning flow
 	body,
 	article,
@@ -147,7 +147,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 			// #Workaround: Change 'auto' to 'hidden'.
 		//overflow: auto;
 		overflow: hidden;
-		
+
 		//	#Bug:[UNRESOLVED:WORKAROUND]
 			//	[Blink/*] [Webkit/*] Hardware transforms disable subpixel-antiliasing during animation, causing visual changes and rounding issues in unrelated areas of a composite layer.
 			// #Workaround: Preemptively force separate composite layers for each context. Causes contents to be anti-aliased instead.
@@ -170,7 +170,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	{
 		counter-increment: figure;	// #Note: Track the number of figures in the content
 	}
-	
+
 	// Dividing and Grouping flow
 	div, // .wrapper, .divider, .group, .p
 	dl,
@@ -187,14 +187,14 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	hgroup,
 	figcaption,
 	a,
-	blockquote,
+	//blockquote,
 	pre,
 	address
 	{
 		display: block;
 		margin: 0;
 		padding: 0;
-		
+
 		font-size: inherit;
 		font-style: inherit;
 	}
@@ -220,7 +220,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	dl
 	{
 		margin-bottom: $line-space;
-		
+
 		list-style-type: none;
 	}
 	div.p > dl,
@@ -239,17 +239,18 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
    		list-style: disc;
 	}
 	#content li {
-    		margin-top: 3px;
+		margin-top: 3px;
+		margin-bottom: 3px;
 	}
 	ol
 	{
-		
+
 		counter-reset: ol;
 	}
 	div.group
 	{
 		overflow: hidden;
-		
+
 		list-style-type: none;
 	}
 	dt,
@@ -258,13 +259,13 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	menuitem
 	{
 		display: list-item;
-		
+
 		text-indent: 0;
 	}
 	menuitem
 	{
 		cursor: pointer;
-		
+
 		&[icon]::before
 		{
 			content: url(attr(icon));
@@ -285,7 +286,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	dl.compact > dd > *
 	{
 		display: inline-block;
-		
+
 		vertical-align: top;
 	}
 	dl.compact > dd + dt::before
@@ -317,7 +318,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	ol > li > :first-child > :first-child > p:first-child
 	{
 		padding-left: $indent * 1;
-		
+
 		text-indent: $indent * -1;
 	}
 	ol > li li > p:first-child,
@@ -325,7 +326,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	ol > li li > :first-child > :first-child > p:first-child
 	{
 		padding-left: $indent * 2.15;
-		
+
 		text-indent: $indent * -2.15;
 	}
 	ol > li li li > p:first-child,
@@ -333,7 +334,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	ol > li li li > :first-child > :first-child > p:first-child
 	{
 		padding-left: $indent * 3.3;
-		
+
 		text-indent: $indent * -3.3;
 	}
 	ol > li > p:first-child::before,
@@ -368,7 +369,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	ul > li > p
 	{
 		padding-left: $indent;
-		
+
 		text-indent: $indent * -1;
 	}
 	ul > li > p:before
@@ -383,15 +384,15 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		border-color: transparent;
 		line-height: inherit;
 		vertical-align: inherit;
-		
+
 		text-decoration: none;
-		
+
 		color: $link-color;
 		background-color: transparent;
 		outline-width: 0;
-		
+
 		cursor: pointer;
-		
+
 		&:not(:disabled):link
 		{
 			color: $link-unvisited-color;
@@ -437,9 +438,9 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	}
 	blockquote
 	{
+		font-style: italic;
 	}
-	// #Note: Add stylish quote marks to blockquotes
-	blockquote::before,
+	// #Note: Add stylish quote marks to blockquotes Note2: looks not working well
 	blockquote::after
 	{
 		position: absolute;
@@ -449,7 +450,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		margin: 0;
 		padding: 0;
 		z-index: 1;
-		
+
 		text-align: center;
 		font-size: 3em;	// #Note: 33pt (~44px)
 		font-family: 'Times New Roman', Serif;
@@ -516,7 +517,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		padding: 0.25em;
 		border: 1px solid lighten($color,20%);
 		border: 1px solid rgba($color,0.2);
-		
+
 		text-align: left;
 		vertical-align: text-top;
 	}
@@ -536,27 +537,35 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		padding: $padding;
 		border: 1px solid $color;
 		vertical-align: text-top;
-		
+
 		text-align: left;
-		
+
 		&:empty
 		{
 			display: none;
 		}
 	}
-	
+
 	// Embedded flow
 	img
 	{
 		display: block;
-		width: auto;
+		//width: auto; display images in blog in their size
 		max-width: 100%;
 		// min-width: 21rem;
 		height: auto;
 		max-height: 100%;
 		margin: auto;
 	}
-	
+	#content img //blog posts
+	{
+		 margin: 20px 0;
+	}
+	#article-screenshots img //do not apply above in screenshots
+	{
+	margin: 0;
+	}
+
 	// Phrasing flow
 	h1,
 	h2,
@@ -570,10 +579,15 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		display: block;
 		margin: 0 0 $line-space 0;
 		padding: 0;
-		
+
 		font-size: inherit;
 		font-style: inherit;
 		font-weight: inherit;
+	}
+	#content h3
+	{
+		text-indent: 20px;
+		margin-top: 20px;
 	}
 	th > p:last-child,
 	td > p:last-child,
@@ -622,13 +636,13 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	h6
 	{
 		margin: 0;
-		
+
 		&:last-child:not(:empty)
 		{
 			margin-bottom: $margin;
 		}
 	}
-	
+
 	$heading-ratio: 1.6180339887498948482045868343656;
 	h1
 	{
@@ -708,14 +722,14 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	article.quote > div.wrapper > footer > p.cite::before,
 	figure.quote > div.wrapper > footer > p.cite::before
 	{
-		content: '— ';
+		content: '— ';
 	}
 	article.code pre > p > code,
 	figure.code pre > p > code
 	{
 		overflow: auto;
 	}
-	
+
 	// Phrased flow
 	p img,
 	li img,
@@ -744,7 +758,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 				// #Workaround: Disable setting content to "\A" as it's supposed to be.
 		//content: "\A";
 		white-space: pre-line;
-		
+
 		&::before,
 		&::after
 		{
@@ -772,12 +786,12 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		margin: 0;
 		padding: 0;
 		@include box-sizing();
-		
+
 		font: inherit;
 		letter-spacing: inherit;
 		text-transform: inherit;
 		word-spacing: inherit;
-		
+
 		color: inherit;
 		background-color: transparent;
 	}
@@ -800,7 +814,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	{
 		outline-width: 0;
 	}
-	
+
 	// Phrasing
 	span,
 	i,
@@ -842,10 +856,10 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		padding: 0;
 		border: none;
 		outline: none;
-		
+
 		color: inherit;
 		background: none;
-		
+
 		font-family: inherit;
 		font-size: inherit;
 		font-style: inherit;
@@ -875,7 +889,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	article section h1 > span::before,
 	article aside h1 > span::before
 	{
-		content: counters(section, '.') '. ';
+		content: counters(section, '.') '. ';
 	}
 	article figure h1 > span::before
 	{
@@ -910,7 +924,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	{
 		font-size: inherit;
 	}
-	
+
 	em,	// #Note: Spoken emphasis
 	em.alt,	// #Note: Alternative meaning
 	i.proper-noun.title,	// #Note: Works or position title
@@ -925,7 +939,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	{
 		font-style: italic;
 	}
-	
+
 	b,	// #Note: ???
 	strong,	// #Note: Local importance
 	dt,	// #Note: Defined term
@@ -1023,10 +1037,10 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		text-transform: lowercase;
 	}
 	h1:lang(en-US),	// #Note: Headings
-	h2:lang(en-US), 
-	h3:lang(en-US), 
+	h2:lang(en-US),
+	h3:lang(en-US),
 	h4:lang(en-US),
-	h5:lang(en-US), 
+	h5:lang(en-US),
 	h6:lang(en-US),
 	i.proper-noun:lang(en-US),	// #Note: Proper noun
 	i.proper-noun.title,	// #Note: Works or position title
@@ -1044,7 +1058,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	u
 	{
 		text-decoration: underline;
-		
+
 		&.overline
 		{
 			text-decoration: overline;
@@ -1107,7 +1121,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	{
 		quotes: '“' '”' '‘' '’';
 	}
-	
+
 	blockquote::before,
 	q::before,
 	i.proper-noun.name.alias::before//,
@@ -1132,7 +1146,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	{
 		content: ']';
 	}
-	
+
 	// Miscellaneous
 	[id]:target
 	{
@@ -1175,17 +1189,17 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 @mixin Base_key-icon($type,$key-color)
 {
 	$key-color: $color !default;
-	
+
 	display: inline-block;
-	
+
 	line-height: 1;
 	text-align: center;
-	
+
 	@if $type == square
 	{
 		width: 1.2em;
 		height: 1.2em;
-		
+
 		background-color: $key-color;
 	}
 	@else if $type == disc
@@ -1193,7 +1207,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 		width: 0.767em;
 		height: 0.767em;
 		border-radius: 50%;
-		
+
 		background-color: $key-color;
 	}
 	@else if $type == triangle
@@ -1365,7 +1379,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 	$moz: ();
 	$ms: ();
 	$spec: ();
-	
+
 	@each $list in $args
 	{
 		// Multiple transitions
@@ -1377,11 +1391,11 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 			$list-moz: -moz-transform;
 			$list-ms: -ms-transform;
 			$list-spec: ();
-			
+
 			@each $var in $list
 			{
 				$list-spec: join($list-spec, $var);
-			
+
 				@if $var != transform
 				{
 					$list-webkit: join($list-webkit, $var);
@@ -1389,7 +1403,7 @@ $highlight-color: #EF0 !global;	// #Note: Default yellow-green for highlight col
 					$list-ms: join($list-ms, $var);
 				}
 			}
-			
+
 			$webkit: append($webkit, $list-webkit);
 			$moz: append($moz, $list-moz);
 			$ms: append($ms, $list-ms);
