@@ -7,14 +7,14 @@ promoted: true
 categories: blog
 ---
 
-QTerminal had always had a quite unique "bookmarks" feature but the setup was not quite intuitive: the file had
-to be created first, it had a hardcoded section containing not very useful bookmarks, filtering never worked
- and so on. Probably few users used it, as some issue never were reported.
- Now - among many other bugfixes in QTerminal and his dropdown twin -
+QTerminal had always had a quite unique "bookmarks" feature but the setup was not very intuitive: the file had
+to be created first, it had a hardcoded section containing not very useful bookmarks, filtering was not working
+ and so on. Probably few users used it, as some issue were never reported.
+ Now - among many other bugfixes in QTerminal and its dropdown twin -
  we dedicated some time to make this feature more attractive and usable to users.
 
- It can be used in a similar way as <code>~/.bash_aliases</code> - a real easy way to use
-  longer commands or hard ones to remember. Commands can be ordered in groups.
+ It can be used in a similar way as <code>~/.bash_aliases</code> - a really easy way to use
+ longer commands or those that are hard to remember. Commands can be ordered in groups.
 
  Some screenshots with the [Example file](https://github.com/lxqt/qterminal/blob/master/qterminal_bookmarks_example.xml):
 
