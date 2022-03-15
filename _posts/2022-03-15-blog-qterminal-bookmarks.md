@@ -2,7 +2,7 @@
 layout: post
 title: QTerminal Bookmarks reloaded
 slug: qterminal-bookmarks-reloaded
-date: mar 15, 2022, 14:54:49
+date: mar 15, 2022, 04:54:49
 promoted: true
 categories: blog
 ---
@@ -10,6 +10,7 @@ categories: blog
 QTerminal had always had a quite unique "bookmarks" feature but the setup was not very intuitive: the file had
 to be created first, it had a hardcoded section containing not very useful bookmarks, filtering was not working
  and so on. Probably few users used it, as some issue were never reported.
+
  Now - among many other bugfixes in QTerminal and its dropdown twin -
  we dedicated some time to make this feature more attractive and usable to users.
 
