@@ -19,6 +19,7 @@ unrelunimp:
 	<div class="wrapper">
 		<main>
 			{{ post.excerpt }}
+			<a href="{{ post.url | relative_url }}">Continue reading ...</a>
 		</main>
 		<footer>{% if post.meta %}<p>{{ post.meta }}</p>{% endif %}</footer>
 	</div>
