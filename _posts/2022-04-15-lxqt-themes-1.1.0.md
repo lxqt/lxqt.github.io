@@ -17,10 +17,12 @@ Main changes:
  * Added palettes matching some themes.
  * Removed colorpicker styling.
  * Fixed/improved quicklaunch placeholder styling.
- * Circumvented the problems of Qt stylesheet in kvantum theme.
+ * Circumvented the problems of Qt stylesheet in `Kvantum` theme.
  * Added Valendas theme.
  * Added missing menu arrows for RTL as well as selected menu arrows.
- * Fixed the top bars and corrected some file names in KDE-Plasma theme.
+ * Fixed the top bars and corrected some file names in `KDE-Plasma` theme.
+
+ **Note**: Users of the `KDE-Plasma` theme have to reselect it due to the changed name.
 
 <br/>
 A full list of changes is in the CHANGELOG file.
