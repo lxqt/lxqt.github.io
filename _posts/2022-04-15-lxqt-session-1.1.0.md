@@ -15,7 +15,7 @@ Main changes:
  * Add NetBSD support.
  * Fixed typos in procreaper warning messages.
  * Added an option for global screen scaling.
- * Changed default icon theme to Breeze .
+ * Changed default icon theme to Breeze.
  * Prevented cut text in header of Environment page.
  * Set Clearlooks as the default LXQt theme.
 
