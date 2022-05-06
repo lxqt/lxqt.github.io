@@ -11,7 +11,7 @@
 )
 {
 	// Do stuff once
-	
+
 	$col-lxqt-blue-light: #41A0CB !global;
 	$col-lxqt-blue: #0280B9 !global;
 	$col-lxqt-blue-dark: #02608B !global;
@@ -20,9 +20,9 @@
 	$col-lxqt-blue-black-dark: #01202F !global;
 	$col-lxqt-grey-light: #888 !global;
 	$col-lxqt-grey: #222 !global;
-	
+
 	$easing: cubic-bezier(.4,0,.2,1);
-	
+
 	$zoom: zoom !global;
 	$zoom-factor: 1.0 !global;
 	$zoom-factor-min: $zoom-factor !global;
@@ -46,11 +46,11 @@
 	$selected-color: lighten(invert($background-color), 10%) !global;
 	$selected-background-color: $link-color !global;
 	$use-rem: true;
-	
+
 	@include Web();
-	
+
 	// LXQt
-	
+
 	// Contexts
 	article,
 	aside,
@@ -58,17 +58,17 @@
 	{
 		padding: 1rem;
 	}
-	
+
 	// Wrappers
 	html
 	{
 		overflow: auto;
-		
+
 		background-image: radial-gradient(50% 50% at 50% 50%, $col-lxqt-blue-black 0, $col-lxqt-blue-black-dark 100%);
 		background-size: 100% 100%;
 		background-position: top left;
 		background-attachment: scroll;
-		
+
 		-webkit-tap-highlight-color: rgba(#000, 0);
 		-ms-overflow-style: scrollbar;
 	}
@@ -82,7 +82,7 @@
 		max-width: none;
 		min-height: 100%;
 	}
-	
+
 	// Headers
 	h1,
 	h2,
@@ -92,33 +92,32 @@
 	h6
 	{
 		font-weight: 200;
-		text-transform: capitalize;
 		color: #0192D3;
 	}
-	
+
 	// Intro
 	#intro
 	{
 		position: static;
-		
+
 		color: #FFF;
 		background-color: #0280B9;
 		box-shadow: 0 0 1em 0 rgba(#000,0.5);
-		
+
 		> #heading
 		{
 			float: left;
 			margin-right: 1em;
 			padding: 0.5em;
 			border-right: 0.25em solid #FFF;
-			
+
 			background-color: $col-lxqt-grey;
 			opacity: 1;
-			
+
 			> h1
 			{
 				margin: 0;
-				
+
 				> a,
 				> a > img
 				{
@@ -127,7 +126,7 @@
 					max-height: 3em;
 					margin: auto;
 					font-size: 1rem;
-					
+
 					> span[itemprop="name"]
 					{
 						display: none;
@@ -141,13 +140,13 @@
 			height: 3em;
 			margin: 0;
 			padding: 0.5em;
-			
+
 			> strong
 			{
 				display: table;
 				height: 3em;
 				font-weight: 300;
-				
+
 				> span
 				{
 					display: table-cell;
@@ -163,7 +162,7 @@
 			height: 3em;
 			margin: 0;
 			padding: 0.5em;
-			
+
 			> button
 			{
 				width: 3em;
@@ -171,10 +170,10 @@
 				margin: 0;
 				padding: 0;
 				border-width: 0;
-				
+
 				background-color: transparent;
 				outline-width: 0;
-				
+
 				&:active
 				{
 					background-color: rgba(#000, 0.2);
@@ -191,9 +190,9 @@
 			clear: both;
 			margin: 0;
 			padding: 0.5em;
-			
+
 			background-color: $col-lxqt-blue-black-light;
-			
+
 			&[data-state="active"]
 			{
 				display: block;
@@ -210,32 +209,32 @@
 				display: table;
 				height: 3em;
 				margin: auto;
-				
+
 				> main
 				{
 					display: table-cell;
 					vertical-align: middle;
 					text-shadow: rgba(#000, 0.75) 1px 1px 5px;
-					
+
 					ul
 					{
 						display: block;
 						margin: 0;
 						padding: 0 0.5em;
-						
+
 						> li
 						{
 							display: inline-block;
 							margin: 0;
 							padding: 0 0.5em;
-							
+
 							> p
 							{
 								margin: 0;
 								padding: 0;
-								
+
 								text-indent: 0;
-								
+
 								&::before
 								{
 									content: none;
@@ -244,7 +243,7 @@
 								> a
 								{
 									font-weight: 400;
-									
+
 									color: #FFF;
 								}
 							}
@@ -256,9 +255,9 @@
 			{
 				display: block;
 				clear: none;
-				
+
 				background-color: $col-lxqt-blue;
-				
+
 				&[data-state="inert"]
 				{
 					display: block;
@@ -266,12 +265,12 @@
 			}
 		}
 	}
-	
+
 	// Unrelated important
 	#wrapper > #unrelimp
 	{
 		font-size: 0.875em;
-		
+
 		> aside
 		{
 			> header
@@ -285,20 +284,20 @@
 		a[href]
 		{
 			font-weight: 400;
-			
+
 			color: $col-lxqt-blue;
 		}
 	}
-	
+
 	// Content
 	#wrapper > #content
 	{
-		
+
 		> article
 		{
 			margin: 0;
 			padding: 1rem;
-			
+
 			&.post,
 			article.post
 			{
@@ -306,7 +305,7 @@
 				> footer
 				{
 					overflow: hidden;
-					
+
 					> p
 					{
 						&.date,
@@ -314,9 +313,9 @@
 						&.meta
 						{
 							float: left;
-							
+
 							font-size: 0.875em;
-							
+
 							color: $col-lxqt-grey-light;
 						}
 					}
@@ -328,18 +327,18 @@
 				{
 					padding-left: 0;
 					overflow: hidden;
-					
+
 					> li
 					{
 						display: block;
 						float: left;
-						
+
 						> a
 						{
 							display: block;
 							width: ((($line-width-min - ($margin * 2)) / 1.5) - 0.5rem);
 							margin-right: 0.5rem;
-							
+
 							> figure
 							{
 								position: relative;
@@ -347,9 +346,9 @@
 								height: ((($line-width-min - ($margin * 2)) / 1.5) * 0.625);
 								margin: 0 0 2.575rem 0;
 								overflow: visible;
-								
+
 								background-color: $col-lxqt-grey;
-								
+
 								> header
 								{
 									position: absolute;
@@ -360,17 +359,17 @@
 									padding: $padding;
 									border-radius: 0 0 0.5rem 0.5rem;
 									@include box-sizing(border-box);
-									
+
 									background-color: $col-lxqt-blue-black-light;
 									text-shadow: rgba(#000, 0.75) 1px 1px 5px;
-									
+
 									> hgroup > h1
 									{
 										margin: 0;
-										
+
 										font-size: 0.875em;
 										font-weight: 400;
-										
+
 										color: $col-white;
 									}
 								}
@@ -389,7 +388,7 @@
 				}
 			}
 		}
-		
+
 		// Related important
 		> #relimp
 		{
@@ -404,7 +403,7 @@
 				}
 			}
 		}
-		
+
 		// Related unimportant
 		> #relunimp
 		{
@@ -420,24 +419,24 @@
 			}
 		}
 	}
-	
+
 	// Unrelated unimportant
 	#wrapper > #unrelunimp
 	{
 		max-width: none;
 		padding: 0 1rem;
 		border-top: 1px solid lighten($col-lxqt-grey, 4);
-		
+
 		font-size: 0.875em;
-		
+
 		background-color: $col-lxqt-grey;
-		
+
 		> aside
 		{
 			margin: 0;
 			padding: 1rem 0;
 			border-top: 1px solid $col-lxqt-blue;
-			
+
 			&:first-child
 			{
 				border-top-width: 0;
@@ -445,12 +444,12 @@
 			&#aside-downloads
 			{
 				font-size: 1rem;
-				
+
 				ul > li > p
 				{
 					padding-left: 0;
 					text-indent: 0;
-					
+
 					&::before
 					{
 						content: none;
@@ -459,9 +458,9 @@
 					> a[href]
 					{
 						display: inline-block;
-						
+
 						color: $col-white;
-						
+
 						> span.label
 						{
 							font-weight: 400;
@@ -478,17 +477,17 @@
 				> div.wrapper > main > ol
 				{
 					padding-left: 0;
-					
+
 					> li
 					{
 						display: block;
-						
+
 						> a
 						{
 							display: block;
 							width: (($line-width-min - 3rem) / 1);
 							margin: 0 auto;
-							
+
 							> figure
 							{
 								position: relative;
@@ -497,9 +496,9 @@
 								margin: 0 auto;
 								margin-bottom: 2.575rem;
 								overflow: visible;
-								
+
 								background-color: $col-lxqt-blue-black-dark;
-								
+
 								> header
 								{
 									position: absolute;
@@ -510,17 +509,17 @@
 									padding: $padding;
 									border-radius: 0 0 0.5rem 0.5rem;
 									@include box-sizing(border-box);
-									
+
 									background-color: $col-lxqt-blue-black-light;
 									text-shadow: rgba(#000, 0.75) 1px 1px 5px;
-									
+
 									> hgroup > h1
 									{
 										margin: 0;
-										
+
 										font-size: 0.875em;
 										font-weight: 400;
-										
+
 										color: $col-white;
 									}
 								}
@@ -562,26 +561,26 @@
 		a[href]
 		{
 			font-weight: 400;
-			
+
 			color: $col-lxqt-blue;
 		}
 	}
-	
+
 	// Outro
 	#wrapper > #outro
 	{
 		max-width: none;
 		padding: 0 1rem;
-		
+
 		font-size: 0.75em;
-		
+
 		background-color: $col-lxqt-grey;
-		
+
 		> section
 		{
 			margin: 0;
 			padding: 1rem 0;
-			
+
 			+ section
 			{
 				border-top: 1px solid $col-lxqt-blue;
@@ -622,11 +621,11 @@
 		a[href]
 		{
 			font-weight: 400;
-			
+
 			color: $col-lxqt-blue;
 		}
 	}
-	
+
 	// Preview
 	#article-home_preview
 	{
@@ -635,7 +634,7 @@
 		padding-left: 0;
 		margin-bottom: 2.25rem;
 		background-color: #111;
-		
+
 		> li
 		{
 			position: absolute;
@@ -645,19 +644,19 @@
 			right: 0;
 			margin: auto;
 			z-index: 1;
-			
+
 			opacity: 1;
-			
+
 			@include transition(opacity 1s $easing);
-			
+
 			&[data-state="inert"]
 			{
 				display: block;
-				
+
 				opacity: 0;
-				
+
 				@include transition(opacity 1s $easing);
-				
+
 				pointer-events: none;
 			}
 			a
@@ -678,11 +677,11 @@
 				right: 0;
 				margin: auto;
 				overflow: visible;
-				
+
 				background-color: $col-lxqt-grey;
-				
+
 				pointer-events: none;	// temp
-				
+
 				/*
 				&:hover::before
 				{
@@ -715,9 +714,9 @@
 					bottom: 0;
 					width: auto;
 					height: auto;
-					
+
 					background-color: rgba(#000, 0.65);
-					
+
 					&:hover::before
 					{
 						content: "−";
@@ -734,17 +733,17 @@
 					padding: $padding;
 					@include box-sizing(border-box);
 					z-index: 1;
-					
+
 					background-color: $col-lxqt-blue-black-light;
 					text-shadow: rgba(#000, 0.75) 1px 1px 5px;
-					
+
 					> hgroup > h1
 					{
 						margin: 0;
-						
+
 						font-size: 1em;
 						font-weight: 400;
-						
+
 						color: $col-white;
 					}
 				}
@@ -761,7 +760,7 @@
 			}
 		}
 	}
-	
+
 	// Links
 	a[href]:not(:disabled),
 	a[href]:not(:disabled):visited,
@@ -772,21 +771,21 @@
 	{
 		font-weight: 400;
 		text-decoration: none;
-		
+
 		background-color: transparent;
 		outline-width: 0;
 	}
-	
+
 	a[href]:not(:disabled):focus,
 	a[href]:not(:disabled):hover
 	{
 		text-decoration: underline;
 	}
-	
+
 	// Responsive columns
 	@media all and (orientation: portrait)
 	{
-		
+
 	}
 	@media all and (min-width: 42rem)
 	{
@@ -805,7 +804,7 @@
 		{
 			padding-left: 0;
 			padding-right: 1rem;
-			
+
 			text-align: right;
 		}
 		body:not([data-columns="0.5"]) #wrapper > #unrelimp > aside:nth-child(odd)::after,
@@ -841,7 +840,7 @@
 			border-bottom: 1px solid rgba(darken($col-lxqt-grey, 3), 0.5);
 			border-radius: 0 0 $margin $margin;
 			z-index: -1;
-			
+
 			background-color: rgba($col-lxqt-grey, 0.5);
 		}
 		body:not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #wrapper > #unrelimp,
@@ -849,7 +848,7 @@
 		body:not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #wrapper > #outro
 		{
 			border-top-width: 0;
-			
+
 			background-color: transparent;
 		}
 		body:not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #wrapper > #unrelimp > aside,
@@ -860,7 +859,7 @@
 			padding: 1rem 0;
 			border-top-width: 1px;
 			@include box-sizing(border-box);
-			
+
 			text-align: right;
 		}
 		body:not([data-columns="0.5"])[data-columns]:not([data-columns="1"]) #wrapper > #unrelimp > aside:first-child,
