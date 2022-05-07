@@ -2,7 +2,7 @@
 layout: post
 title: Latest LXQt version for Debian and Ubuntu
 slug: latest-lxqt-debian-ubuntu
-date: mag 07, 2022, 11:11:10
+date: 2022-05-06 09:00
 promoted: true
 categories: blog
 ---
