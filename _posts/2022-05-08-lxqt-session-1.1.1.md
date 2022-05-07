@@ -2,7 +2,7 @@
 layout: post
 title: Point release lxqt-session 1.1.1
 slug: lxqt-session-1-1-1
-date: 2022-05-07 9:52:01
+date: 2022-05-08 9:52:01
 promoted: true
 categories: release
 ---

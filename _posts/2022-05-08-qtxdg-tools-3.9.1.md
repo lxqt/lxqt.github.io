@@ -2,7 +2,7 @@
 layout: post
 title: First release of qtxdg-tools 3.9.1
 slug: first-release-qtxdg-tools-3-9-1
-date: 2022-05-07 09:25:46
+date: 2022-05-08 09:25:46
 promoted: true
 categories: release
 ---
