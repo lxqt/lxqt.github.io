@@ -5,6 +5,7 @@ description: The Lightweight Qt Desktop Environment
 
 # Settings
 url: 'https://lxqt-project.org'
+timezone: Europe/Rome
 collections:
   downloads:
     output: true
