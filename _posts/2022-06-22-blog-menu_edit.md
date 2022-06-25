@@ -11,15 +11,15 @@ Although there is no complete GUI menu editor some basic things can be easily ac
 
 ### Create a menu entry
 
-To create a new menu entry open the hidden directory `.local` in your home open `share` and then
+To create a new menu entry open the hidden directory `.local` in your home, open `share` and then
 `applications`. In the case the `applications` directory should not be present create it and maybe bookmark it too for an easier access later. Then open Tools > Create Launcher.
 
 In this example we'll create a menu entry to launch Firefox with a different profile:
 
 ![Create Launcher LXQt](../../../../../images/posts/launcher.png)
 
-By default all entries created this way are displayed in the menu under "Other"-  if you like to show it under a [given category](https://specifications.freedesktop.org/menu-spec/latest/apa.html) open
-the created `.desktop` file with an text editor and add a line, in this case it should be `Categories=Network;WebBrowser;`.
+By default all entries created this way are displayed in the menu under "Other"- if you like to show it under a [given category](https://specifications.freedesktop.org/menu-spec/latest/apa.html) open
+the created `.desktop` file with a text editor and add a line, in this case it should be `Categories=Network;WebBrowser;`.
 
 ### Hide a menu entry
 
@@ -27,15 +27,15 @@ If you like to hide an entry open "Applications" in PcManFM-Qt's left pane and c
 
 ![Modify Launcher LXQt](../../../../../images/posts/modify-launcher.png)
 
-Open it with an text editor and add a line `NoDisplay=true`.
+Open it with a text editor and add a line `NoDisplay=true`.
 
 ### Change text or category of a menu entry
 
-In the same way as above you can modify displayed names, generic names (tooltips) or the category where an menu entry is shown. Again note that the copies of already existing menu entries in your local directory will be always the ones displayed in the menu. To apply the changes the panel should  be restarted from "Session Settings". Alternatively the command `update-desktop-database ~/.local/share/applications` will do the same. To undo changes and displaying the original file again deleting the `.desktop` file in `~/.local/share/applications` is enough.
+In the same way as above you can modify displayed names, generic names (tooltips) or the category where a menu entry is shown. Again note that the copies of already existing menu entries in your local directory will be always the ones displayed in the menu. To apply the changes the panel should  be restarted from "Session Settings". Alternatively the command `update-desktop-database ~/.local/share/applications` will do the same. To undo changes and displaying the original file again deleting the `.desktop` file in `~/.local/share/applications` is enough.
 
 ### Adding a category in the menu
 
-Recommended is also here copying the menu file from `etc/xdg/menus /` to an local directory in your home. Eventual errors made will not damage the menu. Open the copy of the menu file with an text editor. To add a menu category paste and edit to your needs the following block anywhere between the similar blocks for the other categories:
+Recommended is also here copying the menu file from `etc/xdg/menus/` to a local directory in your home. In this way, probable mistakes will not damage the menu. Open the copy of the menu file with a text editor. To add a menu category paste and edit to your needs the following block anywhere between the similar blocks for the other categories:
 
 
 ```
