@@ -9,10 +9,11 @@ categories: blog
 
 
 
-Now there are [unofficial LXQt 1.1.0 packages](https://github.com/severusseptimius/lxqt-1.1-debian.git)
-available for Debian testing and a [ppa repository](https://launchpad.net/~severusseptimius/+archive/ubuntu/lxqt) for Ubuntu _Jammy Jellyfish_ 22.04 LTS.
+[updated] As there are now [official backports packages](https://lubuntu.me/jammy-backports-22-04-1/) available for Ubuntu LTS 22.04 we strongly recommend to use those and therefor to disable the unofficial [ppa repository](https://launchpad.net/~severusseptimius/+archive/ubuntu/lxqt). Please never use both together.
 
-This is quite good news, as Debian and Debian-based distributions are unfortunately still lacking full maintainership for LXQt packages.
+Here are the  [unofficial LXQt 1.1.0 packages](https://github.com/severusseptimius/lxqt-1.1-debian.git) packages available for Debian testing.
+
+This is quite good news.
 
 
 
