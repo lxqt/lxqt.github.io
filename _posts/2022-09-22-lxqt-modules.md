@@ -13,7 +13,7 @@ This screen is familiar, users can choose which parts to run always on startup, 
 ![Session Settings of LXQt](../../../../../images/posts/sessionsettings.png)
 
 In a wider sense *modular* includes also the window manager which can be chosen or another default
-filemanager which could be intergrated easily too.
+filemanager which could be integrated easily too.
 
 The main difference from a simple autostart entry for an application and a LXQt Module is
 that modules are restarted automatically on failures or crashes, and the start|stop feature. Not known to many is
@@ -28,7 +28,7 @@ X-LXQt-Module=true
 
 
 So the modules section can also be much more populated. Here we have some components which run only under wayland and
-a script which triggers an alert when the CPU get's hot:
+a script which triggers an alert when the CPU gets hot:
 
 ![Modules Settings of LXQt](../../../../../images/posts/new_modules.png)
 
