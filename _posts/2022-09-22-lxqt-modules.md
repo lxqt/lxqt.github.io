@@ -16,7 +16,9 @@ In a wider sense *modular* includes also the window manager which can be chosen 
 filemanager which could be integrated easily too.
 
 The main difference from a simple autostart entry for an application and a LXQt Module is
-that modules are restarted automatically on failures or crashes, and the start|stop feature. Not known to many is
+that modules are restarted automatically on failures or crashes and the start|stop feature. LXQt will try to start a module only upon 5 times at login and then you will see the message *Module X crashed too many times. Its autorestart has been disabled until next login*.
+
+Not known to many is
 that it's very easy to add an application or a script as LXQt Module:
 all is needed is an extra line in the *.desktop* file which will start the application or script and place it in
 `~/.config/autostart` or `/etc/xdg/autostart`.
@@ -33,4 +35,4 @@ a script which triggers an alert when the CPU gets hot:
 ![Modules Settings of LXQt](../../../../../images/posts/new_modules.png)
 
 
-So "modular" is about freedom of choice.
+So "modular" is also about freedom of choice how you like to configure your desktop environment.
