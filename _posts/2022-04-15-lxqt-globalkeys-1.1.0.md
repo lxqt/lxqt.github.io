@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Release lxqt-globalkeys 1.1.0
-slug: lxqt-globalkeys-1-0-0
+slug: lxqt-globalkeys-1-1-0
 date: apr 15, 2022, 16:56:23
 promoted: true
 categories: release
