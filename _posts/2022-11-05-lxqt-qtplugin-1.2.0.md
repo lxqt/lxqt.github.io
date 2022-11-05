@@ -1,0 +1,19 @@
+---
+layout: post
+title: Release lxqt-qtplugin 1.2.0
+slug: lxtqt-qtplugin-1-2-0
+date: 2022-11-05 09:25
+promoted: true
+categories: release
+---
+
+The LXQt team is proud to announce the release of lxqt-qtplugin 1.2.0.
+The release can be downloaded from [Github](https://github.com/lxqt/lxqt-qtplugin/releases).
+
+Main changes:
+
+* Bumped the version to 1.2.0 and updated the dependencies.
+  
+<br/>
+A full list of changes is in the CHANGELOG file.
+<br/>

@@ -6,7 +6,7 @@ date: apr 15, 2022, 16:58:03
 promoted: true
 categories: release
 ---
-The LXQt team is proud to announce the release of lxqt-notificationd 1.0.0.
+The LXQt team is proud to announce the release of lxqt-notificationd 1.1.0.
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-notificationd/releases).
 
 Main changes:
