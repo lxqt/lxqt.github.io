@@ -7,7 +7,7 @@ promoted: true
 categories: blog
 ---
 
-Although there is no complete GUI menu editor some basic things can be easily achieved - let's see how.
+[Updated] Although there is no complete GUI menu editor some basic things can be easily achieved - let's see how.
 
 ### Create a menu entry
 
@@ -20,6 +20,10 @@ In this example we'll create a menu entry to launch Firefox with a different pro
 
 By default all entries created this way are displayed in the menu under "Other"- if you like to show it under a [given category](https://specifications.freedesktop.org/menu-spec/latest/apa.html) open
 the created `.desktop` file with a text editor and add a line, in this case it should be `Categories=Network;WebBrowser;`.
+
+**Note**: in LXQt 1.2.0 the "Create launcher" utility has got a help button and the categories can now be set too:
+
+![Create Launcher LXQt](../../../../../images/posts/create_launcher.1.2.png)
 
 ### Hide a menu entry
 
@@ -52,4 +56,16 @@ Recommended is also here copying the menu file from `etc/xdg/menus/` to a local 
 ```
 Right click on the menu button, select "Configure applications menu" and set the path to your modified menu. Categories are displayed in alphabetical order and an empty category will not be displayed, so this "Example" category is only shown if one or more desktop files containing `Categories=foo`  are present in `~/.local/share/applications` or `/usr/share/applications`.
 
-The complete documentation can be found [here](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html). Enjoy tweaking!
+### Adding default applications menu
+
+Up to 4 default applications (browser, client email, terminal emulator and filemanager) can be shown in a similar way on bottom or top in the main menu:
+
+![Modify Launcher LXQt](../../../../../images/posts/default_apps_menu.png)
+
+
+![Modify Launcher LXQt](../../../../../images/posts/default_apps_menu_2.png)
+
+For detailed explanations see this [LXQt Discussion](https://github.com/lxqt/lxqt/discussions/2331#discussioncomment-4158978).
+
+
+The complete documentation for the menu can be found [here](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html). Enjoy tweaking!
