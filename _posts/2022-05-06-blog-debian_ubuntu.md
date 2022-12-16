@@ -15,6 +15,8 @@ As there are now official backports packages available for **Ubuntu LTS 22.04** 
 
 The previous [unofficial LXQt 1.1.0 packages](https://github.com/severusseptimius/lxqt-1.1-debian.git) for **Debian testing** *Bookworm* are also not needed anymore as LXQt Version **1.1.0** has now arrived in the official repositories.
 
+Please note that the applications **PcManFm-qt**, **LXimage-qt**, **QTerminal** and **lxqt-archiver** are already at their newest version (1.2.0 / 0.7.0) in Debian testing!
+
 
 
 ![Debian LXQt 1.1](../../../../../images/posts/lxqt.1.1_debian.jpg)
