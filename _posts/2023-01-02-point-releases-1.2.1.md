@@ -7,7 +7,7 @@ promoted: true
 categories: blog
 ---
 
-The LXQt team has decided to release point releases for three main components:
+The LXQt team has decided to make point releases for three main components:
 
 The main reason for the [point release](https://lxqt-project.org/release/2023/01/02/lxqt-panel-1-2-1/) of lxqt-panel was a change of behavior in xfwm4 version 4.18, which caused full-screen windows to go under the panel. A regression in the volume popup is also fixed and a Qeye plugin has been added.
 
