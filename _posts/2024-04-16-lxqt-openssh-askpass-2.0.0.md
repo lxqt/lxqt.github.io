@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-openssh-askpass 2.0.0
 slug: lxqt-openssh-askpass-2-0-0
-date: 2023-11-03 18:00
+date: 2024-04-15 20:41
 promoted: false
 categories: release
 ---
@@ -12,7 +12,7 @@ The release can be downloaded from [Github](https://github.com/lxqt/lxqt-openssh
 
 Main changes:
 
- * Updated translations and bumped the version.
+ * Ported to Qt6.
 
 <br/>
 A full list of changes is in the CHANGELOG file.

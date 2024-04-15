@@ -2,7 +2,7 @@
 layout: post
 title: Release screengrab 2.8.0
 slug: screengrab-2-8-0
-date: 2024-04-06 08:05
+date: 2024-04-15 20:36
 promoted: true
 categories: release
 ---
@@ -11,8 +11,7 @@ The release can be downloaded from [Github](https://github.com/lxqt/screengrab/r
 
 Main changes:
 
- * Ported deprecated KWindowSystem methods.
- * Ported away from an obsolete QLabel method.
+ * Ported to Qt6.
 
 
 <br/>

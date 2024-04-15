@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-themes 2.0.0
 slug: lxqt-themes-2-0-0
-date:2024-04-14 22:19
+date: 2024-04-14 22:19
 promoted: false
 categories: release
 ---

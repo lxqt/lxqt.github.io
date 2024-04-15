@@ -2,7 +2,7 @@
 layout: post
 title: Wayland FAQ
 slug: wayland_faq
-date: 2024-04-09 21:27
+date: 2024-04-15 21:14
 promoted: true
 categories: blog
 ---
