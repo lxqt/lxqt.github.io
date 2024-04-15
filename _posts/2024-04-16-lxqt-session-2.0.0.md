@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-session 2.0.0
 slug: lxqt-session-2-0-0
-date: 2024-04-06 08:02
+date: 2024-04-15 07:02
 promoted: true
 categories: release
 ---
@@ -12,8 +12,11 @@ The release can be downloaded from [Github](https://github.com/lxqt/lxqt-session
 
 Main changes:
 
-* Update the DBus activation environment, to fix problems with apps (like Telegram) which set `DBusActivatable` to `true` in their desktop entries.
-
+ * Made the user inputs stricter in auto-start.
+ * Don't allow inputs consisting of only whitespaces, and remove start and end whitespaces from them.
+ * Fixed a typo.
+ * Ported to Qt6.
+ * Used an overlay layer shell for the leaving dialog and centered it under Wayland.
 
 
 <br/>
