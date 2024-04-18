@@ -7,7 +7,7 @@ promoted: true
 categories: blog
 ---
 
-As LXQt 2.0 is ready to be released and includes Wayland-specific codes for the first time,
+As LXQt 2.0 has been released and includes Wayland-specific codes for the first time,
 here is a short Q&A about that.
 
 
