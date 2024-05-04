@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Point Releases of Several Components
-slug: Point-Release-xdg-desktop-portal-lxqt
-date: 2024-05-03 22:04
+slug: Point-Releases-of-several-components
+date: 2024-05-04 16:04
 promoted: true
 categories: release
 ---
