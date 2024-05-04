@@ -7,7 +7,7 @@ promoted: true
 categories: release
 ---
 
-The LXQt team announces a point releases for xdg-desktop-portal-lxqt 1.0.1.
+The LXQt team announces a point release for xdg-desktop-portal-lxqt 1.0.1.
 The release can be downloaded from [Github](https://github.com/lxqt/xdg-desktop-portal-lxqt/releases).
 
 Changes:
