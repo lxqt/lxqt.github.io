@@ -13,7 +13,7 @@ The LXQt team announces point releases of the following components:
 
 Changes:
 
- * Fixed the initial path (the credit goes to the KDE team for their solution in xdg-desktop-portal-kde).
+* Fixed the initial path, which started to get broken with apps like Firefox recently. The credit goes to the KDE team for their solution in xdg-desktop-portal-kde.
   
 The release can be downloaded from [Github](https://github.com/lxqt/xdg-desktop-portal-lxqt/releases).
 
@@ -34,7 +34,7 @@ Changes:
 
 The release can be downloaded from [Github](https://github.com/lxqt/libfm-qt/releases).
 
-**lxqt-notificationd**
+**lxqt-notificationd 2.0.1**
 
 Changes:
 
