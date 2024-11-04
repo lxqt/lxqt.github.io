@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-menu-data 2.1.0
 slug: release-lxqt-menu-data-2-1-0
-date: 2024-11-02 18:33
+date: 2024-11-05 04:07
 promoted: false
 categories: release
 ---

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Release qtxdg-tools 4.1.0
-slug: release-qtxdg-tools-4.1.0
-date: 2024-11-02 18:25
+slug: release-qtxdg-tools-4-1-0
+date: 2024-11-05 04:07
 promoted: true
 categories: release
 ---

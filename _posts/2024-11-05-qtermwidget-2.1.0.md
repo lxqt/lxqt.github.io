@@ -2,7 +2,7 @@
 layout: post
 title: Release qtermwidget 2.1.0
 slug: qtermwidget-2-1-0
-date: 2024-11-02 18:25
+date: 2024-11-05 04:07
 promoted: true
 categories: release
 ---

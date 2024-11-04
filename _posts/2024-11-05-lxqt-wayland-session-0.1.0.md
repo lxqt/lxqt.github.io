@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-wayland-session 0.1.0
 slug: lxqt-wayland-session-0-1-0
-date: 2024-11-02 18:43
+date: 2024-11-05 04:25
 promoted: true
 categories: release
 ---

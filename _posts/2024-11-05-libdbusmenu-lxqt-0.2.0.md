@@ -2,7 +2,7 @@
 layout: post
 title: Release libdbusmenu-lxqt 0.2.0
 slug: release-libdbusmenu-lxqt-0-2-0
-date: 2024-11-02 20:59
+date: 2024-11-05 04:07
 promoted: false
 categories: release
 ---
