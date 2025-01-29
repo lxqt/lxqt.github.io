@@ -24,7 +24,7 @@ Changes:
 
  * Fixed the issue which happened when full paths were used instead of the compositor's executable name.
  * Updated `lxqt-hyprland.conf` for Hyprland v.0.45.
- * Acitvated `xdg-activation` by default in Wayfire's config.
+ * Activated `xdg-activation` by default in Wayfire's config.
 
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-wayland-session/releases).
 
