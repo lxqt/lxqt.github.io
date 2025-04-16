@@ -12,7 +12,7 @@ slug: screenshots
 </div>
 
 <ol>
-{% for screenshot in site.screenshots %}{% if screenshot.desktop %}
+{% for screenshot in site.screenshots %}{% if screenshot.screenshots %}
 	<li>
 		<a href="{{ screenshot.url | relative_url }}" title="{{ screenshot.title }}">
 			<figure>
