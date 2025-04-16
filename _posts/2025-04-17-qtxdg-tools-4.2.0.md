@@ -2,12 +2,12 @@
 layout: post
 title: Release qtxdg-tools 4.2.0
 slug: release-qtxdg-tools-4.2.0
-date: 2025-04-15 07:12
+date: 2025-04-17 07:12
 promoted: true
 categories: release
 ---
 
-The LXQt team is proud to announce the release of qtxdg-tools 4.2.0
+The LXQt team announces the release of qtxdg-tools 4.2.0
 
 Changes:
 

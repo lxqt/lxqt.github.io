@@ -2,12 +2,12 @@
 layout: post
 title: Release qtermwidget 2.2.0
 slug: qtermwidget-2-2-0
-date: 2025-04-15 07:27
+date: 2025-04-17 07:27
 promoted: true
 categories: release
 ---
 
-The LXQt team announces the release of qtermwidget 2.2.0
+The LXQt team announces the release of qtermwidget 2.2.0.
 The release can be downloaded from [Github](https://github.com/lxqt/qtermwidget/releases).
 
 Changes:

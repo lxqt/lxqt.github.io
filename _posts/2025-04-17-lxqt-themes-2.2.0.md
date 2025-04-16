@@ -6,7 +6,7 @@ date: 2025-04-09 21:02
 promoted: false
 categories: release
 ---
-The LXQt team is proud to announce the release of lxqt-themes 2.2.0
+The LXQt team announces the release of lxqt-themes 2.2.0.
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-themes/releases).
 
 Main changes:

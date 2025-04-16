@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-archiver 1.2.0
 slug: lxqt-archiver-1-2-0
-date: 2025-04-15 07:18
+date: 2025-04-17 07:18
 promoted: true
 categories: release
 ---

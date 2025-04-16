@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-runner 2.2.0
 slug: lxqt-runner-2-2-0
-date: 2025-04-15 0:09
+date: 2025-04-17 0:09
 promoted: false
 categories: release
 ---

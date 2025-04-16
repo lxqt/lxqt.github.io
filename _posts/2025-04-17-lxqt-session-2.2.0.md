@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-session 2.2.0
 slug: lxqt-session-2-2-0
-date: 2025-04-15 07:55
+date: 2025-04-17 07:55
 promoted: true
 categories: release
 ---

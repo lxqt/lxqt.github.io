@@ -2,12 +2,12 @@
 layout: post
 title: Release lxqt-notificationd 2.2.0
 slug: lxqt-notificationd-2-2-0
-date: 2025-04-15 0:14
+date: 2025-04-17 0:14
 promoted: true
 categories: release
 ---
 
-The LXQt team is proud to announce the release of lxqt-notificationd 2.2.0.
+The LXQt team announces the release of lxqt-notificationd 2.2.0.
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-notificationd/releases).
 
 Main changes:

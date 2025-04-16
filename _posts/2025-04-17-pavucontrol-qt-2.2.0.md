@@ -7,7 +7,7 @@ promoted: false
 categories: release
 ---
 
-The LXQt team is proud to announce the release of pavucontrol-qt 2.0.0.
+The LXQt team announces the release of pavucontrol-qt 2.0.0.
 The release can be downloaded from [Github](https://github.com/lxqt/pavucontrol-qt/releases).
 
 Main changes:
