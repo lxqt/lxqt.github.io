@@ -2,12 +2,12 @@
 layout: post
 title: Release ScreenGrab 3.0 and lxqt-panel 2.2.1
 slug: screengrab-3-0-panel-2-2-1-release
-date: 2025-05-17 05:18
+date: 2025-05-17 08:09
 promoted: true
 categories: release
 ---
 
-The LXQt team announces point releases of the following components:
+The LXQt team announces the releases of the following components:
 
 **ScreenGrab 3.0**
 
@@ -26,10 +26,10 @@ In addition:
 The release can be downloaded from [Github](https://github.com/lxqt/screengrab/releases).
 
 
-**lxqt-panel 2.2.1**
+**Point Release lxqt-panel 2.2.1**
 
 The "Show Desktop" plugin works now under Wayland compositors that are compatible with wlroots
- (and which support window minimizing).
+ (and support window minimizing).
 
 In addition:
 
