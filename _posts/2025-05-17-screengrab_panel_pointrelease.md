@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Release ScreenGrab 3.0 and lxqt-panel 2.2.1
-slug: screengrab-3-0-panel-2-2-1-release
-date: 2025-05-17 08:09
+title: Release ScreenGrab 3.0 and 2 point releases
+slug: screengrab-3-0-and-2-point-releases
+date: 2025-05-17 06:09
 promoted: true
 categories: release
 ---
@@ -44,3 +44,13 @@ In addition:
 
 <br/>
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-panel/releases).
+
+
+**Point Release Qps 2.11.1**
+
+Changes:
+
+ * Fixed first launching of Qps without config file.
+
+<br/>
+The release can be downloaded from [Github](https://github.com/lxqt/qps/releases).
