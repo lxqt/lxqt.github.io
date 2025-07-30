@@ -7,7 +7,7 @@ promoted: true
 categories: release
 ---
 
-The LXQt team announce a point releases of **lxqt-wayland-session 0.2.1**
+The LXQt team announce a point release of **lxqt-wayland-session 0.2.1**
 
 Changes:
 
@@ -22,5 +22,3 @@ Updated configurations for following versions of compositors:
 
 <br/>
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-wayland-session/releases).
-
-
