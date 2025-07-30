@@ -12,7 +12,7 @@ The LXQt team announce a point release of **lxqt-wayland-session 0.2.1**
 Changes:
 
 Updated configurations for following versions of compositors:
-  * labwc 0.9,
+  * labwc 0.9
   * Hyprland 0.50
   * Niri 25.05
   * Sway 1.11
