@@ -12,7 +12,7 @@ The release can be downloaded from [Github](https://github.com/lxqt/lxqt-themes/
 Main changes:
 
  * Reduced margins for taskbar buttons in the Light theme.
- * Reduced margins/padding for taskbar groups in the Arch-Colors theme.
+ * Reduced margins/padding for taskbar groups.
  * Refactored the Leech and Clearlooks themes.
  * Fixed calendar widget in the Graphite theme.
 
