@@ -7,7 +7,7 @@ promoted: false
 categories: release
 ---
 
-The LXQt team announces the release of lxqt-config 2..0.
+The LXQt team announces the release of lxqt-config 2.3.0.
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-config/releases).
 
 Main changes:
