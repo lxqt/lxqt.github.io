@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-config 2.3.0
 slug: lxqt-config-2.3-0
-date: 2025-10-26 21:43
+date: 2025-11-05 07:00
 promoted: false
 categories: release
 ---

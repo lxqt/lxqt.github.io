@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-build-tools 2.3.0
 slug: lxqt-build-tools-2-3-0
-date: 2025-10-25 18:37
+date: 2025-11-05 07:00
 promoted: true
 categories: release
 ---

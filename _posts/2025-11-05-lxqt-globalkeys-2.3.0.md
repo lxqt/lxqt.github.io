@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-globalkeys 2.3.0
 slug: lxqt-globalkeys-2-3-0
-date: 2025-10-26 21:44
+date: 2025-11-05 07:00
 promoted: true
 categories: release
 ---

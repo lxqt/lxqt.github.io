@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-powermanagement 2.3.0
 slug: lxqt-powermanagement-2-3-0
-date: 2025-10-28 15:36
+date: 2025-11-05 07:00
 promoted: true
 categories: release
 ---
