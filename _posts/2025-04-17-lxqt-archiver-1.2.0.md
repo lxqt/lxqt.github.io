@@ -7,7 +7,7 @@ promoted: true
 categories: release
 ---
 
-The LXQt team announces the release of lxqt-archiver 1-2.0.
+The LXQt team announces the release of lxqt-archiver 1.2.0.
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-archiver/releases).
 
 Main changes:

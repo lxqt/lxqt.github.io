@@ -2,7 +2,7 @@
 layout: post
 title: Release xdg-desktop-portal-lxqt 1.2.0
 slug: xdg-desktop-portal-lxqt-1-2-0
-0date: 2025-04-17 07:44
+date: 2025-04-17 07:44
 promoted: true
 categories: release
 ---
