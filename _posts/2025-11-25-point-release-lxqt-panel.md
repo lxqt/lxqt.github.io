@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Point Release lxqt-panel 2.3.1
-slug: point-releaseslxqt-panel-2-3-1
+slug: point-release-lxqt-panel-2-3-1
 date: 2025-11-25 17:24
 promoted: true
 categories: release
