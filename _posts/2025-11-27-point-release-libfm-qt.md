@@ -7,7 +7,7 @@ promoted: true
 categories: release
 ---
 
-The LXQt team announce a point release of **libfm-qt 2.3.1**
+The LXQt team announces a point release of **libfm-qt 2.3.1**
 
 
 Changes:
