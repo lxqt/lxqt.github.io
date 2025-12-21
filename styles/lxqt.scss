@@ -13,6 +13,7 @@
 	// Do stuff once
 
 	$col-lxqt-blue-light: #41A0CB !global;
+	$col-lxqt-blue-sidebarlink: #4AC7FF !global;
 	$col-lxqt-blue: #0280B9 !global;
 	$col-lxqt-blue-dark: #02608B !global;
 	$col-lxqt-blue-black-light: #01405D !global;
@@ -562,7 +563,7 @@
 		{
 			font-weight: 400;
 
-			color: $col-lxqt-blue;
+			color: $col-lxqt-blue-sidebarlink;
 		}
 	}
 
