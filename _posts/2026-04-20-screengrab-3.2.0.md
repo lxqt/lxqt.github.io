@@ -11,7 +11,8 @@ The release can be downloaded from [Github](https://github.com/lxqt/screengrab/r
 
 Main changes:
 
-* Updated translations and bumped the version.
+ * Assigned message boxes to the parent window.
+ * Updated translations and bumped the version.
 
 <br/>
 A full list of changes is in the CHANGELOG file.

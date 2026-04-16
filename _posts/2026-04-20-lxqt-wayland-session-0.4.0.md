@@ -12,7 +12,7 @@ The LXQt team announces the release of lxqt-wayland-session 0.4.0.
 
 In addition to fixes and updates for the latest stable versions of some Wayland compositors:
 
-* Bumped the version.
+ * Added support for "openmenu" in lxqt-qdbus script for mainmenu too.
 
 <br/>
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-wayland-session/releases).

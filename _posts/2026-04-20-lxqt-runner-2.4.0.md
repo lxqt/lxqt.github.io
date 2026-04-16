@@ -11,6 +11,7 @@ The LXQt team announces the release of lxqt-runner 2.4.0.
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-runner/releases).
 
 Main changes:
+
  * Removed menucache support.
  * Start calculator also on numbers.
 

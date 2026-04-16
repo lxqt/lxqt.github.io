@@ -10,6 +10,7 @@ The LXQt team announces the release of lxqt-themes 2.4.0.
 The release can be downloaded from [Github](https://github.com/lxqt/lxqt-themes/releases).
 
 Main changes:
+
  * Fix unreadable timezones popup in Frost theme.
  * Updated all themes for multisink volume plugin.
  * 'Dark' theme improvements.
