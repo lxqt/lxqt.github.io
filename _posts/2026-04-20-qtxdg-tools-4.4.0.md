@@ -2,7 +2,7 @@
 layout: post
 title: Release qtxdg-tools 4.4.0
 slug: release-qtxdg-tools-4.4.0
-date: 2026-04-14 07:00
+date: 2026-04-20 08:00
 promoted: true
 categories: release
 ---

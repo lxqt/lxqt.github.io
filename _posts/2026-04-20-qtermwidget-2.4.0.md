@@ -2,7 +2,7 @@
 layout: post
 title: Release qtermwidget 2.4.0
 slug: qtermwidget-2-4-0
-date: 2026-04-14 07:00
+date: 2026-04-20 08:00
 promoted: true
 categories: release
 ---
@@ -12,6 +12,7 @@ The release can be downloaded from [Github](https://github.com/lxqt/qtermwidget/
 
 Changes:
 
+ * emulation: add DECRQM/DECRPM replies for tracked modes.
  * Make sure variables are initialized before use.
  * Fixed env var loop.
  * Added "Nord" theme.
