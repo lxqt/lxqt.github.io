@@ -51,8 +51,8 @@ sudo apt install wayfire wcm swaylock
 ```
 ### niri
 
-Latest niri from git can be installed using [pacstall](https://pacstall.dev/packages/niri/)
-Nothing else is needed, so select "0" when asked.
+Latest niri from git can be installed using [pacstall](https://pacstall.dev/packages/niri/).
+Nothing more is needed except eventually swaybg for the background in the overview, so select "0" or "3" when asked.
 More than 2GB in /tmp is nedded to compile and it will take some time.
 
 
@@ -77,7 +77,6 @@ wget https://raw.githubusercontent.com/lxqt/lxqt-wayland-session/368b14e726b4b72
 ```
 sudo apt install sway -swaylock --no-install-recommends
 ```
-
 ### kwin-wayland
 
 ```
@@ -88,6 +87,8 @@ Kwin's configuration module may require more plasma packages.
 See also [WM Integration Files](https://github.com/lxqt/lxqt-WM-integration-files#kwin_wayland).
 
 ## Notes
+
+* Some panel popups aling to screen border instead of panel border (Qt issue), consider moving it to the top.
 
 * The clipboard manager "Qlipper" included supports Wayland only in its most recent version, so
 disable it under Wayland by editing it in Session Settings → Autostart → "Start only in X11".
