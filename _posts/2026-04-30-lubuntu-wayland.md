@@ -2,7 +2,7 @@
 layout: post
 title: How to Enable Wayland in Lubuntu 26.04
 slug: how-to-enable-wayland-lubuntu-26-04
-date: 2026-04-24 17:03
+date: 2026-05-01 17:03
 promoted: true
 categories: blog
 ---
