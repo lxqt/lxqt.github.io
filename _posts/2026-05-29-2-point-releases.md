@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Point Release lxqt-panel 2.4.1 and lxqt-wayland-session 0.4.1
-slug: point-release-lxqt-panel-2-4-1- wayland-session-0-4-1
-date: 2026-05-28 22:12
+slug: point-release-lxqt-panel-2-4-1-wayland-session-0-4-1
+date: 2026-05-29 13:00
 promoted: true
 categories: release
 ---
@@ -24,7 +24,7 @@ The release can be downloaded from [Github](https://github.com/lxqt/lxqt-panel/r
  **lxqt-wayland-session 0.4.1**
 
  * Updated wiki link in niri configs.
- * Updated for labwc 0.10.0.
+ * Updated for labwc 0.20.0.
  * Migrated Hyprland config to lua for 0.55 and fixed an error with legacy config.
  * Bumped version in lxqt-sway.config and removed doubled keybind.
  * Added method to show `lxqt-clip` to lxqt-qdbus script.
