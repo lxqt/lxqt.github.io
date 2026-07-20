@@ -152,7 +152,7 @@
 				{
 					display: table-cell;
 					vertical-align: middle;
-					text-shadow: rgba(#000, 0.75) 1px 1px 5px;
+					text-shadow: rgba(#000, 0.25) 1px 1px 2px;
 				}
 			}
 		}
@@ -215,7 +215,7 @@
 				{
 					display: table-cell;
 					vertical-align: middle;
-					text-shadow: rgba(#000, 0.75) 1px 1px 5px;
+					text-shadow: rgba(#000, 0.25) 1px 1px 2px;
 
 					ul
 					{
@@ -362,7 +362,7 @@
 									@include box-sizing(border-box);
 
 									background-color: $col-lxqt-blue-black-light;
-									text-shadow: rgba(#000, 0.75) 1px 1px 5px;
+									text-shadow: rgba(#000, 0.25) 1px 1px 2px;
 
 									> hgroup > h1
 									{
@@ -512,7 +512,7 @@
 									@include box-sizing(border-box);
 
 									background-color: $col-lxqt-blue-black-light;
-									text-shadow: rgba(#000, 0.75) 1px 1px 5px;
+									text-shadow: rgba(#000, 0.25) 1px 1px 2px;
 
 									> hgroup > h1
 									{
@@ -736,7 +736,7 @@
 					z-index: 1;
 
 					background-color: $col-lxqt-blue-black-light;
-					text-shadow: rgba(#000, 0.75) 1px 1px 5px;
+					text-shadow: rgba(#000, 0.25) 1px 1px 2px;
 
 					> hgroup > h1
 					{
