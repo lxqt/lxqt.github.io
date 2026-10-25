@@ -14,6 +14,7 @@ Main changes:
 
  * Silenced layershell's warnings by updating its code.
  * CMake maintenance.
+ * Fixed compilation without math support.
  * Updated the address of Free Software Foundation.
 
 <br/>
