@@ -22,6 +22,7 @@ Main changes:
  * Added 'on' state styling to plugin-volume of Clearlooks and Ambiance.
  * Added some padding to Ambiance.
  * Improved the QCalendarWidget style of Graphite.
+ * Refactored Clearlooks theme to support SVG images.
  * Updated the address of Free Software Foundation.
 
 <br/>
