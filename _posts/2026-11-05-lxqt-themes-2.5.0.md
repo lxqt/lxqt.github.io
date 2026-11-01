@@ -2,7 +2,7 @@
 layout: post
 title: Release lxqt-themes 2.5.0
 slug: lxqt-themes-2-5-0
-date: 2026-10-25 14:52
+date: 2026-11-05 07:00
 promoted: false
 categories: release
 ---

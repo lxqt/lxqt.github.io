@@ -2,7 +2,7 @@
 layout: post
 title: Release screengrab 3.3.0
 slug: screengrab-3-3-0
-date: 2026-10-16 07:00
+date: 2026-11-05 07:00
 promoted: true
 categories: release
 ---
